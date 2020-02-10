@@ -20,7 +20,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="40dp"
             android:paddingTop="8dp"
-            android:text="\nButton"
+            android:text="\nKhoa"
             android:layout_marginBottom="5dp"
             android:textColor="#000000" />
 
@@ -36,7 +36,7 @@
             android:paddingLeft="5dp"
             android:paddingRight="40dp"
             android:paddingTop="8dp"
-            android:text="\nButton"
+            android:text="\nNgành"
             android:textColor="#000000" />
     </LinearLayout>
     <LinearLayout
@@ -54,7 +54,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="40dp"
             android:paddingTop="8dp"
-            android:text="\nButton"
+            android:text="\nSơ đồ"
             android:layout_marginBottom="5dp"
             android:textColor="#000000" />
 
@@ -70,7 +70,7 @@
             android:paddingLeft="5dp"
             android:paddingRight="40dp"
             android:paddingTop="8dp"
-            android:text="\nButton"
+            android:text="\nSự kiện"
             android:textColor="#000000" />
     </LinearLayout>
 </LinearLayout>
