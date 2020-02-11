@@ -9,7 +9,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <Button
             android:layout_width="wrap_content"
@@ -25,7 +26,8 @@
             android:textColor="#000000"
             android:paddingStart="16dp"
             android:paddingEnd="40dp"
-            android:drawableStart="@drawable/building" />
+            android:drawableStart="@drawable/building"
+            style="?android:attr/borderlessButtonStyle"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -43,13 +45,15 @@
             android:textColor="#000000"
             android:paddingStart="5dp"
             android:paddingEnd="40dp"
-            android:drawableStart="@drawable/dorm" />
+            android:drawableStart="@drawable/dorm"
+            style="?android:attr/borderlessButtonStyle"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <Button
             android:layout_width="wrap_content"
@@ -65,7 +69,8 @@
             android:textColor="#000000"
             android:drawableStart="@drawable/music"
             android:paddingStart="16dp"
-            android:paddingEnd="40dp" />
+            android:paddingEnd="40dp"
+            style="?android:attr/borderlessButtonStyle"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -83,6 +88,7 @@
             android:textColor="#000000"
             android:drawableStart="@drawable/ingram"
             android:paddingEnd="40dp"
-            android:paddingStart="5dp" />
+            android:paddingStart="5dp"
+            style="?android:attr/borderlessButtonStyle"/>
     </LinearLayout>
 </LinearLayout>
