@@ -57,21 +57,23 @@
         >
 
         <Button
+            android:id="@+id/ButtonSoDo"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#ededed"
-            android:drawableLeft="@drawable/music"
-            android:paddingBottom="5dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="40dp"
-            android:paddingTop="8dp"
-            android:text="@string/So_do"
             android:layout_marginBottom="5dp"
-            android:textColor="#000000"
+            android:background="#ededed"
             android:drawableStart="@drawable/music"
+            android:drawableLeft="@drawable/music"
+            android:onClick="SoDoClick"
             android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
             android:paddingEnd="40dp"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:paddingRight="40dp"
+            android:paddingBottom="5dp"
+            android:text="@string/So_do"
+            android:textColor="#000000" />
 
         <Button
             android:layout_width="wrap_content"
