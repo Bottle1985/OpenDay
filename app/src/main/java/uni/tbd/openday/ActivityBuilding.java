@@ -18,6 +18,8 @@ public class ActivityBuilding extends Activity {
         setContentView(R.layout.list_building);
         // Button template return
         Button next = (Button) findViewById(R.id.Button02);
+        this.overridePendingTransition(R.anim.animation_enter,
+                R.anim.animation_leave);
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent();
