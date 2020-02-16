@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">OpenDay</string>
-    <string name="So_do">Sơ đồ</string>
-    <string name="Su_kien">Sự kiện</string>
-    <string name="Nganh">Ngành</string>
-    <string name="Khoa">Khoa</string>
+    <string name="So_do"> Sơ đồ</string>
+    <string name="Su_kien"> Sự kiện</string>
+    <string name="Nganh"> Ngành</string>
+    <string name="Khoa"> Khoa</string>
 </resources>
