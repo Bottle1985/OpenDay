@@ -31,9 +31,9 @@ public class ActivityBuilding extends Activity {
         // List view function
         final ListView list = findViewById(R.id.list);
         ArrayList<SubjectData> arrayList = new ArrayList<SubjectData>();
-        arrayList.add(new SubjectData(getResources().getString(R.string.Giang_duong), "https://www.tutorialspoint.com/java/", R.drawable.bg));
-        arrayList.add(new SubjectData(getResources().getString(R.string.Ky_tuc_xa), "https://www.tutorialspoint.com/python/", R.drawable.bg_ky_tuc));
-        arrayList.add(new SubjectData(getResources().getString(R.string.Thuc_hanh), "https://www.tutorialspoint.com/javascript/", R.drawable.bg_da_nang));
+        arrayList.add(new SubjectData(getResources().getString(R.string.Giang_duong), "https://www.tutorialspoint.com/java/", R.drawable.thumble_giang_duong));
+        arrayList.add(new SubjectData(getResources().getString(R.string.Ky_tuc_xa), "https://www.tutorialspoint.com/python/", R.drawable.thumble_ky_tuc));
+        arrayList.add(new SubjectData(getResources().getString(R.string.Thuc_hanh), "https://www.tutorialspoint.com/javascript/", R.drawable.thumble_da_nang));
 //        arrayList.add(new SubjectData("Cprogramming", "https://www.tutorialspoint.com/cprogramming/", R.drawable.bg));
 //        arrayList.add(new SubjectData("Cplusplus", "https://www.tutorialspoint.com/cplusplus/", R.drawable.bg));
 //        arrayList.add(new SubjectData("Android", "https://www.tutorialspoint.com/android/", R.drawable.bg));
