@@ -64,9 +64,9 @@ public class CustomAdapter implements ListAdapter {
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse(subjectData.Link));
-                    context.startActivity(i);
+//                    Intent i = new Intent(Intent.ACTION_VIEW);
+//                    i.setData(Uri.parse(subjectData.Link));
+//                    context.startActivity(i);
                 }
             });
             TextView tittle = convertView.findViewById(R.id.title);

@@ -5,20 +5,14 @@
     android:background="@drawable/bg2">
 
     <ListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="#000"
-        android:dividerHeight="1dp"
-        android:footerDividersEnabled="false"
-        android:headerDividersEnabled="false" >
+        android:id = "@+id/list"
+        android:layout_width = "wrap_content"
+        android:layout_height = "match_parent"
+        android:divider = "#000"
+        android:dividerHeight = "1dp"
+        android:descendantFocusability="blocksDescendants"
+        android:footerDividersEnabled = "false"
+        android:headerDividersEnabled = "false"/>
 
-    </ListView>
 
-    <Button android:text="Previous"
-        android:id="@+id/Button02"
-        android:layout_width="250px"
-        android:textSize="18px"
-        android:layout_height="55px">
-    </Button>
 </LinearLayout>
