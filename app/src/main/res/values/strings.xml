@@ -4,5 +4,8 @@
     <string name="Su_kien"> Sự kiện</string>
     <string name="Nganh"> Ngành</string>
     <string name="Khoa"> Khoa</string>
+    <string name="Giang_duong"> Giảng đường</string>
+    <string name="Ky_tuc_xa"> Ký túc xá</string>
+    <string name="Thuc_hanh"> Thực hành</string>
     <string name="todo">TODO</string>
 </resources>

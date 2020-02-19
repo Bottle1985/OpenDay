@@ -2,9 +2,9 @@ package uni.tbd.openday;
 
 public class SubjectData {
     public String SubjectName;
-    String Link;
-    public String Image;
-    public SubjectData(String subjectName, String link, String image) {
+    public String Link;
+    public int Image;
+    public SubjectData(String subjectName, String link, int image) {
         this.SubjectName = subjectName;
         this.Link = link;
         this.Image = image;
