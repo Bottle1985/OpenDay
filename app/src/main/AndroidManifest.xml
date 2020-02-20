@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SUKIEN"></activity>
+        <activity android:name=".SUKIEN" />
         <activity android:name=".NGANH" />
         <activity android:name=".KHOA" />
         <activity android:name=".MainActivity">

@@ -1,154 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+
+    android:background="@color/deep_sky_blue"
     android:padding="16dp"
     tools:context=".NGANH">
 
     <LinearLayout
-        android:id="@+id/nganh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/logo" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="@string/ds_nganh"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/bt_nganh0"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/deep_sky_blue"
+            android:drawableStart="@mipmap/ic_student"
+            android:drawableLeft="@mipmap/ic_student"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="5dp"
             android:text="@string/nganh0"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/dark_magenta"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textColor="#000000"
+            android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/textView21"
+        <Button
+            android:id="@+id/bt_nganh1"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/gt_nganh0"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/deep_sky_blue"
+            android:drawableStart="@mipmap/ic_student"
+            android:drawableLeft="@mipmap/ic_student"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="5dp"
             android:text="@string/nganh1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/dark_magenta"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textColor="#000000"
+            android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/textView22"
+        <Button
+            android:id="@+id/bt_nganh2"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/gt_nganh1"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/deep_sky_blue"
+            android:drawableStart="@mipmap/ic_student"
+            android:drawableLeft="@mipmap/ic_student"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="5dp"
             android:text="@string/nganh2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/dark_magenta"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textColor="#000000"
+            android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/textView23"
+        <Button
+            android:id="@+id/bt_nganh3"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/gt_nganh2"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/deep_sky_blue"
+            android:drawableStart="@mipmap/ic_student"
+            android:drawableLeft="@mipmap/ic_student"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="5dp"
             android:text="@string/nganh3"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/dark_magenta"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textColor="#000000"
+            android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/textView24"
+        <Button
+            android:id="@+id/bt_nganh4"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/gt_nganh3"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/deep_sky_blue"
+            android:drawableStart="@mipmap/ic_student"
+            android:drawableLeft="@mipmap/ic_student"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="5dp"
             android:text="@string/nganh4"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/dark_magenta"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textColor="#000000"
+            android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/textView25"
+        <Button
+            android:id="@+id/bt_nganh5"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/gt_nganh4"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/deep_sky_blue"
+            android:drawableStart="@mipmap/ic_student"
+            android:drawableLeft="@mipmap/ic_student"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="5dp"
             android:text="@string/nganh5"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/dark_magenta"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textColor="#000000"
+            android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/textView26"
+        <Button
+            android:id="@+id/bt_nganh6"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/gt_nganh5"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/deep_sky_blue"
+            android:drawableStart="@mipmap/ic_student"
+            android:drawableLeft="@mipmap/ic_student"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="5dp"
             android:text="@string/nganh6"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/dark_magenta"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textColor="#000000"
+            android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/textView27"
+        <Button
+            android:id="@+id/bt_nganh7"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/gt_nganh6"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/deep_sky_blue"
+            android:drawableStart="@mipmap/ic_student"
+            android:drawableLeft="@mipmap/ic_student"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="40dp"
+            android:paddingRight="40dp"
+            android:paddingBottom="5dp"
             android:text="@string/nganh7"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/dark_magenta"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView28"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/gt_nganh7"
-            android:textColor="@color/black" />
-
+            android:textColor="#000000"
+            android:textSize="14sp" />
     </LinearLayout>
 </ScrollView>

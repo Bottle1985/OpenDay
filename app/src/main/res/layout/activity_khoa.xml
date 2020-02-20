@@ -1,108 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bg2"
-    android:gravity="bottom"
+    android:background="@color/deep_sky_blue"
+    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".KHOA">
 
 
-    <LinearLayout
-        android:id="@+id/khoa0"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp">
+        android:src="@drawable/logo"
+        android:contentDescription="@string/todo" />
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/khoa01"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/fire_brick"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="@string/ds_khoa"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="255dp"
-            android:layout_weight="1"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/cntt" />
+    <Button
+        android:id="@+id/bt_khoa01"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@color/deep_sky_blue"
+        android:drawableStart="@mipmap/ic_internet"
+        android:drawableLeft="@mipmap/ic_internet"
+        android:paddingStart="16dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="40dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="5dp"
+        android:text="@string/khoa01"
+        android:textColor="#000000"
+        android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#6A52E267"
-            android:padding="5dp"
-            android:text="@string/gt_khoa01"
-            android:textColor="@color/black" />
+    <Button
+        android:id="@+id/bt_khoa02"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@color/deep_sky_blue"
+        android:drawableStart="@mipmap/ic_passenger"
+        android:drawableLeft="@mipmap/ic_passenger"
+        android:paddingStart="16dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="40dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="5dp"
+        android:text="@string/khoa02"
+        android:textColor="#000000"
+        android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/khoa02"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/fire_brick"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/bt_khoa03"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@color/deep_sky_blue"
+        android:drawableStart="@mipmap/ic_money"
+        android:drawableLeft="@mipmap/ic_money"
+        android:paddingStart="16dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="40dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="5dp"
+        android:text="@string/khoa03"
+        android:textColor="#000000"
+        android:textSize="14sp" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="255dp"
-            android:layout_weight="1"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/dulich" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#6A52E267"
-            android:padding="5dp"
-            android:text="@string/gt_khoa02"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/khoa03"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/fire_brick"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="match_parent"
-            android:layout_height="255dp"
-            android:layout_weight="1"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/kinhte" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#6A52E267"
-            android:padding="5dp"
-            android:text="@string/gt_khoa03"
-            android:textColor="@color/black" />
-    </LinearLayout>
-
-</ScrollView>
+</LinearLayout>
