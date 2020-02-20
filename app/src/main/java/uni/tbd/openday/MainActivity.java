@@ -24,9 +24,8 @@ public class MainActivity extends AppCompatActivity {
         sodo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), ActivityBuilding.class);
-                startActivityForResult(myIntent, 0);
+                startActivity(myIntent);
             }
-
         });
         khoa.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
