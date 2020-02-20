@@ -17,6 +17,7 @@ import uni.tbd.openday.Adapter.CustomAdapter;
 
 public class ActivityBuilding extends Activity {
     /** Called when the activity is first created. */
+    public static int id_building;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_building);
@@ -40,12 +41,11 @@ public class ActivityBuilding extends Activity {
 
         CustomAdapter customAdapter = new CustomAdapter(this, arrayList);
         list.setAdapter(customAdapter);
-
-
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
 //                Toast.makeText(ActivityBuilding.this, "" + position, Toast.LENGTH_SHORT).show();
+                id_building = position;
                 Intent iBuildingInfo = new Intent(ActivityBuilding.this, BuildingInfo.class);
                 startActivity(iBuildingInfo);
             }
