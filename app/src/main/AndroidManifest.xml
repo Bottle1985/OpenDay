@@ -19,6 +19,7 @@
         <activity android:name=".SUKIEN" />
         <activity android:name=".NGANH" />
         <activity android:name=".KHOA" />
+        <activity android:name=".Activity.BuildingInfo" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

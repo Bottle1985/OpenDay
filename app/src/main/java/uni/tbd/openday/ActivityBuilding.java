@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,11 +17,12 @@ import uni.tbd.openday.Adapter.CustomAdapter;
 
 public class ActivityBuilding extends Activity {
     /** Called when the activity is first created. */
+    public static int id_building;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_building);
         // Button template return
-        //Button next = (Button) findViewById(R.id.Button02);
+
         this.overridePendingTransition(R.anim.animation_enter,
                 R.anim.animation_leave);
         //next.setOnClickListener(new View.OnClickListener() {
@@ -39,14 +41,13 @@ public class ActivityBuilding extends Activity {
 
         CustomAdapter customAdapter = new CustomAdapter(this, arrayList);
         list.setAdapter(customAdapter);
-
-
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-                //Toast.makeText(SuggestionActivity.this, "" + position, Toast.LENGTH_SHORT).show();
-                Intent myIntent = new Intent(arg1.getContext(), BuildingInfo.class);
-                startActivityForResult(myIntent, 0);
+//                Toast.makeText(ActivityBuilding.this, "" + position, Toast.LENGTH_SHORT).show();
+                id_building = position;
+                Intent iBuildingInfo = new Intent(ActivityBuilding.this, BuildingInfo.class);
+                startActivity(iBuildingInfo);
             }
         });
     }
