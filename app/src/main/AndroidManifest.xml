@@ -11,6 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".GT_NGANH"></activity>
+        <activity android:name=".GT_KHOA" />
+        <activity android:name=".Khoa.K_KTL" />
+        <activity android:name=".Khoa.K_NNDLVH" />
+        <activity android:name=".Khoa.K_CNTT" />
         <activity android:name=".SUKIEN" />
         <activity android:name=".NGANH" />
         <activity android:name=".KHOA" />

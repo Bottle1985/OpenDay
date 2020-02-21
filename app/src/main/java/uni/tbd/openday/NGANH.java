@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class NGANH extends AppCompatActivity {
-
+    public static int nganh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,49 +27,57 @@ public class NGANH extends AppCompatActivity {
 
         nganh0.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pou.edu.vn/bophants/sp/luat.500"));
+                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
+                nganh = 0;
                 startActivityForResult(myIntent, 0);
             }
         });
         nganh1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pou.edu.vn/bophants/sp/dong-phuong-hoc.336"));
+                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
+                nganh = 1;
                 startActivityForResult(myIntent, 0);
             }
         });
         nganh2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pou.edu.vn/bophants/sp/du-lich.337"));
+                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
+                nganh = 2;
                 startActivityForResult(myIntent, 0);
             }
         });
         nganh3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pou.edu.vn/bophants/sp/du-lich-nha-hang-khach-san.338"));
+                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
+                nganh = 3;
                 startActivityForResult(myIntent, 0);
             }
         });
         nganh4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pou.edu.vn/bophants/sp/ngon-ngu-anh.340"));
+                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
+                nganh = 4;
                 startActivityForResult(myIntent, 0);
             }
         });
         nganh5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pou.edu.vn/bophants/sp/huong-dan-du-lich-va-lu-hanh.339"));
+                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
+                nganh = 5;
                 startActivityForResult(myIntent, 0);
             }
         });
         nganh6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pou.edu.vn/bophants/sp/nganh-tai-chinh-ngan-hang.501"));
+                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
+                nganh = 6;
                 startActivityForResult(myIntent, 0);
             }
         });
         nganh7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pou.edu.vn/bophants/sp/quan-tri-kinh-doanh.341"));
+                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
+                nganh = 7;
                 startActivityForResult(myIntent, 0);
             }
         });

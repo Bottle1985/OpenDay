@@ -1,18 +1,15 @@
 package uni.tbd.openday;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-import java.net.URL;
 
 public class KHOA extends Activity {
-
+    public static int khoa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,20 +23,23 @@ public class KHOA extends Activity {
 
         khoa01.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pou.edu.vn/khoacntt"));
+                Intent myIntent = new Intent(view.getContext(), GT_KHOA.class);
+                khoa = 1;
                 startActivityForResult(myIntent, 0);
             }
 
         });
         khoa02.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pou.edu.vn/khoanndlvh"));
+                Intent myIntent = new Intent(view.getContext(), GT_KHOA.class);
+                khoa = 2;
                 startActivityForResult(myIntent, 0);
             }
         });
         khoa03.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://pou.edu.vn/khoakinhtevaluat"));
+                Intent myIntent = new Intent(view.getContext(), GT_KHOA.class);
+                khoa = 3;
                 startActivityForResult(myIntent, 0);
             }
         });

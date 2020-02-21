@@ -8,36 +8,160 @@
     <string name="Ky_tuc_xa"> Ký túc xá</string>
     <string name="Thuc_hanh"> Thực hành</string>
     <string name="khoa01"> Khoa Công nghệ thông tin</string>
-    <string name="khoa02"> Khoa Ngôn ngữ, Du lịch và Văn hóa</string>
+    <string name="khoa02"> Khoa Ngôn ngữ, Du lịch \n Và Văn hóa</string>
     <string name="khoa03"> Khoa Kinh tế và Luật</string>
-    <string name="gt_khoa01"> Là ngành học giúp sinh viên phát triển kỹ năng về máy tính và kiến thức toàn diện về phát triển hệ thống quản trị thông tin trong một công ty. Sau khi tốt nghiệp, bạn sẽ sẵn sàng để trở thành những chuyên gia công nghệ</string>
-    <string name="gt_khoa02"> Là ngành học giúp sinh viên phát triển các kỹ năng toàn diện và cung cấp kiến thức tổng quát và toàn diện về sự hoạt động của một công ty trong lĩnh vực DU LỊCH như nhà hàng, khách sạn, các công ty tổ chức tour hay team</string>
-    <string name="gt_khoa03"> Khoa Kinh tế đào tạo tất cả các hệ đào tạo như: đại học chính quy, liên thông chính quy, liên thông vừa làm vừa học từ trình độ trung cấp và cao đẳng lên đại học, văn bằng hai, với 10 chuyên ngành: Quản trị kinh doanh tổng hợp; Quản trị Khách sạn; Quản trị Văn phòng; Marketing và truyền thông trực tuyến; Kế toán - Kiểm toán; Kế toán - Thuế, Kế toán Nhà hàng - Khánh sạn; Ngân hàng thương mại; Tài chính nhà nước; Tài chính doanh nghiệp.</string>
+
     <string name="todo">TODO</string>
-    <string name="nganh0">Luật</string>
-    <string name="gt_nganh0">Trong thời kỳ toàn cầu hóa và hội nhập mạnh mẽ như hiện nay, các quan hệ kinh tế muốn diễn ra tốt đẹp không thể thiếu hệ thống pháp luật chặt chẽ. Nắm vững pháp luật là một trong những điều kiện quyết định thành công và tránh được những rủi ro dẫn đến thiệt hại kinh tế cho doanh nghiệp.</string>
-    <string name="nganh1">Đông phương học</string>
-    <string name="gt_nganh1">Đông Phương học là ngành tìm hiểu về lịch sử, địa lý, kinh tế, chính trị - ngoại giao, ngôn ngữ, văn hóa của các nước phương Đông - nền văn minh lâu đời của nhân loại.
-Cụ thể, tùy theo chuyên ngành, ngành Đông Phương học sẽ cung cấp cho sinh viên những tri thức, hiểu biết và kỹ năng làm việc gắn liền với các nền văn hóa lớn, với những ngôn ngữ giàu ý nghĩa và hấp dẫn của loài người như Nhật Bản, Hàn Quốc, Trung Quốc, Đông Nam Á,…</string>
-    <string name="nganh2">Du lịch</string>
-    <string name="gt_nganh2">Du lịch là ngành công nghiệp không khói, đóng góp rất lớn cho nền kinh tế đất nước.
-Tại Diễn đàn Kinh tế Tư nhân Việt Nam diễn ra tại Hà Nội vào cuối tháng 7/2017 vừa qua, Chính phủ cũng xác định Du lịch là một trong 3 ngành kinh tế mũi nhọn của Việt Nam (bên cạnh Nông nghiệp và Công nghệ thông tin). Cũng vì thế mà xu hướng chọn theo học ngành Du lịch của học sinh, sinh viên Việt Nam đang gia tăng đáng kể. Mọi người vẫn hay truyền tai nhau: “Làm du lịch là kiếm được khối tiền” hoặc “Học du lịch mai sau ra không cần lo chuyện việc làm”. Vậy còn bạn thì sao? Bạn đã sẵn sàng lựa chọn ngành Du lịch chưa?</string>
-    <string name="nganh3">Công nghệ thông tin</string>
-    <string name="gt_nganh3">Khái niệm Công nghệ thông tin là gì? Công nghệ thông tin (IT – Information Technology) là một thuật ngữ bao gồm phần mềm, mạng lưới internet, hệ thống máy tính sử dụng cho việc phân phối và xử lý dữ liệu, trao đổi, lưu trữ và sử dụng thông tin dưới hình thức khác nhau. Một cách dễ hiểu hơn, Công nghệ thông tin là việc sử dụng công nghệ hiện đại vào việc tạo ra, xử lý, truyền dẫn thông tin, lưu trữ, khai thác thông tin....Tốt nghiệp ra trường, sinh viên có thể làm việc ở các vị trí Lập trình viên, Kiểm duyệt chất lượng phần mềm, Chuyên viên phân tích thiết kế hệ thống, quản lý dữ liệu, quản trị mạng, kỹ thuật phần cứng máy tính; Chuyên gia quản lý, kinh doanh, điều phối các dự án công nghệ thông tin;...</string>
-    <string name="nganh4">Ngôn ngữ Anh</string>
-    <string name="gt_nganh4">Khái niệm Ngôn ngữ Anh là gì? Ngôn ngữ Anh là ngành học nghiên cứu về các phương pháp học tập loại ngôn ngữ phổ biến là tiếng Anh, đồng thời đây còn là ngành học nghiên cứu về lịch sử, con người, văn hóa của các quốc gia, dân tộc sử dụng tiếng Anh trên thế giới. Ngôn ngữ Anh là ngôn ngữ chung của toàn cầu, hiện có 50 quốc gia sử dụng tiếng Anh là ngôn ngữ chính, gần 80 quốc gia sử dụng tiếng Anh là ngôn ngữ thứ</string>
-    <string name="nganh5">Kế toán</string>
-    <string name="gt_nganh5">Khái niệm Kế toán là gì? được hiểu là công việc ghi chép, thu nhận, xử lý và cung cấp các thông tin về tình hình hoạt động tài chính của một tổ chức, một doanh nghiệp, một cơ quan nhà nước, một cơ sở kinh doanh tư nhân...Đây là một bộ phận đóng vai trò quan trọng trong lĩnh vực quản lý kinh tế. Từ quản lý ở phạm vi từng đơn vị, cơ quan, doanh nghiệp cho đến quản lý ở phạm vi toàn bộ nền kinh tế. Sau khi tốt nghiệp, sinh viên có rất nhiều cơ hội việc làm hấp dẫn từ Chuyên viên phụ trách kế toán, kiểm toán, giao dịch ngân hàng, thuế, kiểm soát viên, thủ quỹ, tư vấn tài chính; Nhân viên môi giới chứng khoán, nhân viên quản lý dự án, nhân viên phòng giao dịch và ngân quỹ; cho đến Kế toán trưởng, Trưởng phòng Kế toán, Quản lý tài chính;....</string>
-    <string name="nganh6">Tài chính ngân hàng</string>
-    <string name="gt_nganh6">Khái niệm Tài chính ngân hàng  là gì? Đây là ngành học khá rộng, liên quan đến tất cả các dịch vụ giao dịch tài chính, lưu thông và vận hành tiền tệ.
-Cụ thể hơn, Tài chính ngân hàng là kinh doanh về lĩnh vực tiền tệ thông qua ngân hàng và các công cụ tài chính được ngân hàng phát hành nhằm bảo lãnh, thanh toán, chi trả trong nội địa và quốc tế. Sau khi tốt nghiệp, sinh viên có rất nhiều cơ hội việc làm hấp dẫn tại các ngân hàng, tập đoàn tài chính, công ty chứng khoán, quỹ tín dụng...</string>
-    <string name="nganh7">Quản trị kinh doanh</string>
-    <string name="gt_nganh7">Khái niệm Quản trị kinh doanh là gì? được hiểu là việc thực hiện các hành vi quản trị quá trình kinh doanh để duy trì, phát triển công việc kinh doanh của doanh nghiệp, bao gồm việc cân nhắc, tạo ra hệ thống, quy trình và tối đa hóa "hiệu suất", "quản lý hoạt động kinh doanh" bằng quá trình tư duy và ra quyết định của nhà quản lý. Sau khi tốt nghiệp, sinh viên có rất nhiều cơ hội việc làm hấp dẫn từ Phòng kinh doanh, phòng kế hoạch, quản lý, điều hành ở các công ty, tập đoàn trong và ngoài nước.</string>
+    <string name="nganh0">NGÀNH LUẬT</string>
+    <string name="nganh1">NGÀNH ĐÔNG PHƯƠNG HỌC </string>
+    <string name="nganh2">NGÀNH DU LỊCH </string>
+    <string name="nganh3">NGÀNH CÔNG NGHỆ THÔNG TIN</string>
+    <string name="nganh4">NGÀNH NGÔN NGỮ ANH </string>
+    <string name="nganh5">NGÀNH KẾ TOÁN </string>
+    <string name="nganh6">NGÀNH TÀI CHÍNH NGÂN HÀNG </string>
+    <string name="nganh7">NGÀNH QUẢN TRỊ KINH DOANH </string>
     <string name="sukien0"> Thông báo về việc Sinh viên không đến trường tránh dịch bênh Covid-19</string>
     <string name="sukien1"> Giảng viên Hàn Quốc cộng tác với ngành Đông phương học</string>
     <string name="sukien2"> Đại học Thái Bình Dương cho sinh viên nghỉ đến 16.2.2020</string>
     <string name="sukien3"> Tập huấn chuyên đề truyền thông</string>
     <string name="ds_khoa">DANH SÁCH CÁC KHOA </string>
     <string name="ds_nganh">DANH SÁCH CÁC NGÀNH</string>
+    <string name="k_cntt5">
+        1. Xây dựng nội dung chương trình, kế hoạch giảng dạy, học tập và chủ trì tổ chức quá trình đào tạo các ngành thuộc phạm vi quản lý; Tổ chức thực hiện các hoạt động thực tập, thực tế, ngoại khóa cho người học và các hoạt động giáo dục khác trong chương trình theo kế hoạch giảng dạy chung của nhà trường.\n\n
+        2. Quản lý chất lượng, nội dung, phương pháp giảng dạy, kiểm tra, đánh giá kết quả học tập của người học. Quản lý điểm thi kết thúc học phần của sinh viên thuộc khoa quản lý.\n\n
+        3. Quản lý và xây dựng kế hoạch phát triển đội ngũ giảng viên, cán bộ, nhân viên nhằm không ngừng phát triển ngành đào tạo theo sự phân cấp của Trường. Có trách nhiệm lựa chọn mời giảng viên tham gia giảng dạy những học phần của khoa còn thiếu người giảng.\n\n
+        4. Quản lý và tổ chức khai thác cơ sở vật chất kỹ thuật, tài sản do Trường giao có hiệu quả và tiết kiệm.\n \n
+        5. Xét và đề nghị khen thưởng, kỷ luật và giải quyết phép cho cán bộ, giảng viên, nhân viên trong khoa theo quy định của nhà trường.\n\n
+        6. Chủ động phối hợp với phòng Đào tạo và Công tác sinh viên trong việc hợp tác liên kết đào tạo với các trường trong và ngoài nước. Phối hợp phát triển các chương trình hợp tác Quốc tế.\n\n
+        7. Tổ chức biên soạn tài liệu giảng dạy do Hiệu trưởng giao. Tổ chức nghiên cứu cải tiến phương pháp giảng dạy, học tập; đề xuất xây dựng kế hoạch bổ sung, bảo trì thiết bị dạy - học, thực hành và thực nghiệm khoa học.\n\n
+        8. Xây dựng kế hoạch bồi dưỡng nâng cao trình độ chuyên môn, nghiệp vụ, chính trị, tư tưởng, đạo đức, lối sống cho cán bộ, giảng viên và nhân viên thuộc khoa.\n\n
+        9. Chịu trách nhiệm về chất lượng đối với các chuyên ngành đào tạo trước Hiệu trưởng.\n\n
+        10. Quản lý công tác nghiên cứu khoa học trong phạm vi khoa.\n\n
+        11. Quản lý công tác giáo viên chủ nhiệm và công tác sinh viên thuộc Khoa.\n\n
+        12. Phối hợp với các đơn vị chức năng thực hiện các công tác phát sinh trong quá trình hoạt động của nhà trường.\n\n
+        14.Những nhiệm vụ khác theo sự phân công của Hiệu trưởng.</string>
+    <string name="k_cntt3">Khoa có chức năng quản lý toàn diện công tác đào tạo, nghiên cứu khoa học; phối hợp các đơn vị chức năng làm công tác phát triển và bồi dưỡng đội ngũ cán bộ chuyên môn để phục vụ chiến lược đào tạo các ngành của khoa và các ngành khác có liên quan.\n
+        Khoa là đơn vị trực tiếp quản lý các bộ môn và công tác sinh viên</string>
+    <string name="k_cntt1">CHỨC NĂNG, NHIỆM VỤ KHOA DU LỊCH VÀ QUẢN TRỊ KINH DOANH</string>
+    <string name="chucnang">A. CHỨC NĂNG</string>
+    <string name="nhiemvu">B. NHIỆM VỤ:</string>
+    <string name="k_nndlvh1">CHỨC NĂNG, NHIỆM VỤ KHOA NGÔN NGỮ \n DU LỊCH VÀ VĂN HÓA</string>
+    <string name="k_ktl1">CHỨC NĂNG, NHIỆM VỤ KHOA KINH TẾ VÀ LUẬT</string>
+    <string name="ma_nganh_luat">Mã ngành: 7380101</string>
+    <string name="ma_nganh_dong_phuong_hoc">Mã ngành: 7310608</string>
+    <string name="ma_nganh_du_lich">Mã ngành: 7810101</string>
+    <string name="ma_nganh_cntt">Mã ngành: 7480201</string>
+    <string name="ma_nganh_ngon_ngu_anh">Mã ngành: 7220201</string>
+    <string name="ma_nganh_ke_toan">Mã ngành: 7340301</string>
+    <string name="ma_nganh_tc_nn">Mã ngành: 7340201</string>
+    <string name="ma_nganh_qtkd">Mã ngành: 7340101</string>
+    <string name="gt_nganh_luat">
+        Trong thời kỳ toàn cầu hóa và hội nhập mạnh mẽ như hiện nay, các quan hệ kinh tế muốn diễn ra tốt đẹp không thể thiếu hệ thống pháp luật chặt chẽ. Nắm vững pháp luật là một trong những điều kiện quyết định thành công và tránh được những rủi ro dẫn đến thiệt hại kinh tế cho doanh nghiệp. \n
+        Chúng tôi sẽ giúp bạn có được tư duy pháp lý của luật gia trong lĩnh vực kinh tế, dân sự có sự nghiệp vững vàng, ổn định bằng chương trình chất lượng cao và phương pháp học tập hiện đại của ngành Luật.
+    </string>
+    <string name="gt_nganh_dong_phuong_hoc">
+        Đông Phương học là ngành tìm hiểu về lịch sử, địa lý, kinh tế, chính trị - ngoại giao, ngôn ngữ, văn hóa của các nước phương Đông - nền văn minh lâu đời của nhân loại.\n
+        Cụ thể, tùy theo chuyên ngành, ngành Đông Phương học sẽ cung cấp cho sinh viên những tri thức, hiểu biết và kỹ năng làm việc gắn liền với các nền văn hóa lớn, với những ngôn ngữ giàu ý nghĩa và hấp dẫn của loài người như Nhật Bản, Hàn Quốc, Trung Quốc, Đông Nam Á,…
+    </string>
+    <string name="gt_nganh_du_lich">
+        Du lịch là ngành công nghiệp không khói, đóng góp rất lớn cho nền kinh tế đất nước.\n
+        Tại Diễn đàn Kinh tế Tư nhân Việt Nam diễn ra tại Hà Nội vào cuối tháng 7/2017 vừa qua, Chính phủ cũng xác định Du lịch là một trong 3 ngành kinh tế mũi nhọn của Việt Nam (bên cạnh Nông nghiệp và Công nghệ thông tin). Cũng vì thế mà xu hướng chọn theo học ngành Du lịch của học sinh, sinh viên Việt Nam đang gia tăng đáng kể. Mọi người vẫn hay truyền tai nhau: “Làm du lịch là kiếm được khối tiền” hoặc “Học du lịch mai sau ra không cần lo chuyện việc làm”. Vậy còn bạn thì sao? Bạn đã sẵn sàng lựa chọn ngành Du lịch chưa?    </string>
+    <string name="gt_nganh_cntt">
+        Có những thành tựu công nghệ làm thay đổi cả thế giới nhưng quy về mục đích chung vẫn là phục vục con người và xã hội, với chúng tôi mong muốn lớn nhất là đào tạo bạn thành những chuyên gia công nghệ thông tin giỏi chuyên môn để mang đến giá trị công nghệ thực sự cho cộng đồng, thực hiện được ước mơ chinh phục chân trời bao la của thế giới công nghệ    </string>
+    <string name="gt_nganh_ngon_ngu_anh">
+        Chúng tôi trang bị cho bạn một ngôn ngữ toàn cầu để bạn sở hữu trong tay một nghề nghiệp toàn cầu. Bạn đã từng hình dung mình có thể trao đổi thông tin và làm việc được với những đồng nghiệp trên khắp thế giới bằng tiếng Anh chưa? Bạn nên nghĩ đến nó ngay bây giờ và bạn cũng cần biết rằng mình sẽ làm được điều đó.    </string>
+    <string name="gt_nganh_tc_nn">
+        Khái niệm Tài chính ngân hàng  là gì? Đây là ngành học khá rộng, liên quan đến tất cả các dịch vụ giao dịch tài chính, lưu thông và vận hành tiền tệ.    </string>
+    <string name="gt_nganh_ke_toan">
+        Khái niệm Kế toán là gì? được hiểu là công việc ghi chép, thu nhận, xử lý và cung cấp các thông tin về tình hình hoạt động tài chính của một tổ chức, một doanh nghiệp, một cơ quan nhà nước, một cơ sở kinh doanh tư nhân...Đây là một bộ phận đóng vai trò quan trọng trong lĩnh vực quản lý kinh tế. Từ quản lý ở phạm vi từng đơn vị, cơ quan, doanh nghiệp cho đến quản lý ở phạm vi toàn bộ nền kinh tế.    </string>
+    <string name="gt_nganh_qtkd">
+        Quản trị kinh doanh luôn là một trong những ngành hấp dẫn các bạn trẻ năng động, đặc biệt  trong xu thế hội nhập kinh tế Quốc tế của Việt Nam những năm gần đây. Việc tìm hiểu rõ về ngành Quản trị kinh doanh giúp bạn định hướng nghề nghiệp tốt hơn trước khi quyết định chọn ngành, chọn trường theo học. Chúng ta sẽ từng bước tìm hiểu qua tất cả những thông tin cần thiết, qua đó giúp bạn có cái nhìn rõ ràng hơn về ngành học này.    </string>
+    <string name="cac_chuyen_nganh_luat">
+        Luật học\n
+        Luật kinh tế - dân sự
+    </string>
+    <string name="cac_chuyen_nganh_dong_phuong_hoc">
+        Trung Quốc học\n
+        Hàn quốc học
+    </string>
+    <string name="cac_chuyen_nganh_du_lich">
+        Hướng dẫn du lịch và lữ hành \n
+        Quản trị khách sạn và nhà hàng \n
+        Du lịch - khách sạn quốc tế
+    </string>
+    <string name="cac_chuyen_nganh_cntt">
+        Truyền thông Mạng Máy Tính \n
+        Công nghệ phần mềm \n
+        Trí tuệ nhân tạo và Khoa học dữ liệu
+    </string>
+    <string name="cac_chuyen_nganh_ngon_ngu_anh">
+        Tiếng Anh giảng dạy \n
+        Tiếng Anh thương mại và du lịch
+    </string>
+    <string name="cac_chuyen_nganh_tc_nn">
+        Ngân hàng thương mại \n
+        Tài chính doanh nghiệp
+    </string>
+    <string name="cac_chuyen_nganh_qtkd">
+        Quản trị Marketing \n
+        Quản trị kinh doanh tổng hợp
+    </string>
+    <string name="cac_chuyen_nganh_ke_toan">
+        Kiểm toán - Kiểm toán \n
+        Kế toán nhà hàng - khách sạn
+    </string>
+    <string name="co_hoi_vl_luat">
+        Chuyên gia tư vấn pháp lý, phân tích, đánh giá, giải quyết các vấn đề phát sinh trong quá trình vận hành của nền kinh tế, các hoạt động kinh doanh và đảm bảo các hoạt động của tổ chức đúng chủ trương, chính sách của nhà nước và các công ước quốc tế có liên quan đến lĩnh vực kinh tế.\n
+        Chuyên viên thực hiện các dịch vụ pháp lý của luật sư hoặc người hành nghề luật sư trong các tổ chức dịch vụ pháp luật.\n
+        Chuyên viên tư vấn pháp luật trong các doanh nghiệp và các tổ chức kinh tế, xã hội.\n
+        Chuyên viên lập pháp, hành pháp và tư pháp trong các cơ quan nhà nước các cấp.\n
+        Nghiên cứu, giảng dạy về pháp luật kinh tế tại các viện nghiên cứu, cơ sở giáo dục.
+    </string>
+    <string name="co_hoi_vl_dong_phuong_hoc">
+        Cán bộ phụ trách các mảng liên quan đến lĩnh vực lịch sử, văn hóa, xã hội, ngoại giao làm việc trong các cơ quan, ban ngành tổ chức Nhà nước \n
+        Chuyên viên ngoại giao, quan hệ quốc tế tại các cơ quan, tổ chức, doanh nghiệp ở Việt Nam và khu vực \n
+        Phiên dịch viên, giao dịch viên, hướng dẫn viên tại các sở ngoại vụ, cơ quan ngoại giao, công ty nước ngoài, khu du lịch,... \n
+        Giảng dạy và nghiên cứu về lịch sử, văn hóa phương Đông.
+    </string>
+    <string name="co_hoi_vl_du_lich">
+        Đó là ngành kinh tế tạo ra nhiều cơ hội việc làm với mức thu nhập hấp dẫn và ổn định cho những bạn thực sự có đam mê và chịu khó \n
+        Công việc trong lĩnh vực du lịch là công việc không bao giờ nhàm chán, là công việc vừa làm vừa học, vừa rèn luyện vừa khám phá, vừa hưởng thụ và được trả công xứng đáng.
+    </string>
+    <string name="co_hoi_vl_cntt">
+        Lập trình viên phần mềm, chuyên viên phân tích thiết kế hệ thống, quản lý dữ liệu, quản trị mạng, kỹ thuật phần cứng máy tính,… tại các công ty phần mềm, công ty cung cấp giải pháp về công nghệ thông tin, công ty sản xuất, lắp ráp, sữa chữa trang thiết bị phần cứng \n
+        Chuyên gia quản lý, điều phối các dự án công nghệ thông tin tại các tập đoàn, doanh nghiệp, tổ chức thương mại điện tử trong và ngoài nước
+    </string>
+    <string name="co_hoi_vl_ngon_ngu_anh">
+        Biên dịch viên, phiên dịch viên trong các công ty, cơ quan ngoại giao, cơ quan truyền thông, các tổ chức kinh tế, xã hội của Việt Nam và quốc tế; dịch thuật cho các Nhà xuất bản, trung tâm phát hành sách, báo, tạp chí,… \n
+        Chuyên viên truyền thông, tổ chức sự kiện, thư ký, trợ lý,… trong các công ty nước ngoài \n
+        Hướng dẫn viên, chuyên viên tư vấn tại các công ty du lịch, lữ hành, nhà hàng khách sạn \n
+        Giáo viên giảng dạy và nghiên cứu tiếng Anh tại các trường đại học, cao đẳng, trung cấp chuyên nghiệp, phổ thông trung học, trung tâm ngoại ngữ
+    </string>
+    <string name="co_hoi_vl_tc_nn">
+        Chuyên viên tại các các doanh nghiệp kinh doanh, công ty kiểm toán, quỹ đầu tư, công ty kinh doanh bất động sản, công ty tài chính, công ty bảo hiểm, chứng khoán… \n
+        Chuyên viên tại các ngân hàng thương mại (cán bộ tín dụng, nhân viên kế toán, kế toán viên phòng thanh toán quốc tế, nhân viên kinh doanh ngoại tệ), công ty chứng khoán (nhà môi giới và kinh doanh chứng khoán), tổ chức tín dụng phi ngân hàng, cơ quan quản lý nhà nước về tài chính ngân hàng và các loại hình doanh nghiệp khác hoặc đảm đương công việc của trợ lý, tư vấn, tham vấn cho lãnh đạo doanh nghiệp, các tổ chức tài chính \n
+        Giảng viên ngành Tài chính ngân hàng tại các trường đại học, cao đẳng, trung cấp
+    </string>
+    <string name="co_hoi_vl_qtkd">
+        Chuyên viên phụ trách việc xây dựng, triển khai các hợp đồng ngoại thương; kiểm soát tình hình tài chính; xây dựng chiến lược và lập kế hoạch tiếp thị; tìm kiếm thị trường kinh doanh; kiểm soát chất lượng sản phẩm và dịch vụ cho các doanh nghiệp trong và ngoài nước, hoặc của doanh nghiệp do chính bạn tự tạo lập và điều hành \n
+        Chuyên viên làm việc ở nhiều bộ phận khác nhau như phòng hành chính – nhân sự, phòng kinh doanh, phòng marketing,… tại các công ty hoạt động trong lĩnh vực sản xuất, dịch vụ \n
+        Giảng viên ngành Quản trị Kinh doanh tại các trường đại học, cao đẳng, trung cấp
+    </string>
+    <string name="co_hoi_vl_ke_toan">
+        Chuyên viên tại các doanh nghiệp thuộc mọi lĩnh vực trong nước, doanh nghiệp có vốn đầu tư nước ngoài, các tổ chức phi chính phủ, các cơ quan quản lý nhà nước, các bệnh viện, các trường, các cơ sở đào tạo,...  \n
+        Chuyên viên tư vấn tài chính, nhân viên ngân hàng, nhân viên môi giới chứng khoán,… \n
+        Nghiên cứu viên, Giảng viên, Thanh tra kinh tế,…
+    </string>
+
+    <string name="cach_nop_hs">
+        Cách 1: Nộp hồ sơ online: Thí sinh đăng ký xét tuyển trực tuyến tại Website: http://tbd.edu.vn/bophants/sp/xet-tuyen-truc-tuyen.84\n
+        Cách 2: Nộp chuyển phát nhanh qua đường bưu điện theo địa chỉ: Phòng Tư vấn, Tuyển sinh và Truyền thông Trường Đại học Thái Bình Dương - Số 08 Pasteur, TP. Nha Trang, Tỉnh Khánh Hòa. Điện thoại: 0983 375 456 \n
+        Cách 3: Nộp trực tiếp tại Trường Đại học Thái Bình Dương theo địa chỉ: Phòng Tư vấn, Tuyển sinh và Truyền thông Trường Đại học Thái Bình Dương - Số 08 Pasteur, TP. Nha Trang, Tỉnh Khánh Hòa. \n
+        Cách 4: Nộp trực tiếp tại các buổi tư vấn của Trường Đại học Thái Bình Dương tại trường THPT/các ngày hội tư vấn tuyển sinh.</string>
+    <string name="lien_he">Holine liên hệ: \n0258 656 55 77 - 0258 656 55 88 \n 0258 656 55 99 - 0983 375 456 \n
+        Website: www.tbd.edu.vn \n
+        Facebook: TruongDaihocThaiBinhduong</string>
+
+
 
 </resources>
