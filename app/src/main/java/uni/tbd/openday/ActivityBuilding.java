@@ -25,26 +25,19 @@ public class ActivityBuilding extends Activity {
 
         this.overridePendingTransition(R.anim.animation_enter,
                 R.anim.animation_leave);
-        //next.setOnClickListener(new View.OnClickListener() {
-        //    public void onClick(View view) {
-        //        Intent intent = new Intent();
-        //        setResult(RESULT_OK, intent);
-        //        finish();
-        //    }
-        //});
+
         // List view function
         final ListView list = findViewById(R.id.list);
         ArrayList<SubjectData> arrayList = new ArrayList<SubjectData>();
-        arrayList.add(new SubjectData(getResources().getString(R.string.Giang_duong), "https://www.tutorialspoint.com/java/", R.drawable.thumble_giang_duong));
-        arrayList.add(new SubjectData(getResources().getString(R.string.Ky_tuc_xa), "https://www.tutorialspoint.com/python/", R.drawable.thumble_ky_tuc));
-        arrayList.add(new SubjectData(getResources().getString(R.string.Thuc_hanh), "https://www.tutorialspoint.com/javascript/", R.drawable.thumble_da_nang));
+        arrayList.add(new SubjectData(getResources().getString(R.string.Giang_duong), "", R.drawable.thumble_giang_duong));
+        arrayList.add(new SubjectData(getResources().getString(R.string.Ky_tuc_xa), "", R.drawable.thumble_ky_tuc));
+        arrayList.add(new SubjectData(getResources().getString(R.string.Thuc_hanh), "", R.drawable.thumble_da_nang));
 
         CustomAdapter customAdapter = new CustomAdapter(this, arrayList);
         list.setAdapter(customAdapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-//                Toast.makeText(ActivityBuilding.this, "" + position, Toast.LENGTH_SHORT).show();
                 id_building = position;
                 Intent iBuildingInfo = new Intent(ActivityBuilding.this, BuildingInfo.class);
                 startActivity(iBuildingInfo);
