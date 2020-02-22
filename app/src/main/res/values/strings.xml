@@ -4,9 +4,9 @@
     <string name="Su_kien"> Sự kiện</string>
     <string name="Nganh"> Ngành</string>
     <string name="Khoa"> Khoa</string>
-    <string name="Giang_duong"> Giảng đường</string>
-    <string name="Ky_tuc_xa"> Ký túc xá</string>
-    <string name="Thuc_hanh"> Thực hành</string>
+    <string name="Giang_duong">TÒA NHÀ HÀNH CHÍNH VÀ GIẢNG ĐƯỜNG</string>
+    <string name="Ky_tuc_xa"> KÝ TÚC XÁ</string>
+    <string name="Thuc_hanh"> TÒA NHÀ ĐA NĂNG</string>
     <string name="khoa01"> Khoa Công nghệ thông tin</string>
     <string name="khoa02"> Khoa Ngôn ngữ, Du lịch \n Và Văn hóa</string>
     <string name="khoa03"> Khoa Kinh tế và Luật</string>
@@ -163,6 +163,19 @@
         Facebook: TruongDaihocThaiBinhduong</string>
 
     <string name="hello">Hello</string>
-
+    <string name="chi_dan_giang_duong">
+        101. Phòng hội thảo \n
+        102. Phòng họp \n
+        103. Khoa công nghệ thông tin \n
+        104. Hội đồng quản trị \n
+        105. Phòng đảm bảo chất lượng \n
+        106. Hiệu trưởng \n
+        107. Phó hiệu trưởng \n
+        108. Phòng y tế \n
+        109. Khoa kinh tế và luật \n
+        110. Trung tâm hàn quốc học \n
+        111. Khoa ngôn ngữ du lịch và văn hóa \n
+        112. Trung tâm quan hệ doanh nghiệp và cộng đồng \n
+    </string>
 
 </resources>
