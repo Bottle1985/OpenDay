@@ -1,13 +1,11 @@
 package uni.tbd.openday;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.animation.Animator;
-import android.animation.AnimatorInflater;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -16,10 +14,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Open activity list building
-        Button sodo = (Button) findViewById(R.id.ButtonSoDo);
-        Button khoa = (Button) findViewById(R.id.ButtonKhoa);
-        Button nganh = (Button) findViewById(R.id.ButtonNganh);
-        Button sukien = (Button) findViewById(R.id.ButtonSuKien);
+        Button sodo = findViewById(R.id.ButtonSoDo);
+        Button khoa =  findViewById(R.id.ButtonKhoa);
+        Button nganh =  findViewById(R.id.ButtonNganh);
+        Button sukien =  findViewById(R.id.ButtonSuKien);
+        Button tuyensinh =  findViewById(R.id.ButtonTuyenSinh);
+        Button tracnghiem =  findViewById(R.id.ButtonTracNghiem);
 
         sodo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -42,6 +42,18 @@ public class MainActivity extends AppCompatActivity {
         sukien.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), SUKIEN.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
+        tuyensinh.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), webview.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
+        tracnghiem.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), TRAC_NGHIEM.class);
                 startActivityForResult(myIntent, 0);
             }
         });

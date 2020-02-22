@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "136251213489",
+    "firebase_url": "https://trac-nghiem-nganh.firebaseio.com",
+    "project_id": "trac-nghiem-nganh",
+    "storage_bucket": "trac-nghiem-nganh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136251213489:android:5df7531dffb887b6a70490",
+        "android_client_info": {
+          "package_name": "uni.tbd.openday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136251213489-9vs1mathfcjniu7heilc76fvfp27gr68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3FvPS6CcPDpXL_houuSeljA4WHkVJ9Xk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136251213489-9vs1mathfcjniu7heilc76fvfp27gr68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

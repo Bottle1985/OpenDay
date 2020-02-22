@@ -121,6 +121,54 @@
                 android:text="@string/Su_kien"
                 android:textColor="#000000" />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ButtonTuyenSinh"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="#EFC84A"
+                android:drawableStart="@mipmap/ic_info"
+                android:drawableLeft="@mipmap/ic_info"
+                android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="40dp"
+                android:paddingRight="40dp"
+                android:paddingBottom="5dp"
+                android:text="@string/tuyen_sinh"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/ButtonTracNghiem"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="#EFC84A"
+                android:drawableStart="@mipmap/ic_book"
+                android:drawableLeft="@mipmap/ic_book"
+                android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="40dp"
+                android:paddingRight="40dp"
+                android:paddingBottom="5dp"
+                android:text="@string/trac_nghiem"
+                android:textColor="#000000"
+                android:layout_marginEnd="10dp" />
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
