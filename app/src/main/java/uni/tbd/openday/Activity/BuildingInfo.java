@@ -12,8 +12,9 @@ import uni.tbd.openday.R;
 
 public class BuildingInfo  extends Activity {
     public final int BUILDING_GIANG_DUONG = 0;
-    public final int BUILDING_DA_NANG = 1;
-    public final int BUILDING_KY_TUC_XA = 2;
+    public final int BUILDING_KY_TUC_XA = 1;
+    public final int BUILDING_DA_NANG = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

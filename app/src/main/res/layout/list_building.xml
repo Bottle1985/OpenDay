@@ -13,6 +13,5 @@
         android:descendantFocusability="blocksDescendants"
         android:footerDividersEnabled = "false"
         android:headerDividersEnabled = "false"/>
-
-
+    
 </LinearLayout>
