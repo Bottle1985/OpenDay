@@ -25,5 +25,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Giới tính của bạn là gì?" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
     </LinearLayout>
 </ScrollView>

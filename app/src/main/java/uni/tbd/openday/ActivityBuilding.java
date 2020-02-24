@@ -10,12 +10,14 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 
 import uni.tbd.openday.Activity.BuildingInfo;
 import uni.tbd.openday.Adapter.CustomAdapter;
 
-public class ActivityBuilding extends Activity {
+public class ActivityBuilding extends AppCompatActivity {
     /** Called when the activity is first created. */
     public static int id_building;
     public void onCreate(Bundle savedInstanceState) {

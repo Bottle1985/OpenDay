@@ -39,8 +39,10 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="#EFC84A"
+                android:background="@drawable/custom_button"
                 android:drawableStart="@mipmap/ic_enterprise"
                 android:drawableLeft="@mipmap/ic_enterprise"
                 android:paddingStart="16dp"
@@ -51,27 +53,28 @@
                 android:paddingBottom="5dp"
                 android:text="@string/Khoa"
                 android:textColor="#000000"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/ButtonNganh"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="start"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="#EFC84A"
+                android:background="@drawable/custom_button"
                 android:drawableStart="@mipmap/ic_scholarship"
                 android:drawableLeft="@mipmap/ic_scholarship"
-                android:paddingStart="5dp"
-                android:paddingLeft="5dp"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
                 android:paddingTop="8dp"
                 android:paddingEnd="40dp"
                 android:paddingRight="40dp"
                 android:paddingBottom="5dp"
                 android:text="@string/Nganh"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="12sp" />
 
         </LinearLayout>
 
@@ -88,7 +91,7 @@
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:background="#EFC84A"
+                android:background="@drawable/custom_button"
                 android:drawableStart="@mipmap/ic_gps"
                 android:drawableLeft="@mipmap/ic_gps"
                 android:onClick="SoDoClick"
@@ -99,27 +102,30 @@
                 android:paddingRight="40dp"
                 android:paddingBottom="5dp"
                 android:text="@string/So_do"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/ButtonSuKien"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="#EFC84A"
+                android:background="@drawable/custom_button"
                 android:drawableStart="@mipmap/ic_incentive"
                 android:drawableLeft="@mipmap/ic_incentive"
-                android:paddingStart="5dp"
-                android:paddingLeft="5dp"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
                 android:paddingTop="8dp"
                 android:paddingEnd="40dp"
                 android:paddingRight="40dp"
                 android:paddingBottom="5dp"
                 android:text="@string/Su_kien"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
@@ -133,41 +139,41 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
-
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="#EFC84A"
+                android:background="@drawable/custom_button"
                 android:drawableStart="@mipmap/ic_info"
                 android:drawableLeft="@mipmap/ic_info"
-                android:paddingStart="5dp"
-                android:paddingLeft="5dp"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
                 android:paddingTop="8dp"
                 android:paddingEnd="40dp"
                 android:paddingRight="40dp"
                 android:paddingBottom="5dp"
                 android:text="@string/tuyen_sinh"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/ButtonTracNghiem"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="#EFC84A"
+                android:background="@drawable/custom_button"
                 android:drawableStart="@mipmap/ic_book"
                 android:drawableLeft="@mipmap/ic_book"
-                android:paddingStart="5dp"
-                android:paddingLeft="5dp"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
                 android:paddingTop="8dp"
                 android:paddingEnd="40dp"
                 android:paddingRight="40dp"
                 android:paddingBottom="5dp"
                 android:text="@string/trac_nghiem"
                 android:textColor="#000000"
-                android:layout_marginEnd="10dp" />
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 

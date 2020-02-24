@@ -12,7 +12,9 @@
         android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Danh sách sự kiện:"
+        android:background="@drawable/custom_textview"
+        android:padding="5dp"
+        android:text=" Danh sách sự kiện:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
         android:textStyle="bold" />
