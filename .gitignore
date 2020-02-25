@@ -15,3 +15,6 @@
 .idea/workspace.xml___jb_old___
 *.log
 *.xml___jb_old___
+.idea/gradle.xml
+build.gradle
+gradle/wrapper/gradle-wrapper.properties
