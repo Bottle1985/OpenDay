@@ -12,9 +12,10 @@ import java.util.ArrayList;
 
 import uni.tbd.openday.Activity.BuildingInfo;
 import uni.tbd.openday.Adapter.CustomAdapter;
+import uni.tbd.openday.Adapter.SuKienAdapter;
 
 public class SUKIEN extends AppCompatActivity {
-
+    public  static int id_sukien;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,15 +28,15 @@ public class SUKIEN extends AppCompatActivity {
         arrayList.add(new SubjectData(getResources().getString(R.string.sukien1), "http://pou.edu.vn/news/giang-vien-han-quoc-cong-tac-voi-nganh-dong-phuong-hoc.787", R.drawable.sukien1));
         arrayList.add(new SubjectData(getResources().getString(R.string.sukien2), "http://pou.edu.vn/news/dai-hoc-thai-binh-duong-cho-sinh-vien-nghi-den-16-2-2020.784", R.drawable.sukien2));
 
-        CustomAdapter customAdapter = new CustomAdapter(this, arrayList);
-        list.setAdapter(customAdapter);
+        SuKienAdapter suKienAdapter = new SuKienAdapter(this, arrayList);
+        list.setAdapter(suKienAdapter);
 
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-                //Toast.makeText(SuggestionActivity.this, "" + position, Toast.LENGTH_SHORT).show();
-                Intent myIntent = new Intent(arg1.getContext(), BuildingInfo.class);
+                id_sukien = position;
+                Intent myIntent = new Intent(arg1.getContext(), SuKienAdapter.class);
                 startActivityForResult(myIntent, 0);
             }
         });
