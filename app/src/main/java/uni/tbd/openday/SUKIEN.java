@@ -10,8 +10,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import uni.tbd.openday.Activity.BuildingInfo;
-import uni.tbd.openday.Adapter.CustomAdapter;
+
 import uni.tbd.openday.Adapter.SuKienAdapter;
 
 public class SUKIEN extends AppCompatActivity {
@@ -30,7 +29,6 @@ public class SUKIEN extends AppCompatActivity {
 
         SuKienAdapter suKienAdapter = new SuKienAdapter(this, arrayList);
         list.setAdapter(suKienAdapter);
-
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
