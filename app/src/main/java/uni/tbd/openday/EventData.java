@@ -13,4 +13,11 @@ public class EventData {
         this.Link = link;
         this.Image = image;
     }
+    public EventData(String eventName,String eventSummary,String eventPlace,String eventTime,String eventLecturer) {
+        this.EventName = eventName;
+        this.EventSummary = eventSummary;
+        this.EventPlace = eventPlace;
+        this.EventTime = eventTime;
+        this.EventLecturer = eventLecturer;
+    }
 }

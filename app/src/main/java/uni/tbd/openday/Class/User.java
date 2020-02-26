@@ -3,7 +3,7 @@ package uni.tbd.openday.Class;
 public class User {
 
     public String name;
-    private String email;
+    public String email;
 
 
     public User() {
