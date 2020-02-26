@@ -18,7 +18,7 @@ public class event_add extends AppCompatActivity {
     private EditText editName, editSummary, editPlace, editTime, editLecturer;
     private DatabaseReference mFirebaseDatabase;
 
-    private String userId;
+    private String eventId;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_event);
@@ -43,12 +43,12 @@ public class event_add extends AppCompatActivity {
         // TODO
         // In real apps this userId should be fetched
         // by implementing firebase auth
-        if (TextUtils.isEmpty(userId)) {
-            userId = mFirebaseDatabase.push().getKey();
+        if (TextUtils.isEmpty(eventId)) {
+            eventId = mFirebaseDatabase.push().getKey();
         }
 
         EventData event = new EventData(name, summary,place,time,lecturer);
-        mFirebaseDatabase.child(userId).setValue(event);
+        mFirebaseDatabase.child(eventId).setValue(event);
     }
 
     public void save_event_click(View view) {
@@ -58,8 +58,8 @@ public class event_add extends AppCompatActivity {
         String time = editTime.getText().toString();
         String lecturer = editLecturer.getText().toString();
 
-        // Check for already existed userId
-        if (TextUtils.isEmpty(userId)) {
+        // Check for already existed eventId
+        if (TextUtils.isEmpty(eventId)) {
             createEvent(name, summary,place,time,lecturer);
         }
     }
