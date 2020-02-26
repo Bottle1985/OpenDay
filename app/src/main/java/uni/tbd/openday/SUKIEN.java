@@ -11,6 +11,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 
+import uni.tbd.openday.Activity.event_info;
 import uni.tbd.openday.Adapter.SuKienAdapter;
 
 public class SUKIEN extends AppCompatActivity {
@@ -34,7 +35,7 @@ public class SUKIEN extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
                 id_sukien = position;
-                Intent myIntent = new Intent(arg1.getContext(), SuKienAdapter.class);
+                Intent myIntent = new Intent(arg1.getContext(), event_info.class);
                 startActivityForResult(myIntent, 0);
             }
         });
