@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "940053606946",
+    "firebase_url": "https://openday-802c4.firebaseio.com",
+    "project_id": "openday-802c4",
+    "storage_bucket": "openday-802c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940053606946:android:b33814cb94df29ddb7507b",
+        "android_client_info": {
+          "package_name": "uni.tbd.openday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940053606946-mi18l91pguikj37mcukjfkamrh1d6lda.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uni.tbd.openday",
+            "certificate_hash": "ed43d9f1138a1de0262d7bc8b4ef8a2384903f59"
+          }
+        },
+        {
+          "client_id": "940053606946-jbffgbrr30ord56dssj60602fsm6trn3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_e_YsEMfJppaAd_dBAq0KekOOAuHaKfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940053606946-jbffgbrr30ord56dssj60602fsm6trn3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,6 +3,7 @@ package uni.tbd.openday.Activity;
 import android.app.Activity;
 import android.os.Bundle;
 
+
 import uni.tbd.openday.R;
 
 public class event_info extends Activity {
@@ -12,5 +13,6 @@ public class event_info extends Activity {
         setContentView(R.layout.info_event);
         this.overridePendingTransition(R.anim.animation_enter,
                 R.anim.animation_leave);
+
     }
 }
