@@ -23,8 +23,6 @@ public class ActivityBuilding extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_building);
-        // Button template return
-
         this.overridePendingTransition(R.anim.animation_enter,
                 R.anim.animation_leave);
 

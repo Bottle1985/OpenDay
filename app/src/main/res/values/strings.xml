@@ -189,5 +189,8 @@
     <string name="event_time_1">25.2.2020</string>
     <string name="event_lecturer">Diễn giả sự kiện</string>
     <string name="event_lecturer_1">Thạc sĩ Nguyễn Đăng Bắc, Tiến sĩ Nguyễn Trùng Lập</string>
+    <string name="add_event">Thêm sự kiện</string>
+    <string name="danh_sach_su_kien">Danh sách sự kiện:</string>
+    <string name="save">Lưu</string>
 
 </resources>

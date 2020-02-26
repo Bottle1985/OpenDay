@@ -1,6 +1,6 @@
 package uni.tbd.openday.Activity;
 
-import android.app.Activity;
+
 import android.os.Bundle;
 import android.widget.TextView;
 

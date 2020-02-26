@@ -11,6 +11,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 
+import uni.tbd.openday.Activity.event_add;
 import uni.tbd.openday.Activity.event_info;
 import uni.tbd.openday.Adapter.EventAdapter;
 
@@ -39,5 +40,10 @@ public class SUKIEN extends AppCompatActivity {
                 startActivity(ieveninfo);
             }
         });
+    }
+
+    public void add_event_click(View view) {
+        Intent eventAdd = new Intent(SUKIEN.this, event_add.class);
+        startActivity(eventAdd);
     }
 }

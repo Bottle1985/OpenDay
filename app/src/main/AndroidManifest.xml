@@ -29,6 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityBuilding" />
+        <activity android:name=".Activity.event_add" />
     </application>
 
 </manifest>
