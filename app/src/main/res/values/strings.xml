@@ -180,9 +180,14 @@
     <string name="tuyen_sinh">TUYỂN SINH</string>
     <string name="trac_nghiem">TRẮC NGHIỆM</string>
     <string name="event_name">Tên sự kiện</string>
+    <string name="event_name_1">Tập huấn sử dụng Moodle và triển khai E-Learning</string>
     <string name="event_summary">Nội dung sự kiện</string>
+    <string name="event_summary_1">Nha Trang, 25.2.2020 – Sáng nay, nhóm phát triển dự án E-Learning từ khoa Công nghệ thông tin tổ chức tập huấn sử dụng công cụ Moodle cho 25 giảng viên</string>
     <string name="event_place">Địa điểm sự kiện</string>
+    <string name="event_place_1">tại cơ sở 79 Mai Thị Dõng</string>
     <string name="event_time">Thời gian sự kiện</string>
+    <string name="event_time_1">25.2.2020</string>
     <string name="event_lecturer">Diễn giả sự kiện</string>
+    <string name="event_lecturer_1">Thạc sĩ Nguyễn Đăng Bắc, Tiến sĩ Nguyễn Trùng Lập</string>
 
 </resources>

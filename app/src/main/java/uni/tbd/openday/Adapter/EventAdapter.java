@@ -15,13 +15,13 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import uni.tbd.openday.EventData;
 import uni.tbd.openday.R;
-import uni.tbd.openday.SubjectData;
 
-public class SuKienAdapter implements ListAdapter {
-    ArrayList<SubjectData> arrayList;
+public class EventAdapter implements ListAdapter {
+    ArrayList<EventData> arrayList;
     Context context;
-    public SuKienAdapter(Context context, ArrayList<SubjectData> arrayList) {
+    public EventAdapter(Context context, ArrayList<EventData> arrayList) {
         this.arrayList=arrayList;
         this.context=context;
     }
@@ -57,16 +57,16 @@ public class SuKienAdapter implements ListAdapter {
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final SubjectData subjectData = arrayList.get(position);
+        final EventData eventData = arrayList.get(position);
         if(convertView == null) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
             convertView = layoutInflater.inflate(R.layout.list_row, null);
 
             TextView tittle = convertView.findViewById(R.id.title);
             ImageView imag = convertView.findViewById(R.id.list_image);
-            tittle.setText(subjectData.SubjectName);
+            tittle.setText(eventData.EventName);
             Picasso.with(context)
-                    .load(subjectData.Image)
+                    .load(eventData.Image)
                     .into(imag);
         }
         return convertView;

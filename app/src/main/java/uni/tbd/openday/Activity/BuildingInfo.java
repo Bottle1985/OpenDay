@@ -6,11 +6,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import uni.tbd.openday.ActivityBuilding;
 import uni.tbd.openday.R;
 
 
-public class BuildingInfo  extends Activity {
+public class BuildingInfo  extends AppCompatActivity {
     public final int BUILDING_GIANG_DUONG = 0;
     public final int BUILDING_KY_TUC_XA = 1;
     public final int BUILDING_DA_NANG = 2;
