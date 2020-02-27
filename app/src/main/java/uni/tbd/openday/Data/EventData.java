@@ -1,4 +1,4 @@
-package uni.tbd.openday;
+package uni.tbd.openday.Data;
 
 public class EventData {
     public String EventName, EventSummary, EventPlace, EventTime, EventLecturer;

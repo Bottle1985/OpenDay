@@ -1,14 +1,11 @@
 package uni.tbd.openday;
 
-import android.app.Activity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +13,7 @@ import java.util.ArrayList;
 
 import uni.tbd.openday.Activity.BuildingInfo;
 import uni.tbd.openday.Adapter.CustomAdapter;
+import uni.tbd.openday.Data.SubjectData;
 
 public class ActivityBuilding extends AppCompatActivity {
     /** Called when the activity is first created. */

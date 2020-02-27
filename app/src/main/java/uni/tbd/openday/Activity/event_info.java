@@ -2,6 +2,7 @@ package uni.tbd.openday.Activity;
 
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -22,6 +23,7 @@ public class event_info extends AppCompatActivity {
         TextView eventplace = findViewById(R.id.event_place);
         TextView eventtime = findViewById(R.id.event_time);
         TextView eventlecturer = findViewById(R.id.event_lecturer);
+        ImageView eventimg = findViewById(R.id.img_event);
         switch (SUKIEN.id_sukien){
             case 0:{
                 eventname.setText(R.string.event_name_1);
@@ -29,6 +31,7 @@ public class event_info extends AppCompatActivity {
                 eventplace.setText(R.string.event_place_1);
                 eventtime.setText(R.string.event_time_1);
                 eventlecturer.setText(R.string.event_lecturer_1);
+                eventimg.setImageResource(R.drawable.sukien0);
                 break;
             }
             case 1:{
@@ -37,6 +40,7 @@ public class event_info extends AppCompatActivity {
                 eventplace.setText(R.string.event_place_1);
                 eventtime.setText(R.string.event_time_1);
                 eventlecturer.setText(R.string.event_lecturer_1);
+                eventimg.setImageResource(R.drawable.sukien1);
                 break;
             }
             case 2:{
@@ -45,6 +49,7 @@ public class event_info extends AppCompatActivity {
                 eventplace.setText(R.string.event_place_1);
                 eventtime.setText(R.string.event_time_1);
                 eventlecturer.setText(R.string.event_lecturer_1);
+                eventimg.setImageResource(R.drawable.sukien2);
                 break;
             }
         }

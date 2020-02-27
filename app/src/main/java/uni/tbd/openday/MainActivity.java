@@ -1,29 +1,30 @@
 package uni.tbd.openday;
 
+import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+    Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         // Open activity list building
-        Button sodo = findViewById(R.id.ButtonSoDo);
-        Button khoa =  findViewById(R.id.ButtonKhoa);
-        Button nganh =  findViewById(R.id.ButtonNganh);
-        Button sukien =  findViewById(R.id.ButtonSuKien);
-        Button tuyensinh =  findViewById(R.id.ButtonTuyenSinh);
-        Button tracnghiem =  findViewById(R.id.ButtonTracNghiem);
 
+        AnhXa();
         sodo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), ActivityBuilding.class);
@@ -60,20 +61,63 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(myIntent, 0);
             }
         });
-    }
 
+    }
+    private void AnhXa(){
+
+        sodo = (Button) findViewById(R.id.ButtonSoDo);
+        khoa = (Button) findViewById(R.id.ButtonKhoa);
+        nganh = (Button) findViewById(R.id.ButtonNganh);
+        sukien = (Button) findViewById(R.id.ButtonSuKien);
+        tuyensinh = (Button) findViewById(R.id.ButtonTuyenSinh);
+        tracnghiem = (Button) findViewById(R.id.ButtonTracNghiem);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
 
         return super.onCreateOptionsMenu(menu);
     }
-
+    private void login(){
+        final Dialog login = new Dialog(this);
+        login.setContentView(R.layout.login);
+        login.setCanceledOnTouchOutside(false);
+        final EditText edit_email = login.findViewById(R.id.email_login);
+        final EditText edit_pass = login.findViewById(R.id.pass_login);
+        Button loginbt = login.findViewById(R.id.bt_login);
+        Button exitbt = login.findViewById(R.id.bt_exit);
+        loginbt.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ShowToast")
+            @Override
+            public void onClick(View v) {
+                String email = edit_email.getText().toString().trim();
+                String pass = edit_pass.getText().toString().trim();
+                if (email.equals("123@gmail.com") && pass.equals("123456")){
+                    Toast.makeText(MainActivity.this,"Đăng nhập thành công ",Toast.LENGTH_LONG);
+                }else {
+                    Toast.makeText(MainActivity.this,"Đăng nhập thất bại ",Toast.LENGTH_LONG);
+                }
+            }
+        });
+        exitbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login.dismiss();
+            }
+        });
+        login.show();
+    }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.menu_setting:
+            case R.id.menu_login: {
+                login();
                 break;
+            }
+            case R.id.menu_setting: {
+
+                break;
+            }
             case R.id.menu_email:
                 break;
             case R.id.menu_phone:
@@ -83,5 +127,27 @@ public class MainActivity extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        getMenuInflater().inflate(R.menu.menu_language,menu);
+        menu.setHeaderTitle("Chọn ngôn ngữ");
+        menu.setHeaderIcon(R.mipmap.ic_vietnam);
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.lang_en:{
+
+                break;
+            }
+            case R.id.lang_vi:{
+                break;
+            }
+        }
+        return super.onContextItemSelected(item);
     }
 }

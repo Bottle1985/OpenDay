@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import uni.tbd.openday.EventData;
+import uni.tbd.openday.Data.EventData;
 import uni.tbd.openday.R;
 
 public class event_add extends AppCompatActivity {

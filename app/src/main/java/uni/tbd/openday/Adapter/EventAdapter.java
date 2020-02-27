@@ -1,9 +1,7 @@
 package uni.tbd.openday.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.database.DataSetObserver;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import uni.tbd.openday.EventData;
+import uni.tbd.openday.Data.EventData;
 import uni.tbd.openday.R;
 
 public class EventAdapter implements ListAdapter {

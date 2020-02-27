@@ -1,4 +1,4 @@
-package uni.tbd.openday;
+package uni.tbd.openday.Data;
 
 public class SubjectData {
     public String SubjectName;
