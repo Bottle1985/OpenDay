@@ -6,7 +6,18 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
+import uni.tbd.openday.Activity.event_info;
+import uni.tbd.openday.Adapter.EventAdapter;
+import uni.tbd.openday.Adapter.NganhAdapter;
+import uni.tbd.openday.Data.EventData;
+import uni.tbd.openday.Data.NganhData;
+import uni.tbd.openday.Data.SubjectData;
 
 public class NGANH extends AppCompatActivity {
     public static int nganh;
@@ -16,69 +27,26 @@ public class NGANH extends AppCompatActivity {
         setContentView(R.layout.activity_nganh);
         this.overridePendingTransition(R.anim.animation_enter,
                 R.anim.animation_leave);
-        Button nganh0 = (Button) findViewById(R.id.bt_nganh0);
-        Button nganh1 = (Button) findViewById(R.id.bt_nganh1);
-        Button nganh2 = (Button) findViewById(R.id.bt_nganh2);
-        Button nganh3 = (Button) findViewById(R.id.bt_nganh3);
-        Button nganh4 = (Button) findViewById(R.id.bt_nganh4);
-        Button nganh5 = (Button) findViewById(R.id.bt_nganh5);
-        Button nganh6 = (Button) findViewById(R.id.bt_nganh6);
-        Button nganh7 = (Button) findViewById(R.id.bt_nganh7);
+        final ListView list = findViewById(R.id.listview_nganh);
+        ArrayList<NganhData> arrayList = new ArrayList<NganhData>();
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh0), "", R.drawable.luat));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh1), "", R.drawable.dongphuonghoc));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh2), "", R.drawable.dulich));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh3), "", R.drawable.cntt));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh4), "", R.drawable.ngonguanh));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh5), "", R.drawable.ketoan));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh6), "", R.drawable.taichinhnganhang));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh7), "", R.drawable.quantrikinhdoanh));
 
-        nganh0.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
-                nganh = 0;
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        nganh1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
-                nganh = 1;
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        nganh2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
-                nganh = 2;
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        nganh3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
-                nganh = 3;
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        nganh4.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
-                nganh = 4;
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        nganh5.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
-                nganh = 5;
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        nganh6.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
-                nganh = 6;
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        nganh7.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), GT_NGANH.class);
-                nganh = 7;
-                startActivityForResult(myIntent, 0);
+        NganhAdapter nganhAdapter = new NganhAdapter(this, arrayList);
+        list.setAdapter(nganhAdapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+                nganh = position;
+                Intent nganhinfo = new Intent(NGANH.this, GT_NGANH.class);
+                startActivity(nganhinfo);
             }
         });
     }

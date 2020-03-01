@@ -5,6 +5,8 @@ import android.database.DataSetObserver;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
@@ -66,6 +68,8 @@ public class EventAdapter implements ListAdapter {
             Picasso.with(context)
                     .load(eventData.Image)
                     .into(imag);
+            Animation animation = AnimationUtils.loadAnimation(context,R.anim.anim_listview);
+            convertView.startAnimation(animation);
         }
         return convertView;
     }

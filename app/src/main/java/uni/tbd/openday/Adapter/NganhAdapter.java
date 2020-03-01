@@ -15,13 +15,14 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import uni.tbd.openday.Data.EventData;
+import uni.tbd.openday.Data.NganhData;
 import uni.tbd.openday.R;
-import uni.tbd.openday.Data.SubjectData;
 
-public class CustomAdapter implements ListAdapter {
-    ArrayList<SubjectData> arrayList;
+public class NganhAdapter implements ListAdapter {
+    ArrayList<NganhData> arrayList;
     Context context;
-    public CustomAdapter(Context context, ArrayList<SubjectData> arrayList) {
+    public NganhAdapter(Context context, ArrayList<NganhData> arrayList) {
         this.arrayList=arrayList;
         this.context=context;
     }
@@ -57,16 +58,16 @@ public class CustomAdapter implements ListAdapter {
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final SubjectData subjectData = arrayList.get(position);
+        final NganhData nganhData = arrayList.get(position);
         if(convertView == null) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
             convertView = layoutInflater.inflate(R.layout.list_row, null);
 
             TextView tittle = convertView.findViewById(R.id.title);
             ImageView imag = convertView.findViewById(R.id.list_image);
-            tittle.setText(subjectData.SubjectName);
+            tittle.setText(nganhData.NganhName);
             Picasso.with(context)
-                    .load(subjectData.Image)
+                    .load(nganhData.Image)
                     .into(imag);
             Animation animation = AnimationUtils.loadAnimation(context,R.anim.anim_listview);
             convertView.startAnimation(animation);

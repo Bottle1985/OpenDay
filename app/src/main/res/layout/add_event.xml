@@ -12,6 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_edittext"
         android:inputType="textPersonName"
         android:hint="@string/event_name"
         android:autofillHints="" />
@@ -21,6 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_edittext"
         android:inputType="textPersonName"
         android:hint="@string/event_summary"
         android:autofillHints="" />
@@ -30,6 +34,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_edittext"
         android:inputType="textPersonName"
         android:hint="@string/event_place"
         android:autofillHints="" />
@@ -39,6 +45,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_edittext"
         android:inputType="time"
         android:hint="@string/event_time"
         android:autofillHints="" />
@@ -48,15 +56,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_edittext"
         android:inputType="textPersonName"
         android:hint="@string/event_lecturer"
         android:autofillHints="" />
 
     <Button
         android:id="@+id/button_event_save"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+
+        android:background="@drawable/custom_button"
         android:onClick="save_event_click"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
         android:text="@string/save" />
 </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
