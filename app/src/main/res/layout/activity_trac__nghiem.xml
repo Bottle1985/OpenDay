@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/deep_sky_blue"
+    android:background="@color/blanched_almond"
     android:padding="5dp"
     tools:context=".TRAC_NGHIEM">
 

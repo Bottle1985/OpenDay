@@ -1,5 +1,6 @@
 package uni.tbd.openday;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,8 +23,12 @@ public class SUKIEN extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sukien);
-        this.overridePendingTransition(R.anim.animation_enter,
-                R.anim.animation_leave);
+        this.overridePendingTransition(R.anim.activity_open_enter,
+                R.anim.activity_open_exit);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setLogo(R.mipmap.ic_launcher);
+        actionBar.setDisplayUseLogoEnabled(true);
         final ListView list = findViewById(R.id.list_sukien);
         ArrayList<EventData> arrayList = new ArrayList<EventData>();
         arrayList.add(new EventData(getResources().getString(R.string.event_name_1),getResources().getString(R.string.event_summary_1),getResources().getString(R.string.event_place_1),getResources().getString(R.string.event_time_1),getResources().getString(R.string.event_lecturer_1), "http://pou.edu.vn/news/tap-huan-su-dung-moodle-va-trien-khai-e-learning.789", R.drawable.sukien1));

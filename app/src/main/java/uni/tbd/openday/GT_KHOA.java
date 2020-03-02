@@ -28,6 +28,8 @@ public class GT_KHOA extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gt__khoa);
+        this.overridePendingTransition(R.anim.fade_in,
+                R.anim.fade_out);
         TextView TenKhoa = (TextView) findViewById(R.id.ten_khoa);
         TextView TitleKhoa = (TextView) findViewById(R.id.title_khoa);
         ActionBar actionBar = getSupportActionBar();

@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import uni.tbd.openday.R;
@@ -16,8 +17,12 @@ public class event_info extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_event);
-        this.overridePendingTransition(R.anim.animation_enter,
-                R.anim.animation_leave);
+        this.overridePendingTransition(R.anim.fade_in,
+                R.anim.fade_out);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setLogo(R.mipmap.ic_launcher);
+        actionBar.setDisplayUseLogoEnabled(true);
         TextView eventname = findViewById(R.id.event_name);
         TextView eventsummary = findViewById(R.id.event_summary);
         TextView eventplace = findViewById(R.id.event_place);

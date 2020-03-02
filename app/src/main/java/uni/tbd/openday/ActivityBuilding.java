@@ -21,8 +21,8 @@ public class ActivityBuilding extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_building);
-        this.overridePendingTransition(R.anim.animation_enter,
-                R.anim.animation_leave);
+        this.overridePendingTransition(R.anim.activity_open_enter,
+                R.anim.activity_open_exit);
 
         // List view function
         final ListView list = findViewById(R.id.list);

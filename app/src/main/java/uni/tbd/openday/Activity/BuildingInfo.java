@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import uni.tbd.openday.ActivityBuilding;
@@ -21,8 +22,12 @@ public class BuildingInfo  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_building);
-        this.overridePendingTransition(R.anim.animation_enter,
-                R.anim.animation_leave);
+        this.overridePendingTransition(R.anim.fade_in,
+                R.anim.fade_out);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setLogo(R.mipmap.ic_launcher);
+        actionBar.setDisplayUseLogoEnabled(true);
         ImageView imgBuilding = (ImageView)findViewById(R.id.ImageBuilding);
         TextView txtBuildingName = (TextView)findViewById(R.id.building_name);
         TextView txtBuildingDirect= (TextView)findViewById(R.id.building_direct);

@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
@@ -22,9 +23,12 @@ public class event_add extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_event);
-        this.overridePendingTransition(R.anim.animation_enter,
-                R.anim.animation_leave);
-
+        this.overridePendingTransition(R.anim.fade_in,
+                R.anim.fade_out);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setLogo(R.mipmap.ic_launcher);
+        actionBar.setDisplayUseLogoEnabled(true);
         editName = (EditText) findViewById(R.id.edit_event_name);
         editSummary = (EditText) findViewById(R.id.edit_event_summary);
         editPlace = (EditText) findViewById(R.id.edit_event_place);

@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Open activity list building
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setLogo(R.mipmap.ic_launcher);
+        actionBar.setDisplayUseLogoEnabled(true);
         AnhXa();
         sodo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -86,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
         final EditText edit_pass = login.findViewById(R.id.pass_login);
         Button loginbt = login.findViewById(R.id.bt_login);
         Button exitbt = login.findViewById(R.id.bt_exit);
+        this.overridePendingTransition(R.anim.dialog_enter,
+                R.anim.dialog_exit);
         loginbt.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ShowToast")
             @Override
@@ -111,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.menu_login: {
+
                 login();
                 break;
             }
