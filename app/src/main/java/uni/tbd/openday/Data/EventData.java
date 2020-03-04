@@ -4,6 +4,9 @@ public class EventData {
     public String EventName, EventSummary, EventPlace, EventTime, EventLecturer;
     public String Link;
     public int Image;
+    public EventData() {
+    }
+
     public EventData(String eventName,String eventSummary,String eventPlace,String eventTime,String eventLecturer, String link, int image) {
         this.EventName = eventName;
         this.EventSummary = eventSummary;

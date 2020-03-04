@@ -66,7 +66,7 @@ public class NganhAdapter implements ListAdapter {
             TextView tittle = convertView.findViewById(R.id.title);
             ImageView imag = convertView.findViewById(R.id.list_image);
             tittle.setText(nganhData.NganhName);
-            Picasso.with(context)
+            Picasso.get()
                     .load(nganhData.Image)
                     .into(imag);
             Animation animation = AnimationUtils.loadAnimation(context,R.anim.anim_listview);

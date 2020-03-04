@@ -65,8 +65,8 @@ public class EventAdapter implements ListAdapter {
             TextView tittle = convertView.findViewById(R.id.title);
             ImageView imag = convertView.findViewById(R.id.list_image);
             tittle.setText(eventData.EventName);
-            Picasso.with(context)
-                    .load(eventData.Image)
+            Picasso.get()
+                    .load(R.drawable.sukien1)
                     .into(imag);
             Animation animation = AnimationUtils.loadAnimation(context,R.anim.anim_listview);
             convertView.startAnimation(animation);
