@@ -10,8 +10,6 @@ import android.view.View;
 
 import android.widget.AdapterView;
 import android.widget.ListView;
-//import android.widget.TextView;
-
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,8 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-
-
 
 import uni.tbd.openday.Activity.event_add;
 
@@ -33,9 +29,8 @@ import uni.tbd.openday.Data.EventData;
 public class SUKIEN extends AppCompatActivity {
     public static int id_sukien;
     private static final String TAG = "SUKIEN";
-    private EventData[] event = new EventData[4];
-    //private String userId;
-    //private ListView mListView;
+    private EventData event;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +44,6 @@ public class SUKIEN extends AppCompatActivity {
         actionBar.setDisplayUseLogoEnabled(true);
         // Load data from database
         // get reference to 'events' node
-
-//        final TextView labelGetKey = findViewById(R.id.textView8);
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
         DatabaseReference mFirebaseDatabase = mFirebaseInstance.getReference("events");
         ValueEventListener postListener = new ValueEventListener() {
@@ -58,20 +51,15 @@ public class SUKIEN extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 // ...
-                String key = dataSnapshot.getKey();
-                StringBuilder dataKeys= new StringBuilder();
-                ArrayList<EventData> bookModelList = new ArrayList<>();
+                ArrayList<EventData> eventList = new ArrayList<>();
                 for (DataSnapshot child: dataSnapshot.getChildren()){
-
                     // Get User object and use the values to update the UI
-                    event[0] = child.getValue(EventData.class);
-                    bookModelList.add(event[0]);
-
+                    event = child.getValue(EventData.class);
+                    eventList.add(event);
                 }
-                ListView list = (ListView) findViewById(R.id.list_sukien);
-                EventAdapter adapter = new EventAdapter(SUKIEN.this, bookModelList);
+                ListView list = findViewById(R.id.list_sukien);
+                EventAdapter adapter = new EventAdapter(SUKIEN.this, eventList);
                 list.setAdapter(adapter);
-//                labelGetKey.setText(dataKeys.toString());
                 list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
