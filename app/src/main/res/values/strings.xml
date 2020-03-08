@@ -192,5 +192,10 @@
     <string name="add_event">Thêm sự kiện</string>
     <string name="danh_sach_su_kien">Danh sách sự kiện:</string>
     <string name="save">Lưu</string>
+    <string name="Question_1">Câu 1: What interests you most?</string>
+    <string name="answer1_a">Different cultures to my own</string>
+    <string name="answer1_b">How people express themselves</string>
+    <string name="answer1_c">The economy</string>
+    <string name="answer1_d">How things work</string>
 
 </resources>

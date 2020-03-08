@@ -22,20 +22,21 @@
             android:id="@+id/countLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Q1"
+            android:text="@string/Question_1"
             android:textSize="22sp"
             android:layout_marginTop="20dp"/>
         <ImageView
             android:id="@+id/questionImage"
-            android:layout_width="170dp"
+            android:layout_width="match_parent"
             android:layout_height="170dp"
             android:src="@drawable/quiz_interests"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/todo" />
         <Button
             android:id="@+id/answerBtn1"
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:text="answer1"
+            android:text="@string/answer1_a"
             android:layout_marginTop="10dp"
             android:onClick="checkAnswer"/>
 
@@ -43,7 +44,7 @@
             android:id="@+id/answerBtn2"
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:text="answer2"
+            android:text="@string/answer1_b"
             android:layout_marginTop="6dp"
             android:onClick="checkAnswer"/>
 
@@ -51,7 +52,7 @@
             android:id="@+id/answerBtn3"
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:text="answer3"
+            android:text="@string/answer1_c"
             android:layout_marginTop="6dp"
             android:onClick="checkAnswer"/>
 
@@ -59,7 +60,7 @@
             android:id="@+id/answerBtn4"
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:text="answer4"
+            android:text="@string/answer1_d"
             android:layout_marginTop="6dp"
             android:onClick="checkAnswer"/>
     </LinearLayout>

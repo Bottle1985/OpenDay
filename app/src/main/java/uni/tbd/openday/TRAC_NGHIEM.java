@@ -30,8 +30,8 @@ public class TRAC_NGHIEM extends AppCompatActivity {
     ArrayList<ArrayList<String>> quizArray = new ArrayList<>();
 
     String[][] quizData = {
-            // {"Image Name", "Right Answer", "Choice1", "Choice2", "Choice3"}
-            {"image_circle", "circle", "triangle", "square", "hexagon"},
+            // {"Question", "Right Answer", "Choice1", "Choice2", "Choice3"}
+            {"What interests you most?", "Different cultures to my own", "How people express themselves", "The economy", "How things work"},
             {"image_triangle", "triangle", "circle", "square", "pentagon"},
             {"image_square", "square", "triangle", "pentagon", "hexagon"},
             {"image_pentagon", "pentagon", "circle", "triangle", "hexagon"},
@@ -58,14 +58,14 @@ public class TRAC_NGHIEM extends AppCompatActivity {
         answerBtn4 = findViewById(R.id.answerBtn4);
 
         // Create quizArray from quizData.
-        for (int i = 0; i < quizData.length; i++) {
+        for (String[] quizDatum : quizData) {
             // Prepare array.
             ArrayList<String> tmpArray = new ArrayList<>();
-            tmpArray.add(quizData[i][0]); // Image Name
-            tmpArray.add(quizData[i][1]); // Right Answer
-            tmpArray.add(quizData[i][2]); // Choice1
-            tmpArray.add(quizData[i][3]); // Choice2
-            tmpArray.add(quizData[i][4]); // Choice3
+            tmpArray.add(quizDatum[0]); // Image Name
+            tmpArray.add(quizDatum[1]); // Right Answer
+            tmpArray.add(quizDatum[2]); // Choice1
+            tmpArray.add(quizDatum[3]); // Choice2
+            tmpArray.add(quizDatum[4]); // Choice3
 
             // Add tmpArray to quizArray.
             quizArray.add(tmpArray);
@@ -88,8 +88,8 @@ public class TRAC_NGHIEM extends AppCompatActivity {
 
         // Set Image and Right Answer.
         // Array format: {"Image Name", "Right Answer", "Choice1", "Choice2", "Choice3"}
-        questionImage.setImageResource(
-                getResources().getIdentifier(quiz.get(0), "drawable", getPackageName()));
+//        questionImage.setImageResource(
+//                getResources().getIdentifier(quiz.get(0), "drawable", getPackageName()));
         rightAnswer = quiz.get(1);
 
         // Remove "Image Name" from quiz and shuffle choices.
