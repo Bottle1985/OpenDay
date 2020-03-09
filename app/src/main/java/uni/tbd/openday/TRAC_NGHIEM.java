@@ -18,6 +18,7 @@ import java.util.Random;
 public class TRAC_NGHIEM extends AppCompatActivity {
     private TextView countLabel;
     private ImageView questionImage;
+    //private TextView questionLabel;
     private Button answerBtn1;
     private Button answerBtn2;
     private Button answerBtn3;
@@ -56,6 +57,7 @@ public class TRAC_NGHIEM extends AppCompatActivity {
         actionBar.setLogo(R.mipmap.ic_launcher);
         actionBar.setDisplayUseLogoEnabled(true);
         countLabel = findViewById(R.id.countLabel);
+        //questionLabel = findViewById(R.id.countLabel);
         questionImage = findViewById(R.id.questionImage);
         answerBtn1 = findViewById(R.id.answerBtn1);
         answerBtn2 = findViewById(R.id.answerBtn2);
@@ -80,10 +82,8 @@ public class TRAC_NGHIEM extends AppCompatActivity {
     }
 
     public void showNextQuiz() {
-
         // Update quizCountLabel.
-        countLabel.setText("Q" + quizCount);
-
+        //countLabel.setText("Q" + quizCount);
         // Generate random number between 0 and 4 (quizArray's size -1)
         Random random = new Random();
         int randomNum = random.nextInt(quizArray.size());
@@ -95,6 +95,9 @@ public class TRAC_NGHIEM extends AppCompatActivity {
         // Array format: {"Image Name", "Right Answer", "Choice1", "Choice2", "Choice3"}
 //        questionImage.setImageResource(
 //                getResources().getIdentifier(quiz.get(0), "drawable", getPackageName()));
+        //questionLabel.setText(quiz.get(0));
+        // Update question.
+        countLabel.setText(quiz.get(0));
         rightAnswer = quiz.get(1);
 
         // Remove "Image Name" from quiz and shuffle choices.
