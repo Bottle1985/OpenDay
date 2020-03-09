@@ -30,12 +30,17 @@ public class TRAC_NGHIEM extends AppCompatActivity {
     ArrayList<ArrayList<String>> quizArray = new ArrayList<>();
 
     String[][] quizData = {
-            // {"Question", "Right Answer", "Choice1", "Choice2", "Choice3"}
-            {"What interests you most?", "Different cultures to my own", "How people express themselves", "The economy", "How things work"},
-            {"image_triangle", "triangle", "circle", "square", "pentagon"},
-            {"image_square", "square", "triangle", "pentagon", "hexagon"},
-            {"image_pentagon", "pentagon", "circle", "triangle", "hexagon"},
-            {"image_hexagon", "hexagon", "triangle", "pentagon", "circle"},
+            // {"Question", "Choice 1", "Choice 2", "Choice 3", "Choice 4", "Choice 5"}
+            {"What interests you most?", "Different cultures to my own", "How people express themselves", "The economy", "How things work", "The news"},
+            {"Do you work better as a team or as an individual?", "As an individual", "As a team", "A bit of both", "One on one with a person"},
+            {"Which would you say is your best skill", "My ability to reason and aruge", "I can figure out the solution to most problems", "I'm excellent at planning and organising", "I'm a quick learner"},
+            {"What salary range would you be happy with?", "+30,000", "+50,000", "+70,000", "+100,000", "Whatever allows me to live comfortably"},
+            {"Are you interested in travelling with work?", "Definitely! It's a free plane ticket", "I'm not fussed", "I'd rather not", "No"},
+            {"What are your values?", "I'm ambitious and will work hard to succeed", "I want a good work/life balance", "I want to work at something I'm passionate about", "I want to develop something that will help others"},
+            {"Are there jobs available in your area?", "Yes. Lots.", "Some but it's competative", "No but I'm willing to move", "Hardly any in my field"},
+            {"Do you tend to be more introverted or extroverted?", "Completely introverted", "Absolutely extroverted", "More extroverted, but a little introverted", "More introverted, but a little extroverted"},
+            {"How do you feel about growth opportunities within work?", "I don't mind reaching a high pleateau", "I'm comfortable at any level", "I want to win at everything I do", "I must succeed everytime"},
+            {"Which best describes your personality?", "High functioning, friendly", "Logical and reasonable", "Free thinking, quirky", "Smart, thinking ahead of everyone else", "Innovative, ruthless"},
     };
 
 
@@ -62,10 +67,10 @@ public class TRAC_NGHIEM extends AppCompatActivity {
             // Prepare array.
             ArrayList<String> tmpArray = new ArrayList<>();
             tmpArray.add(quizDatum[0]); // Image Name
-            tmpArray.add(quizDatum[1]); // Right Answer
-            tmpArray.add(quizDatum[2]); // Choice1
-            tmpArray.add(quizDatum[3]); // Choice2
-            tmpArray.add(quizDatum[4]); // Choice3
+            tmpArray.add(quizDatum[1]); // Choice 1
+            tmpArray.add(quizDatum[2]); // Choice 2
+            tmpArray.add(quizDatum[3]); // Choice 3
+            tmpArray.add(quizDatum[4]); // Choice 4
 
             // Add tmpArray to quizArray.
             quizArray.add(tmpArray);
