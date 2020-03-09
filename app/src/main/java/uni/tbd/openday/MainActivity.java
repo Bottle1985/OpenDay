@@ -86,10 +86,10 @@ public class MainActivity extends AppCompatActivity {
         final Dialog login = new Dialog(this);
         login.setContentView(R.layout.login);
         login.setCanceledOnTouchOutside(false);
-        final EditText edit_email = login.findViewById(R.id.email_login);
-        final EditText edit_pass = login.findViewById(R.id.pass_login);
-        Button loginbt = login.findViewById(R.id.bt_login);
-        Button exitbt = login.findViewById(R.id.bt_exit);
+        final EditText edit_email = login.findViewById(R.id.username);
+        final EditText edit_pass = login.findViewById(R.id.password);
+        Button loginbt = login.findViewById(R.id.btn_login);
+
         this.overridePendingTransition(R.anim.dialog_enter,
                 R.anim.dialog_exit);
         loginbt.setOnClickListener(new View.OnClickListener() {
@@ -105,12 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        exitbt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                login.dismiss();
-            }
-        });
+
         login.show();
     }
     @Override
