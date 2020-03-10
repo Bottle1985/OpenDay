@@ -33,9 +33,11 @@ public class GT_KHOA extends AppCompatActivity {
         TextView TenKhoa = (TextView) findViewById(R.id.ten_khoa);
         TextView TitleKhoa = (TextView) findViewById(R.id.title_khoa);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setLogo(R.mipmap.ic_launcher);
-        actionBar.setDisplayUseLogoEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setLogo(R.mipmap.ic_launcher);
+            actionBar.setDisplayUseLogoEnabled(true);
+        }
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         switch (KHOA.khoa){

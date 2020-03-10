@@ -25,9 +25,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Open activity list building
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setLogo(R.mipmap.ic_launcher);
-        actionBar.setDisplayUseLogoEnabled(true);
+        if(actionBar != null) {
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setLogo(R.mipmap.ic_launcher);
+            actionBar.setDisplayUseLogoEnabled(true);
+        }
         AnhXa();
         sodo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

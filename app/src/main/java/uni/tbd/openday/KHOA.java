@@ -19,9 +19,11 @@ public class KHOA extends AppCompatActivity {
         this.overridePendingTransition(R.anim.activity_open_enter,
                 R.anim.activity_open_exit);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setLogo(R.mipmap.ic_launcher);
-        actionBar.setDisplayUseLogoEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setLogo(R.mipmap.ic_launcher);
+            actionBar.setDisplayUseLogoEnabled(true);
+        }
 
         Button khoa01 = (Button) findViewById(R.id.bt_khoa01);
         Button khoa02 = (Button) findViewById(R.id.bt_khoa02);

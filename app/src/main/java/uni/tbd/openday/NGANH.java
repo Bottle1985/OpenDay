@@ -29,9 +29,11 @@ public class NGANH extends AppCompatActivity {
         this.overridePendingTransition(R.anim.activity_open_enter,
                 R.anim.activity_open_exit);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setLogo(R.mipmap.ic_launcher);
-        actionBar.setDisplayUseLogoEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setLogo(R.mipmap.ic_launcher);
+            actionBar.setDisplayUseLogoEnabled(true);
+        }
         final ListView list = findViewById(R.id.listview_nganh);
         ArrayList<NganhData> arrayList = new ArrayList<NganhData>();
         arrayList.add(new NganhData(getResources().getString(R.string.nganh0), "", R.drawable.luat));

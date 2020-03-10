@@ -16,9 +16,11 @@ public class GT_NGANH extends AppCompatActivity {
         this.overridePendingTransition(R.anim.fade_in,
                 R.anim.fade_out);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setLogo(R.mipmap.ic_launcher);
-        actionBar.setDisplayUseLogoEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setLogo(R.mipmap.ic_launcher);
+            actionBar.setDisplayUseLogoEnabled(true);
+        }
         TextView TenNganh = (TextView) findViewById(R.id.ten_nganh);
         TextView MaNganh = (TextView) findViewById(R.id.ma_nganh);
         TextView GTNganh = (TextView) findViewById(R.id.gt_nganh);

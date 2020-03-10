@@ -18,15 +18,16 @@ import java.util.Random;
 public class TRAC_NGHIEM extends AppCompatActivity {
     private TextView countLabel;
     private ImageView questionImage;
-    //private TextView questionLabel;
+
     private Button answerBtn1;
     private Button answerBtn2;
     private Button answerBtn3;
     private Button answerBtn4;
+    //private Button answerBtn5;
 
-    private String rightAnswer;
-    private int rightAnswerCount = 0;
-    private int quizCount = 1;
+    private String[] Answers;
+    private int[] AnswerCount;
+    //private int quizCount = 1;
 
     ArrayList<ArrayList<String>> quizArray = new ArrayList<>();
 
@@ -52,10 +53,11 @@ public class TRAC_NGHIEM extends AppCompatActivity {
         this.overridePendingTransition(R.anim.activity_open_enter,
                 R.anim.activity_open_exit);
         ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setLogo(R.mipmap.ic_launcher);
-        actionBar.setDisplayUseLogoEnabled(true);
+        if(actionBar != null) {
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setLogo(R.mipmap.ic_launcher);
+            actionBar.setDisplayUseLogoEnabled(true);
+        }
         countLabel = findViewById(R.id.countLabel);
         //questionLabel = findViewById(R.id.countLabel);
         questionImage = findViewById(R.id.questionImage);
@@ -63,7 +65,9 @@ public class TRAC_NGHIEM extends AppCompatActivity {
         answerBtn2 = findViewById(R.id.answerBtn2);
         answerBtn3 = findViewById(R.id.answerBtn3);
         answerBtn4 = findViewById(R.id.answerBtn4);
-
+        //answerBtn5 = findViewById(R.id.answerBtn5);
+        Answers = new String[5];
+        AnswerCount = new int[4];
         // Create quizArray from quizData.
         for (String[] quizDatum : quizData) {
             // Prepare array.
@@ -73,7 +77,7 @@ public class TRAC_NGHIEM extends AppCompatActivity {
             tmpArray.add(quizDatum[2]); // Choice 2
             tmpArray.add(quizDatum[3]); // Choice 3
             tmpArray.add(quizDatum[4]); // Choice 4
-
+            //tmpArray.add(quizDatum[5]); // Choice 5
             // Add tmpArray to quizArray.
             quizArray.add(tmpArray);
         }
@@ -98,9 +102,13 @@ public class TRAC_NGHIEM extends AppCompatActivity {
         //questionLabel.setText(quiz.get(0));
         // Update question.
         countLabel.setText(quiz.get(0));
-        rightAnswer = quiz.get(1);
+        Answers[0] = quiz.get(1);
+        Answers[1] = quiz.get(2);
+        Answers[2] = quiz.get(3);
+        Answers[3] = quiz.get(4);
+        //Answers[4] = quiz.get(5);
 
-        // Remove "Image Name" from quiz and shuffle choices.
+        // Remove "Question" from quiz and shuffle choices.
         quiz.remove(0);
         Collections.shuffle(quiz);
 
@@ -109,7 +117,7 @@ public class TRAC_NGHIEM extends AppCompatActivity {
         answerBtn2.setText(quiz.get(1));
         answerBtn3.setText(quiz.get(2));
         answerBtn4.setText(quiz.get(3));
-
+        //answerBtn5.setText(quiz.get(4));
         // Remove this quiz from quizArray.
         quizArray.remove(randomNum);
 
@@ -121,43 +129,54 @@ public class TRAC_NGHIEM extends AppCompatActivity {
         Button answerBtn = findViewById(view.getId());
         String btnText = answerBtn.getText().toString();
 
-        String alertTitle;
-
-        if (btnText.equals(rightAnswer)) {
-            // Correct!!
-            //alertTitle = "Correct!";
-            rightAnswerCount++;
-
-        } else {
-            // Wrong
-            //alertTitle = "Wrong...";
+        //String alertTitle;
+        if (btnText.equals(Answers[0])) {
+            AnswerCount[0]++;
+        } else if (btnText.equals(Answers[1]))
+        {
+            AnswerCount[1]++;
+        } else if (btnText.equals(Answers[2]))
+        {
+            AnswerCount[2]++;
+        } else if (btnText.equals(Answers[3]))
+        {
+            AnswerCount[3]++;
+        } else
+        {
+            AnswerCount[4]++;
         }
 
-        // Create Dialog.
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle(alertTitle);
-//        builder.setMessage("Answer : " + rightAnswer);
-//        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i) {
-                if (quizArray.size() < 1) {
-                    // quizArray is empty.
-                    showResult();
-
-                } else {
-                    quizCount++;
-                    showNextQuiz();
-                }
-//            }
-//        });
-//        builder.setCancelable(false);
-//        builder.show();
+        if (quizArray.size() < 1) {
+                // quizArray is empty.
+                showResult();
+            } else {
+                //quizCount++;
+                showNextQuiz();
+        }
     }
 
     public void showResult() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Result");
-        builder.setMessage(rightAnswerCount + " / 5");
+        int max = 0;
+        for (int i : AnswerCount) {
+            if (i > max) {
+                max = i;
+            }
+        }
+        if (max == AnswerCount[0]) {
+            builder.setMessage("Chúc mừng bạn phù hợp với Ngôn ngữ học");
+        } else if (max == AnswerCount[1])
+        {
+            builder.setMessage("Chúc mừng bạn phù hợp với Công nghệ thông tin");
+        } else if (max == AnswerCount[2])
+        {
+            builder.setMessage("Chúc mừng bạn phù hợp với Kinh tế");
+        }
+        else
+        {
+            builder.setMessage("Chúc mừng bạn phù hợp với Luật");
+        }
         builder.setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

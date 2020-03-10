@@ -63,5 +63,12 @@
             android:text="@string/answer1_d"
             android:layout_marginTop="6dp"
             android:onClick="checkAnswer"/>
+<!--        <Button-->
+<!--            android:id="@+id/answerBtn5"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:text="@string/answer1_e"-->
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:onClick="checkAnswer"/>-->
     </LinearLayout>
 </ScrollView>

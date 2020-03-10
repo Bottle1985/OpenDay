@@ -38,10 +38,12 @@ public class SUKIEN extends AppCompatActivity {
         this.overridePendingTransition(R.anim.activity_open_enter,
                 R.anim.activity_open_exit);
         ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setLogo(R.mipmap.ic_launcher);
-        actionBar.setDisplayUseLogoEnabled(true);
+        if(actionBar != null)
+        {
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setLogo(R.mipmap.ic_launcher);
+            actionBar.setDisplayUseLogoEnabled(true);
+        }
         // Load data from database
         // get reference to 'events' node
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
