@@ -20,9 +20,11 @@ public class webview extends AppCompatActivity {
         this.overridePendingTransition(R.anim.translucent_enter,
                 R.anim.translucent_exit);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setLogo(R.mipmap.ic_launcher);
-        actionBar.setDisplayUseLogoEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setLogo(R.mipmap.ic_launcher);
+            actionBar.setDisplayUseLogoEnabled(true);
+        }
         webView = (WebView)findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("http://pou.edu.vn/bophants/news/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2019.610");

@@ -32,10 +32,11 @@ public class event_info extends AppCompatActivity {
         this.overridePendingTransition(R.anim.fade_in,
                 R.anim.fade_out);
         ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setLogo(R.mipmap.ic_launcher);
-        actionBar.setDisplayUseLogoEnabled(true);
+        if(actionBar != null) {
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setLogo(R.mipmap.ic_launcher);
+            actionBar.setDisplayUseLogoEnabled(true);
+        }
         eventname = findViewById(R.id.event_name);
         eventsummary = findViewById(R.id.event_summary);
         eventplace = findViewById(R.id.event_place);
