@@ -12,19 +12,6 @@ import android.widget.TextView;
 public class GT_KHOA extends AppCompatActivity {
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId())
-        {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
-
-            default:break;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gt__khoa);
@@ -38,8 +25,6 @@ public class GT_KHOA extends AppCompatActivity {
             actionBar.setLogo(R.mipmap.ic_launcher);
             actionBar.setDisplayUseLogoEnabled(true);
         }
-
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
         switch (KHOA.khoa){
             case 1: {
                 TenKhoa.setText(R.string.khoa01);

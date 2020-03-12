@@ -4,15 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cornflower_blue"
+    android:background="@drawable/bg_login"
     tools:context=".Register">
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="80dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:background="@drawable/custom_textview"
+        android:padding="10dp"
         android:gravity="center"
         android:text="Đăng ký tài khoản"
         android:textSize="24sp"
@@ -25,49 +30,91 @@
         android:id="@+id/reg_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/custom_edittext"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/et_bg"
+        android:padding="10dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Họ và Tên"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        tools:layout_editor_absoluteX="100dp" />
+        android:hint="Họ và Tên"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
         android:id="@+id/reg_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:autofillHints=""
-        android:background="@drawable/custom_edittext"
+        android:background="@drawable/et_bg"
+        android:padding="10dp"
         android:ems="10"
         android:inputType="textEmailSubject"
-        android:text="Email"
-        app:layout_constraintTop_toBottomOf="@+id/reg_name"
-        tools:layout_editor_absoluteX="98dp" />
+        android:hint="Email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_name" />
 
     <EditText
         android:id="@+id/reg_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/custom_edittext"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/et_bg"
+        android:padding="10dp"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="Password"
-        app:layout_constraintTop_toBottomOf="@+id/reg_email"
-        tools:layout_editor_absoluteX="62dp" />
+        android:hint="Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_email" />
+    <EditText
+        android:id="@+id/reg_repass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/et_bg"
+        android:padding="10dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Nhập lại Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_pass" />
 
     <EditText
         android:id="@+id/reg_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/custom_edittext"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/et_bg"
+        android:padding="10dp"
         android:ems="10"
         android:inputType="phone"
-        app:layout_constraintTop_toBottomOf="@+id/reg_pass"
-        tools:layout_editor_absoluteX="99dp" />
+        android:hint="Số điện thoại"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_repass" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -79,23 +126,23 @@
         tools:layout_editor_absoluteX="47dp">
 
         <Button
-            android:id="@+id/btn_reg "
+            android:id="@+id/btn_reg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/btn_bg"
             android:text="Đăng Ký " />
 
         <Button
-            android:id="@+id/btn_exit "
+            android:id="@+id/btn_exit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="30dp"
             android:layout_weight="1"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/btn_bg"
             android:text="Hủy " />
     </LinearLayout>
 
@@ -107,7 +154,7 @@
         android:gravity="center"
         android:lineSpacingExtra="8sp"
         android:text="Bạn đã có tài khoản? Đăng Nhập!"
-        android:textColor="@color/greenYellow"
+        android:textColor="@color/green"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
