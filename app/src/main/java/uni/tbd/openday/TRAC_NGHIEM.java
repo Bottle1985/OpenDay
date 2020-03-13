@@ -8,7 +8,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+//import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.Random;
 
 public class TRAC_NGHIEM extends AppCompatActivity {
     private TextView countLabel;
-    private ImageView questionImage;
+//    private ImageView questionImage;
 
     private Button answerBtn1;
     private Button answerBtn2;
@@ -41,10 +41,22 @@ public class TRAC_NGHIEM extends AppCompatActivity {
             {"What are your values?", "I'm ambitious and will work hard to succeed", "I want a good work/life balance", "I want to work at something I'm passionate about", "I want to develop something that will help others"},
             {"Are there jobs available in your area?", "Yes. Lots.", "Some but it's competative", "No but I'm willing to move", "Hardly any in my field"},
             {"Do you tend to be more introverted or extroverted?", "Completely introverted", "Absolutely extroverted", "More extroverted, but a little introverted", "More introverted, but a little extroverted"},
-            {"How do you feel about growth opportunities within work?", "I don't mind reaching a high pleateau", "I'm comfortable at any level", "I want to win at everything I do", "I must succeed everytime"},
+            {"How do you feel about growth opportunities within work?", "I don't mind reaching a high plateau", "I'm comfortable at any level", "I want to win at everything I do", "I must succeed everytime"},
             {"Which best describes your personality?", "High functioning, friendly", "Logical and reasonable", "Free thinking, quirky", "Smart, thinking ahead of everyone else", "Innovative, ruthless"},
     };
-
+    String[][] quizDataVN = {
+            // {"Question", "Choice 1", "Choice 2", "Choice 3", "Choice 4", "Choice 5"}
+            {"Bạn quan tâm điều gì nhất?", "Sự đa dạng của các nền văn hóa ",  "Mọi thứ hoạt động như thế nào", "Nền kinh tế", "Cách mọi người thể hiện bản thân", "Tin tức"},
+            {"Bạn thích làm việc nhóm hay cá nhân?",  "Như một đội","Như một cá nhân", "Cả 2 kiểu", "Một đối một với người khác"},
+            {"Kĩ năng nào là tốt nhất của bạn",  "Tiếp thu nhanh", "Tìm ra giải pháp cho các vấn đề", "Lập kế hoạch và tổ chức","Khả năng giải thích và lý luận"},
+            {"Mức lương nào sẽ làm bạn hài lòng?", "+5,000,000đ", "+10,000,000đ", "15,0000,000đ", "+20,000,000đ", "Bao nhiêu cũng được miễn là sống thoải mái"},
+            {"Bạn có thích du lịch kết hợp công việc hay không?", "Chắc chắn rồi, đó là vé máy bay miễn phí", "Không đời nào", "Sao cũng được", "Thỉnh thoảng thôi"},
+            {"Điều gì quan trọng đối với bạn?", "Tôi muốn làm điều mình đam mê", "Tôi có quyết tâm và sẽ làm việc chăm chỉ để thành công", "Tôi muốn cân bằng công việc và cuộc sống",  "Tôi muốn làm gì đó giúp người khác"},
+            {"Có nhu cầu việc làm trong khu vực của bạn hay không?", "Không nhưng tôi sẵn sàng di chuyển chỗ ở",  "Một số và có cạnh tranh mới được nhận", "Có, rất nhiều", "Hầu như không có lĩnh vực của tôi"},
+            {"Bạn sống nội tâm hay hướng ngoại?", "Hoàn toàn hướng ngoại", "Hoàn toàn hướng nội", "Hướng ngoại hơn, hướng nội một chút", "Hướng nội hơn, hướng ngoại một chút"},
+            {"Bạn cảm thấy thế nào về cơ hội phát triển trong công việc?","Tôi phải thành công mọi lúc","Tôi thoải mái ở mọi vị trí",  "Tôi sẵn sàng đạt vị trí cao nhất",  "Tôi muốn giành chiến thắng ở mọi thứ tôi làm"},
+            {"Tính cách nổi trội của bạn?", "Hoạt bát, thân thiện", "Suy nghĩ có logic và hợp lý", "Thông minh, đi trước mọi người", "Sáng tạo, không khoan nhượng", "Tự do và cá tính"},
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +72,7 @@ public class TRAC_NGHIEM extends AppCompatActivity {
         }
         countLabel = findViewById(R.id.countLabel);
         //questionLabel = findViewById(R.id.countLabel);
-        questionImage = findViewById(R.id.questionImage);
+//        questionImage = findViewById(R.id.questionImage);
         answerBtn1 = findViewById(R.id.answerBtn1);
         answerBtn2 = findViewById(R.id.answerBtn2);
         answerBtn3 = findViewById(R.id.answerBtn3);
@@ -69,7 +81,7 @@ public class TRAC_NGHIEM extends AppCompatActivity {
         Answers = new String[5];
         AnswerCount = new int[4];
         // Create quizArray from quizData.
-        for (String[] quizDatum : quizData) {
+        for (String[] quizDatum : quizDataVN) {
             // Prepare array.
             ArrayList<String> tmpArray = new ArrayList<>();
             tmpArray.add(quizDatum[0]); // Image Name
