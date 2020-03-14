@@ -26,9 +26,11 @@ public class event_add extends AppCompatActivity {
         this.overridePendingTransition(R.anim.fade_in,
                 R.anim.fade_out);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setLogo(R.mipmap.ic_launcher);
-        actionBar.setDisplayUseLogoEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setLogo(R.mipmap.ic_launcher);
+            actionBar.setDisplayUseLogoEnabled(true);
+        }
         editName = (EditText) findViewById(R.id.edit_event_name);
         editSummary = (EditText) findViewById(R.id.edit_event_summary);
         editPlace = (EditText) findViewById(R.id.edit_event_place);

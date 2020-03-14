@@ -49,7 +49,7 @@ public class TRAC_NGHIEM extends AppCompatActivity {
             {"Bạn quan tâm điều gì nhất?", "Sự đa dạng của các nền văn hóa ",  "Mọi thứ hoạt động như thế nào", "Nền kinh tế", "Cách mọi người thể hiện bản thân", "Tin tức"},
             {"Bạn thích làm việc nhóm hay cá nhân?",  "Như một đội","Như một cá nhân", "Cả 2 kiểu", "Một đối một với người khác"},
             {"Kĩ năng nào là tốt nhất của bạn",  "Tiếp thu nhanh", "Tìm ra giải pháp cho các vấn đề", "Lập kế hoạch và tổ chức","Khả năng giải thích và lý luận"},
-            {"Mức lương nào sẽ làm bạn hài lòng?", "+5,000,000đ", "+10,000,000đ", "15,0000,000đ", "+20,000,000đ", "Bao nhiêu cũng được miễn là sống thoải mái"},
+            {"Mức lương nào sẽ làm bạn hài lòng?", "+5,000,000đ", "+10,000,000đ", "+15,0000,000đ", "+20,000,000đ", "Bao nhiêu cũng được miễn là sống thoải mái"},
             {"Bạn có thích du lịch kết hợp công việc hay không?", "Chắc chắn rồi, đó là vé máy bay miễn phí", "Không đời nào", "Sao cũng được", "Thỉnh thoảng thôi"},
             {"Điều gì quan trọng đối với bạn?", "Tôi muốn làm điều mình đam mê", "Tôi có quyết tâm và sẽ làm việc chăm chỉ để thành công", "Tôi muốn cân bằng công việc và cuộc sống",  "Tôi muốn làm gì đó giúp người khác"},
             {"Có nhu cầu việc làm trong khu vực của bạn hay không?", "Không nhưng tôi sẵn sàng di chuyển chỗ ở",  "Một số và có cạnh tranh mới được nhận", "Có, rất nhiều", "Hầu như không có lĩnh vực của tôi"},
