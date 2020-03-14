@@ -1,8 +1,12 @@
 package uni.tbd.openday.Activity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,7 +20,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import uni.tbd.openday.ActivityBuilding;
 import uni.tbd.openday.Data.EventData;
+import uni.tbd.openday.KHOA;
 import uni.tbd.openday.R;
 import uni.tbd.openday.SUKIEN;
 
@@ -25,6 +31,8 @@ public class event_info extends AppCompatActivity {
     private EventData event;
     TextView eventname, eventsummary, eventplace, eventtime, eventlecturer;
     ImageView eventimg;
+    Button vitrievent;
+    int idvitri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +51,7 @@ public class event_info extends AppCompatActivity {
         eventtime = findViewById(R.id.event_time);
         eventlecturer = findViewById(R.id.event_lecturer);
         eventimg = findViewById(R.id.img_event);
+        vitrievent = findViewById(R.id.btn_vitri);
         // Load data from database
         // get reference to 'events' node
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
@@ -75,17 +84,42 @@ public class event_info extends AppCompatActivity {
         mFirebaseDatabase.addValueEventListener(postListener);
         // End load data from database
 
+        vitrievent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (idvitri){
+                    case 0:{
+                        Intent myIntent = new Intent(v.getContext(), BuildingInfo.class);
+                        startActivityForResult(myIntent, 0);
+                        break;
+                    }
+                    case 1:{
+                        Intent myIntent = new Intent(v.getContext(), BuildingInfo.class);
+                        startActivityForResult(myIntent, 0);
+                        break;
+                    }
+                    case 2:{
+                        Intent myIntent = new Intent(v.getContext(), BuildingInfo.class);
+                        startActivityForResult(myIntent, 0);
+                        break;
+                    }
+                }
+            }
+        });
         switch (SUKIEN.id_sukien){
             case 0:{
                 eventimg.setImageResource(R.drawable.sukien0);
+                idvitri = ActivityBuilding.id_building;
                 break;
             }
             case 1:{
                 eventimg.setImageResource(R.drawable.sukien1);
+                idvitri = ActivityBuilding.id_building;
                 break;
             }
             case 2:{
                 eventimg.setImageResource(R.drawable.sukien2);
+                idvitri = ActivityBuilding.id_building;
                 break;
             }
         }
