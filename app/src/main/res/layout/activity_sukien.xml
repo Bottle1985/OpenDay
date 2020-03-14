@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/custom_textview"
-        android:padding="5dp"
+        android:padding="10dp"
         android:text="@string/danh_sach_su_kien"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
@@ -28,6 +28,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_event"
+        android:padding="8dp"
+        android:background="@drawable/custom_button"
         android:onClick="add_event_click"
         />
 </LinearLayout>

@@ -10,8 +10,6 @@
     <string name="khoa01"> Khoa Công nghệ thông tin</string>
     <string name="khoa02"> Khoa Ngôn ngữ, Du lịch \n Và Văn hóa</string>
     <string name="khoa03"> Khoa Kinh tế và Luật</string>
-
-    <string name="todo">TODO</string>
     <string name="nganh0">NGÀNH LUẬT</string>
     <string name="nganh1">NGÀNH ĐÔNG PHƯƠNG HỌC </string>
     <string name="nganh2">NGÀNH DU LỊCH </string>
@@ -206,4 +204,5 @@
     <string name="sign_in_with_facebook">Sign in with Facebook</string>
     <string name="or">or</string>
     <string name="logo">logo</string>
+    <string name="todo">TODO</string>
 </resources>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bg_login"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".KHOA">
 
@@ -13,28 +13,41 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
         android:src="@drawable/logo"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@drawable/custom_textview"
-        android:padding="5dp"
         android:gravity="center"
+        android:padding="5dp"
         android:text="@string/ds_khoa"
         android:textColor="@color/black"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/bt_khoa01"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/custom_button"
         android:drawableStart="@mipmap/ic_internet"
         android:drawableLeft="@mipmap/ic_internet"
@@ -46,14 +59,21 @@
         android:paddingBottom="5dp"
         android:text="@string/khoa01"
         android:textColor="#000000"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/bt_khoa02"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/custom_button"
         android:drawableStart="@mipmap/ic_passenger"
         android:drawableLeft="@mipmap/ic_passenger"
@@ -65,14 +85,21 @@
         android:paddingBottom="5dp"
         android:text="@string/khoa02"
         android:textColor="#000000"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_khoa01" />
 
     <Button
         android:id="@+id/bt_khoa03"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/custom_button"
         android:drawableStart="@mipmap/ic_money"
         android:drawableLeft="@mipmap/ic_money"
@@ -84,6 +111,9 @@
         android:paddingBottom="5dp"
         android:text="@string/khoa03"
         android:textColor="#000000"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_khoa02" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
