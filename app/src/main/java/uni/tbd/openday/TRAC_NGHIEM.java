@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,10 +16,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+import uni.tbd.openday.Activity.BuildingInfo;
+
 public class TRAC_NGHIEM extends AppCompatActivity {
     private TextView countLabel;
 //    private ImageView questionImage;
-
+    static int idkhoa, mode= 0;
     private Button answerBtn1;
     private Button answerBtn2;
     private Button answerBtn3;
@@ -168,8 +171,10 @@ public class TRAC_NGHIEM extends AppCompatActivity {
     }
 
     public void showResult() {
+        String thongbao;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Result");
+        builder.setTitle("Kết quả");
+        builder.setCancelable(false);
         int max = 0;
         for (int i : AnswerCount) {
             if (i > max) {
@@ -177,18 +182,41 @@ public class TRAC_NGHIEM extends AppCompatActivity {
             }
         }
         if (max == AnswerCount[0]) {
-            builder.setMessage("Chúc mừng bạn phù hợp với Ngôn ngữ học");
+            thongbao = "Chúc mừng bạn phù hợp với Ngôn ngữ học";
+            builder.setMessage(thongbao);
         } else if (max == AnswerCount[1])
         {
-            builder.setMessage("Chúc mừng bạn phù hợp với Công nghệ thông tin");
+            thongbao = "Chúc mừng bạn phù hợp với Công nghệ thông tin";
+            builder.setMessage(thongbao);
         } else if (max == AnswerCount[2])
         {
-            builder.setMessage("Chúc mừng bạn phù hợp với Kinh tế");
+            thongbao = "Chúc mừng bạn phù hợp với Kinh tế";
+            builder.setMessage(thongbao);
         }
         else
         {
-            builder.setMessage("Chúc mừng bạn phù hợp với Luật");
+            thongbao = "Chúc mừng bạn phù hợp với Luật";
+            builder.setMessage(thongbao);
         }
+        builder.setNeutralButton("Ngành phù hợp", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                boolean check1 = thongbao.contains("Công nghệ thông tin");
+                boolean check2 = thongbao.contains("Ngôn ngữ học");
+//                boolean check3 = thongbao.contains("Kinh tế");
+                if (check1){
+                    mode = 1;
+                    idkhoa = 1;
+                }else if(check2){
+                    mode = 1;
+                    idkhoa = 2;
+                }else {
+                    mode = 1;
+                    idkhoa = 3;
+                }
+                startActivity(new Intent (TRAC_NGHIEM.this,GT_KHOA.class));
+            }
+        });
         builder.setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

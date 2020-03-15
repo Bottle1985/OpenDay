@@ -25,22 +25,43 @@ public class GT_KHOA extends AppCompatActivity {
             actionBar.setLogo(R.mipmap.ic_launcher);
             actionBar.setDisplayUseLogoEnabled(true);
         }
-        switch (KHOA.khoa){
-            case 1: {
-                TenKhoa.setText(R.string.khoa01);
-                TitleKhoa.setText(R.string.k_cntt1);
-                break;
+        if (TRAC_NGHIEM.mode == 0){
+            switch (KHOA.khoa){
+                case 1: {
+                    TenKhoa.setText(R.string.khoa01);
+                    TitleKhoa.setText(R.string.k_cntt1);
+                    break;
+                }
+                case 2:{
+                    TenKhoa.setText(R.string.khoa02);
+                    TitleKhoa.setText(R.string.k_nndlvh1);
+                    break;
+                }
+                case 3:{
+                    TenKhoa.setText(R.string.khoa03);
+                    TitleKhoa.setText(R.string.k_ktl1);
+                    break;
+                }
             }
-            case 2:{
-                TenKhoa.setText(R.string.khoa02);
-                TitleKhoa.setText(R.string.k_nndlvh1);
-                break;
-            }
-            case 3:{
-                TenKhoa.setText(R.string.khoa03);
-                TitleKhoa.setText(R.string.k_ktl1);
-                break;
+        }else {
+            switch (TRAC_NGHIEM.idkhoa){
+                case 1: {
+                    TenKhoa.setText(R.string.khoa01);
+                    TitleKhoa.setText(R.string.k_cntt1);
+                    break;
+                }
+                case 2:{
+                    TenKhoa.setText(R.string.khoa02);
+                    TitleKhoa.setText(R.string.k_nndlvh1);
+                    break;
+                }
+                case 3:{
+                    TenKhoa.setText(R.string.khoa03);
+                    TitleKhoa.setText(R.string.k_ktl1);
+                    break;
+                }
             }
         }
+
     }
 }

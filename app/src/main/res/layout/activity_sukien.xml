@@ -33,6 +33,5 @@
         android:onClick="add_event_click"
         android:padding="8dp"
         android:text="@string/add_event"
-
         android:visibility="invisible" />
 </LinearLayout>
