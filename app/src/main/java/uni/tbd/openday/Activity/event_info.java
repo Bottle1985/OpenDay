@@ -33,6 +33,7 @@ public class event_info extends AppCompatActivity {
     ImageView eventimg;
     Button vitrievent;
     int idvitri;
+    public static int id_building, mode = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +71,20 @@ public class event_info extends AppCompatActivity {
                         eventplace.setText(event.EventPlace);
                         eventtime.setText(event.EventTime);
                         eventlecturer.setText(event.EventLecturer);
+                        boolean isPresent1 = event.EventPlace.contains("101");
+                        boolean isPresent2 = event.EventPlace.contains(getResources().getString(R.string.Thuc_hanh));
+                        if (isPresent1){
+                            mode = 1;
+                            idvitri = 0;
+                        }
+                        else if (isPresent2){
+                            mode = 1;
+                            idvitri = 1;
+                        }
+                        else{
+                            mode = 1;
+                            idvitri = 2;
+                        }
                     }
                     icount++;
               }
@@ -91,16 +106,19 @@ public class event_info extends AppCompatActivity {
                     case 0:{
                         Intent myIntent = new Intent(v.getContext(), BuildingInfo.class);
                         startActivityForResult(myIntent, 0);
+                        id_building = 0;
                         break;
                     }
                     case 1:{
                         Intent myIntent = new Intent(v.getContext(), BuildingInfo.class);
                         startActivityForResult(myIntent, 0);
+                        id_building = 1;
                         break;
                     }
                     case 2:{
                         Intent myIntent = new Intent(v.getContext(), BuildingInfo.class);
                         startActivityForResult(myIntent, 0);
+                        id_building = 2;
                         break;
                     }
                 }
@@ -109,17 +127,14 @@ public class event_info extends AppCompatActivity {
         switch (SUKIEN.id_sukien){
             case 0:{
                 eventimg.setImageResource(R.drawable.sukien0);
-                idvitri = ActivityBuilding.id_building;
                 break;
             }
             case 1:{
                 eventimg.setImageResource(R.drawable.sukien1);
-                idvitri = ActivityBuilding.id_building;
                 break;
             }
             case 2:{
                 eventimg.setImageResource(R.drawable.sukien2);
-                idvitri = ActivityBuilding.id_building;
                 break;
             }
         }
