@@ -12,45 +12,45 @@
         android:id="@+id/edit_event_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_margin="10dp"
+        android:autofillHints=""
         android:background="@drawable/custom_edittext"
-        android:inputType="textPersonName"
+        android:ems="10"
         android:hint="@string/event_name"
-        android:autofillHints="" />
+        android:inputType="textShortMessage" />
 
     <EditText
         android:id="@+id/edit_event_summary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_margin="10dp"
+        android:autofillHints=""
         android:background="@drawable/custom_edittext"
-        android:inputType="textPersonName"
+        android:ems="10"
         android:hint="@string/event_summary"
-        android:autofillHints="" />
+        android:inputType="textLongMessage" />
 
     <EditText
         android:id="@+id/edit_event_place"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_margin="10dp"
+        android:autofillHints=""
         android:background="@drawable/custom_edittext"
-        android:inputType="textPersonName"
+        android:ems="10"
         android:hint="@string/event_place"
-        android:autofillHints="" />
+        android:inputType="textShortMessage" />
 
     <EditText
         android:id="@+id/edit_event_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_margin="10dp"
+        android:autofillHints=""
         android:background="@drawable/custom_edittext"
-        android:inputType="time"
+        android:ems="10"
         android:hint="@string/event_time"
-        android:autofillHints="" />
+        android:inputType="textShortMessage" />
 
     <EditText
         android:id="@+id/edit_event_lecturer"

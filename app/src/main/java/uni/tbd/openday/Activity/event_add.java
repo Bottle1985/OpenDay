@@ -68,5 +68,6 @@ public class event_add extends AppCompatActivity {
         if (TextUtils.isEmpty(eventId)) {
             createEvent(name, summary,place,time,lecturer);
         }
+        finish();
     }
 }
