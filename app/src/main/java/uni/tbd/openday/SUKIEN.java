@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -44,6 +45,9 @@ public class SUKIEN extends AppCompatActivity {
             actionBar.setLogo(R.mipmap.ic_launcher);
             actionBar.setDisplayUseLogoEnabled(true);
         }
+        Button event_click = findViewById(R.id.event_add);
+        if(Config.BUILD_TYPE!=0)
+            event_click.setVisibility(View.INVISIBLE);
         // Load data from database
         // get reference to 'events' node
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
