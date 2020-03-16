@@ -46,8 +46,8 @@ public class SUKIEN extends AppCompatActivity {
             actionBar.setDisplayUseLogoEnabled(true);
         }
         Button event_click = findViewById(R.id.event_add);
-        if(Config.BUILD_TYPE!=0)
-            event_click.setVisibility(View.INVISIBLE);
+        if(Config.BUILD_TYPE==0)
+            event_click.setVisibility(View.VISIBLE);
         // Load data from database
         // get reference to 'events' node
         FirebaseDatabase mFirebaseInstance = FirebaseDatabase.getInstance();
