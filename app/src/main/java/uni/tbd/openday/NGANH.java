@@ -36,18 +36,16 @@ public class NGANH extends AppCompatActivity {
         }
         final ListView list = findViewById(R.id.listview_nganh);
         ArrayList<NganhData> arrayList = new ArrayList<NganhData>();
-        arrayList.add(new NganhData(getResources().getString(R.string.nganh0), "", R.drawable.luat));
-        arrayList.add(new NganhData(getResources().getString(R.string.nganh1), "", R.drawable.dongphuonghoc));
-        arrayList.add(new NganhData(getResources().getString(R.string.nganh2), "", R.drawable.dulich));
-        arrayList.add(new NganhData(getResources().getString(R.string.nganh3), "", R.drawable.cntt));
-        arrayList.add(new NganhData(getResources().getString(R.string.nganh4), "", R.drawable.ngonguanh));
-        arrayList.add(new NganhData(getResources().getString(R.string.nganh5), "", R.drawable.ketoan));
-        arrayList.add(new NganhData(getResources().getString(R.string.nganh6), "", R.drawable.taichinhnganhang));
-        arrayList.add(new NganhData(getResources().getString(R.string.nganh7), "", R.drawable.quantrikinhdoanh));
-
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh0), "", R.drawable.luat2));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh1), "", R.drawable.dongphuonghoc2));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh2), "", R.drawable.dulich2));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh3), "", R.drawable.cntt2));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh4), "", R.drawable.ngonnguanh2));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh5), "", R.drawable.ketoan2));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh6), "", R.drawable.tcnh2));
+        arrayList.add(new NganhData(getResources().getString(R.string.nganh7), "", R.drawable.qtkd2));
         NganhAdapter nganhAdapter = new NganhAdapter(this, arrayList);
         list.setAdapter(nganhAdapter);
-
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {

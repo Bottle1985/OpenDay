@@ -25,19 +25,14 @@
     <string name="ds_khoa">DANH SÁCH CÁC KHOA </string>
     <string name="ds_nganh">DANH SÁCH CÁC NGÀNH</string>
     <string name="k_cntt5">
-        1. Xây dựng nội dung chương trình, kế hoạch giảng dạy, học tập và chủ trì tổ chức quá trình đào tạo các ngành thuộc phạm vi quản lý; Tổ chức thực hiện các hoạt động thực tập, thực tế, ngoại khóa cho người học và các hoạt động giáo dục khác trong chương trình theo kế hoạch giảng dạy chung của nhà trường.\n\n
-        2. Quản lý chất lượng, nội dung, phương pháp giảng dạy, kiểm tra, đánh giá kết quả học tập của người học. Quản lý điểm thi kết thúc học phần của sinh viên thuộc khoa quản lý.\n\n
-        3. Quản lý và xây dựng kế hoạch phát triển đội ngũ giảng viên, cán bộ, nhân viên nhằm không ngừng phát triển ngành đào tạo theo sự phân cấp của Trường. Có trách nhiệm lựa chọn mời giảng viên tham gia giảng dạy những học phần của khoa còn thiếu người giảng.\n\n
-        4. Quản lý và tổ chức khai thác cơ sở vật chất kỹ thuật, tài sản do Trường giao có hiệu quả và tiết kiệm.\n \n
-        5. Xét và đề nghị khen thưởng, kỷ luật và giải quyết phép cho cán bộ, giảng viên, nhân viên trong khoa theo quy định của nhà trường.\n\n
-        6. Chủ động phối hợp với phòng Đào tạo và Công tác sinh viên trong việc hợp tác liên kết đào tạo với các trường trong và ngoài nước. Phối hợp phát triển các chương trình hợp tác Quốc tế.\n\n
-        7. Tổ chức biên soạn tài liệu giảng dạy do Hiệu trưởng giao. Tổ chức nghiên cứu cải tiến phương pháp giảng dạy, học tập; đề xuất xây dựng kế hoạch bổ sung, bảo trì thiết bị dạy - học, thực hành và thực nghiệm khoa học.\n\n
-        8. Xây dựng kế hoạch bồi dưỡng nâng cao trình độ chuyên môn, nghiệp vụ, chính trị, tư tưởng, đạo đức, lối sống cho cán bộ, giảng viên và nhân viên thuộc khoa.\n\n
-        9. Chịu trách nhiệm về chất lượng đối với các chuyên ngành đào tạo trước Hiệu trưởng.\n\n
-        10. Quản lý công tác nghiên cứu khoa học trong phạm vi khoa.\n\n
-        11. Quản lý công tác giáo viên chủ nhiệm và công tác sinh viên thuộc Khoa.\n\n
-        12. Phối hợp với các đơn vị chức năng thực hiện các công tác phát sinh trong quá trình hoạt động của nhà trường.\n\n
-        14.Những nhiệm vụ khác theo sự phân công của Hiệu trưởng.</string>
+        ✔Theo Bộ Thông tin và Truyền thông, tới năm 2025, Việt Nam thiếu hụt hơn 800.000 nhân sự IT. Ngành có mức thu nhập cao thứ 3, mức lương phổ biến bắt đầu từ mới ra trường, chưa có kinh nghiệm đến nhân viên là từ 15 đến 30 triệu đồng, quản lý từ 2500 đến 3000$/tháng.\n
+        🔸Với sự điều hành của Tiến sĩ Khoa học Tri thức (2014) tại JAIST Nhật Bản, Nguyễn Trùng Lập. Ông có trên 15 năm kinh nghiệm giảng dạy và làm dự án công nghệ thông tin.\n
+        🔹Trên 97% sinh viên IT của Đại học Thái Bình Dương có việc làm ngay khi ra trường.\n
+        🔸Sinh viên nắm vững kiến thức mới nhất về AI, IoT, điện toán đám mây, an toàn thông tin.\n
+        🔹Sinh viên IT còn được trang bị kiến thức tổng quát về giáo dục khai phóng để có khả năng tự học suốt đời, giải quyết vấn đề, tư duy phản biện, và đủ sức làm việc trong môi trường quốc tế.\n
+        🔸Đại học Thái Bình Dương đã thiết lập IT Space (mô phỏng môi trường làm việc như một doanh nghiệp IT) để sinh viên trải nghiệm thực tế bao gồm: quy trình, dự án thật và văn hóa doanh nghiệp.\n
+        🔹Đại học Quốc gia Jeju Hàn Quốc hỗ trợ trong nghiên cứu, đào tạo và thực hiện chương trình trao đổi sinh viên.\n
+        🎯Khoa Công Nghệ Thông Tin đại học Thái Bình Dương sẵn sàng đồng hành cùng các bạn chinh phục cơ hội này.</string>
     <string name="k_cntt3">Khoa có chức năng quản lý toàn diện công tác đào tạo, nghiên cứu khoa học; phối hợp các đơn vị chức năng làm công tác phát triển và bồi dưỡng đội ngũ cán bộ chuyên môn để phục vụ chiến lược đào tạo các ngành của khoa và các ngành khác có liên quan.\n
         Khoa là đơn vị trực tiếp quản lý các bộ môn và công tác sinh viên</string>
     <string name="k_cntt1">CHỨC NĂNG, NHIỆM VỤ KHOA DU LỊCH VÀ QUẢN TRỊ KINH DOANH</string>
@@ -150,7 +145,15 @@
         Chuyên viên tư vấn tài chính, nhân viên ngân hàng, nhân viên môi giới chứng khoán,… \n
         Nghiên cứu viên, Giảng viên, Thanh tra kinh tế,…
     </string>
-
+    <string name="lienhe">
+    👉Có thắc mắc, bạn hãy liên hệ ngay để được tư vấn ngành học phù hợp:\n
+    ☑️Thông tin chi tiết về ngành học tham khảo tại: https://bitly.com.vn/fj9CZ \n
+    🔸Gởi câu hỏi về cho đội ngũ tư vấn của TBD: \n
+    ☎️Hotline: 02583727147 \n
+    ✅Page: Trường Đại học Thái Bình Dương \n
+    🔹Web: www.tbd.edu.vn \n
+    📧 Email: phongtstt@tbd.edu.vn \n
+    </string>
     <string name="cach_nop_hs">
         Cách 1: Nộp hồ sơ online: Thí sinh đăng ký xét tuyển trực tuyến tại Website: http://tbd.edu.vn/bophants/sp/xet-tuyen-truc-tuyen.84\n
         Cách 2: Nộp chuyển phát nhanh qua đường bưu điện theo địa chỉ: Phòng Tư vấn, Tuyển sinh và Truyền thông Trường Đại học Thái Bình Dương - Số 08 Pasteur, TP. Nha Trang, Tỉnh Khánh Hòa. Điện thoại: 0983 375 456 \n
