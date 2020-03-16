@@ -61,6 +61,7 @@ public class GT_KHOA extends AppCompatActivity {
                     break;
                 }
             }
+            TRAC_NGHIEM.mode=0;
         }
 
     }

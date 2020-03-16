@@ -74,6 +74,7 @@ public class BuildingInfo  extends AppCompatActivity {
                 default:
                     break;
             }
+            event_info.mode=0;
         }
 
     }
