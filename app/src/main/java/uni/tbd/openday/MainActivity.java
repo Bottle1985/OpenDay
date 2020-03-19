@@ -8,6 +8,8 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -22,12 +24,15 @@ public class MainActivity extends AppCompatActivity {
     Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem;
     ViewFlipper viewFlipper;
     int [] arrHinh = {R.drawable.sukien0,R.drawable.sukien1,R.drawable.sukien2,R.drawable.sukien3};
+    Animation in, out;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Open activity list building
         ActionBar actionBar = getSupportActionBar();
+        in = AnimationUtils.loadAnimation(this,R.anim.fade_in);
+        out = AnimationUtils.loadAnimation(this,R.anim.fade_out);
         if(actionBar != null) {
             actionBar.setDisplayShowHomeEnabled(true);
             actionBar.setLogo(R.mipmap.ic_launcher);
@@ -39,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
             imageView.setImageResource(arrHinh[i]);
             viewFlipper.addView(imageView);
         }
+        viewFlipper.setInAnimation(in);
+        viewFlipper.setOutAnimation(out);
         viewFlipper.setFlipInterval(3000);
         viewFlipper.setAutoStart(true);
         sodo.setOnClickListener(new View.OnClickListener() {
