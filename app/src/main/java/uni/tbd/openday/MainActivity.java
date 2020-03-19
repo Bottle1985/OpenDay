@@ -10,7 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -18,7 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem;
-
+    ViewFlipper viewFlipper;
+    int [] arrHinh = {R.drawable.sukien0,R.drawable.sukien1,R.drawable.sukien2,R.drawable.sukien3};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayUseLogoEnabled(true);
         }
         AnhXa();
+        for (int i = 0;i< arrHinh.length;i++){
+            ImageView imageView = new ImageView(this);
+            imageView.setImageResource(arrHinh[i]);
+            viewFlipper.addView(imageView);
+        }
+        viewFlipper.setFlipInterval(3000);
+        viewFlipper.setAutoStart(true);
         sodo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), ActivityBuilding.class);
@@ -70,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void AnhXa(){
-
+        viewFlipper = (ViewFlipper) findViewById(R.id.viewflipper);
         sodo = (Button) findViewById(R.id.ButtonSoDo);
         khoa = (Button) findViewById(R.id.ButtonKhoa);
         nganh = (Button) findViewById(R.id.ButtonNganh);
