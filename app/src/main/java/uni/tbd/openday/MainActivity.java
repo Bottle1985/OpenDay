@@ -95,12 +95,6 @@ public class MainActivity extends AppCompatActivity {
         tuyensinh = (Button) findViewById(R.id.ButtonTuyenSinh);
         tracnghiem = (Button) findViewById(R.id.ButtonTracNghiem);
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
-
-        return super.onCreateOptionsMenu(menu);
-    }
     private void login(){
         final Dialog login = new Dialog(this);
         login.setContentView(R.layout.login);
@@ -126,49 +120,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
         login.show();
-    }
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.menu_login: {
-
-                login();
-                break;
-            }
-            case R.id.menu_setting: {
-
-                break;
-            }
-            case R.id.menu_email:
-                break;
-            case R.id.menu_phone:
-                break;
-            case R.id.menu_exit:
-                break;
-
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        getMenuInflater().inflate(R.menu.menu_language,menu);
-        menu.setHeaderTitle("Chọn ngôn ngữ");
-        menu.setHeaderIcon(R.mipmap.ic_vietnam);
-        super.onCreateContextMenu(menu, v, menuInfo);
-    }
-
-    @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.lang_en:{
-
-                break;
-            }
-            case R.id.lang_vi:{
-                break;
-            }
-        }
-        return super.onContextItemSelected(item);
     }
 }
