@@ -39,5 +39,6 @@ dependencies {
     // Add the Firebase SDK for Google Analytics
     implementation 'com.google.firebase:firebase-analytics:17.2.3'
     // Add the SDK for Firebase Cloud Messaging
-    implementation 'com.google.firebase:firebase-messaging:20.1.2'
+    implementation 'com.google.firebase:firebase-messaging:20.1.3'
+    implementation 'com.android.support:design:28.0.0'
 }

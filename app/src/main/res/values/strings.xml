@@ -4,6 +4,9 @@
     <string name="Su_kien"> Sự kiện</string>
     <string name="Nganh"> Ngành</string>
     <string name="Khoa"> Khoa</string>
+    <string name="nav_header_title">Thái Bình Dương</string>
+    <string name="nav_header_subtitle">tbd.edu.vn</string>
+    <string name="nav_header_desc">Navigation header</string>
     <string name="Giang_duong">TÒA NHÀ HÀNH CHÍNH VÀ GIẢNG ĐƯỜNG</string>
     <string name="Ky_tuc_xa"> KÝ TÚC XÁ</string>
     <string name="Thuc_hanh"> TÒA NHÀ ĐA NĂNG</string>

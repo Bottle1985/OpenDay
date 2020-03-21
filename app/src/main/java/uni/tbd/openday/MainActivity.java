@@ -19,12 +19,17 @@ import android.widget.ViewFlipper;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class MainActivity extends AppCompatActivity {
     Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem;
     ViewFlipper viewFlipper;
     int [] arrHinh = {R.drawable.sukien0,R.drawable.sukien1,R.drawable.sukien2,R.drawable.sukien3};
     Animation in, out;
+    Toolbar toolbar;
+    DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayUseLogoEnabled(true);
         }
         AnhXa();
+        ButtonAction();
+        ActionBar();
         for (int i = 0;i< arrHinh.length;i++){
             ImageView imageView = new ImageView(this);
             imageView.setImageResource(arrHinh[i]);
@@ -48,6 +55,21 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper.setOutAnimation(out);
         viewFlipper.setFlipInterval(3000);
         viewFlipper.setAutoStart(true);
+
+
+    }
+    private void ActionBar(){
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationIcon(android.R.drawable.ic_menu_sort_by_size);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+    }
+    private void ButtonAction(){
         sodo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), ActivityBuilding.class);
@@ -84,9 +106,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(myIntent, 0);
             }
         });
-
     }
     private void AnhXa(){
+        drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewflipper);
         sodo = (Button) findViewById(R.id.ButtonSoDo);
         khoa = (Button) findViewById(R.id.ButtonKhoa);
@@ -94,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         sukien = (Button) findViewById(R.id.ButtonSuKien);
         tuyensinh = (Button) findViewById(R.id.ButtonTuyenSinh);
         tracnghiem = (Button) findViewById(R.id.ButtonTracNghiem);
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
     }
     private void login(){
         final Dialog login = new Dialog(this);
