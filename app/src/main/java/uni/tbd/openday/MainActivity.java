@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper.setOutAnimation(out);
         viewFlipper.setFlipInterval(3000);
         viewFlipper.setAutoStart(true);
-
-
+        // For undone feature
+        viewFlipper.setVisibility(View.INVISIBLE);
     }
     private void ActionBar(){
         setSupportActionBar(toolbar);
