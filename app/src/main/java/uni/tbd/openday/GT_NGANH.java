@@ -54,7 +54,7 @@ public class GT_NGANH extends AppCompatActivity {
                     TenNganh.setText(R.string.nganh2);
                     MaNganh.setText(R.string.ma_nganh_du_lich);
                     GTNganh.setText(R.string.gt_nganh_du_lich);
-                    ChuyenNganh.setText(R.string.cac_chuyen_nganh_cntt);
+                    ChuyenNganh.setText(R.string.cac_chuyen_nganh_du_lich);
                     CoHoiViecLam.setText(R.string.co_hoi_vl_du_lich);
                     IMGNganh.setImageResource(R.drawable.dulich);
                     IMGXetTuyen.setImageResource(R.drawable.xt_du_lich);
