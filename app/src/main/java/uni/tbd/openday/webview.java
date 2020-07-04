@@ -27,7 +27,7 @@ public class webview extends AppCompatActivity {
         }
         webView = (WebView)findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://pou.edu.vn/bophants/news/thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2019.610");
+        webView.loadUrl("https://tbd.edu.vn/tuyen-sinh/phuong-an-tuyen-sinh-2020/");
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
     }

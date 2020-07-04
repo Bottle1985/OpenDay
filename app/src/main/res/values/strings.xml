@@ -28,14 +28,7 @@
     <string name="ds_khoa">DANH SÁCH CÁC KHOA </string>
     <string name="ds_nganh">DANH SÁCH CÁC NGÀNH</string>
     <string name="k_cntt5">
-        ✔Theo Bộ Thông tin và Truyền thông, tới năm 2025, Việt Nam thiếu hụt hơn 800.000 nhân sự IT. Ngành có mức thu nhập cao thứ 3, mức lương phổ biến bắt đầu từ mới ra trường, chưa có kinh nghiệm đến nhân viên là từ 15 đến 30 triệu đồng, quản lý từ 2500 đến 3000$/tháng.\n
-        🔸Với sự điều hành của Tiến sĩ Khoa học Tri thức (2014) tại JAIST Nhật Bản, Nguyễn Trùng Lập. Ông có trên 15 năm kinh nghiệm giảng dạy và làm dự án công nghệ thông tin.\n
-        🔹Trên 97% sinh viên IT của Đại học Thái Bình Dương có việc làm ngay khi ra trường.\n
-        🔸Sinh viên nắm vững kiến thức mới nhất về AI, IoT, điện toán đám mây, an toàn thông tin.\n
-        🔹Sinh viên IT còn được trang bị kiến thức tổng quát về giáo dục khai phóng để có khả năng tự học suốt đời, giải quyết vấn đề, tư duy phản biện, và đủ sức làm việc trong môi trường quốc tế.\n
-        🔸Đại học Thái Bình Dương đã thiết lập IT Space (mô phỏng môi trường làm việc như một doanh nghiệp IT) để sinh viên trải nghiệm thực tế bao gồm: quy trình, dự án thật và văn hóa doanh nghiệp.\n
-        🔹Đại học Quốc gia Jeju Hàn Quốc hỗ trợ trong nghiên cứu, đào tạo và thực hiện chương trình trao đổi sinh viên.\n
-        🎯Khoa Công Nghệ Thông Tin đại học Thái Bình Dương sẵn sàng đồng hành cùng các bạn chinh phục cơ hội này.</string>
+    </string>
     <string name="k_cntt3">Khoa có chức năng quản lý toàn diện công tác đào tạo, nghiên cứu khoa học; phối hợp các đơn vị chức năng làm công tác phát triển và bồi dưỡng đội ngũ cán bộ chuyên môn để phục vụ chiến lược đào tạo các ngành của khoa và các ngành khác có liên quan.\n
         Khoa là đơn vị trực tiếp quản lý các bộ môn và công tác sinh viên</string>
     <string name="k_cntt1">CHỨC NĂNG, NHIỆM VỤ KHOA DU LỊCH VÀ QUẢN TRỊ KINH DOANH</string>
@@ -166,7 +159,7 @@
         Website: www.tbd.edu.vn \n
         Facebook: TruongDaihocThaiBinhduong</string>
 
-    <string name="hello">Hello</string>
+    <string name="hello">Đang xây dựng.</string>
     <string name="chi_dan_giang_duong">
         101. Phòng hội thảo \n
         102. Phòng họp \n
