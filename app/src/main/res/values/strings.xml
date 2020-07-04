@@ -162,6 +162,7 @@
 
     <string name="hello">Đang xây dựng.</string>
     <string name="chi_dan_giang_duong">
+        G07. Phòng hội nghị \n
         101. Phòng hội thảo \n
         102. Phòng họp \n
         103. Khoa công nghệ thông tin \n
@@ -174,6 +175,9 @@
         110. Trung tâm hàn quốc học \n
         111. Khoa ngôn ngữ du lịch và văn hóa \n
         112. Trung tâm quan hệ doanh nghiệp và cộng đồng \n
+        302. Phòng học
+        Hội trường tầng 4 \n
+
     </string>
     <string name="tuyen_sinh">TUYỂN SINH</string>
     <string name="trac_nghiem">TRẮC NGHIỆM</string>

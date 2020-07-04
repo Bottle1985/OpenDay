@@ -71,7 +71,7 @@ public class event_info extends AppCompatActivity {
                         eventplace.setText(event.EventPlace);
                         eventtime.setText(event.EventTime);
                         eventlecturer.setText(event.EventLecturer);
-                        boolean isPresent1 = event.EventPlace.contains("101");
+                        boolean isPresent1 = event.EventPlace.contains("101")||event.EventPlace.contains("giảng đường");
                         boolean isPresent2 = event.EventPlace.contains(getResources().getString(R.string.Thuc_hanh));
                         if (isPresent1){
                             mode = 1;
@@ -84,6 +84,7 @@ public class event_info extends AppCompatActivity {
                         else{
                             mode = 1;
                             idvitri = 2;
+                            vitrievent.setVisibility(View.INVISIBLE);
                         }
                     }
                     icount++;
