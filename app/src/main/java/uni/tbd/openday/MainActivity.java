@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         });
         nganh.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                GT_KHOA.mode = 0;
                 Intent myIntent = new Intent(view.getContext(), NGANH.class);
                 startActivityForResult(myIntent, 0);
             }
