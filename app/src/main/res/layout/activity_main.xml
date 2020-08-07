@@ -155,6 +155,15 @@
                     android:text="@string/tuyen_sinh"
                     android:textColor="#000000"
                     android:textSize="12sp" />
+                <Button
+                    android:id="@+id/ButtonHoiDap"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/hoi_dap"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
             </LinearLayout>
         </com.google.android.material.navigation.NavigationView>
     </androidx.drawerlayout.widget.DrawerLayout>
