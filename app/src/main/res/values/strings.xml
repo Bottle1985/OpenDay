@@ -214,4 +214,5 @@
     <string name="logo">logo</string>
     <string name="todo">TODO</string>
     <string name="hoi_dap">Hỏi đáp</string>
+    <string name="DangNhap">Đăng nhập</string>
 </resources>

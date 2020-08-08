@@ -24,7 +24,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 public class MainActivity extends AppCompatActivity {
-    Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem;
+    Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem, Login;
     ViewFlipper viewFlipper;
     int [] arrHinh = {R.drawable.sukien0,R.drawable.sukien1,R.drawable.sukien2,R.drawable.sukien3};
     Animation in, out;
@@ -70,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void ButtonAction(){
+        Login.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+//                Intent myIntent = new Intent(view.getContext(), KHOA.class);
+//                startActivityForResult(myIntent, 0);
+                login();
+            }
+        });
         sodo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), ActivityBuilding.class);
@@ -111,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
     private void AnhXa(){
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewflipper);
+        Login = (Button) findViewById(R.id.ButtonDangNhap);
         sodo = (Button) findViewById(R.id.ButtonSoDo);
         khoa = (Button) findViewById(R.id.ButtonKhoa);
         nganh = (Button) findViewById(R.id.ButtonNganh);
