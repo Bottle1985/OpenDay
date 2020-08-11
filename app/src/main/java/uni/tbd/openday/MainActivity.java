@@ -23,6 +23,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import uni.tbd.openday.Activity.Login;
+
 public class MainActivity extends AppCompatActivity {
     Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem, Login;
     ViewFlipper viewFlipper;
@@ -72,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
     private void ButtonAction(){
         Login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-//                Intent myIntent = new Intent(view.getContext(), KHOA.class);
-//                startActivityForResult(myIntent, 0);
-                login();
+                Intent myIntent = new Intent(view.getContext(), uni.tbd.openday.Activity.Login.class);
+                startActivityForResult(myIntent, 0);
+                //login();
             }
         });
         sodo.setOnClickListener(new View.OnClickListener() {
