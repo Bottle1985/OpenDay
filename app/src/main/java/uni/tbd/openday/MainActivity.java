@@ -3,6 +3,7 @@ package uni.tbd.openday;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -13,6 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -23,10 +25,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import uni.tbd.openday.Activity.Login;
 
 public class MainActivity extends AppCompatActivity {
     Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem, Login;
+    TextView txtUserName;
     ViewFlipper viewFlipper;
     int [] arrHinh = {R.drawable.sukien0,R.drawable.sukien1,R.drawable.sukien2,R.drawable.sukien3};
     Animation in, out;
@@ -48,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         AnhXa();
         ButtonAction();
         ActionBar();
+        accessUserInformation();
         for (int i = 0;i< arrHinh.length;i++){
             ImageView imageView = new ImageView(this);
             imageView.setImageResource(arrHinh[i]);
@@ -128,6 +135,25 @@ public class MainActivity extends AppCompatActivity {
         tuyensinh = (Button) findViewById(R.id.ButtonTuyenSinh);
         tracnghiem = (Button) findViewById(R.id.ButtonTracNghiem);
         toolbar = (Toolbar)findViewById(R.id.toolbar);
+        txtUserName = (TextView) findViewById(R.id.textUserName);
+    }
+    public void accessUserInformation(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Name, email address, and profile photo Url
+            String name = user.getDisplayName();
+            String email = user.getEmail();
+            Uri photoUrl = user.getPhotoUrl();
+
+            txtUserName.setText(email);
+            // Check if user's email is verified
+            boolean emailVerified = user.isEmailVerified();
+
+            // The user's ID, unique to the Firebase project. Do NOT use this value to
+            // authenticate with your backend server, if you have one. Use
+            // FirebaseUser.getIdToken() instead.
+            String uid = user.getUid();
+        }
     }
     private void login(){
         final Dialog login = new Dialog(this);
@@ -152,7 +178,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
         login.show();
     }
 }

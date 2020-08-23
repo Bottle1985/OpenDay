@@ -1,5 +1,5 @@
 package uni.tbd.openday.Activity;
-
+// This show user profile
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -43,8 +43,6 @@ public class ProfileActivity  extends AppCompatActivity {
         accessUserInformation();
     }
 
-
-
     public void accessUserInformation(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
@@ -53,9 +51,7 @@ public class ProfileActivity  extends AppCompatActivity {
             String email = user.getEmail();
             Uri photoUrl = user.getPhotoUrl();
 
-
             userInfoEmail.setText(email);
-
             // Check if user's email is verified
             boolean emailVerified = user.isEmailVerified();
 
@@ -64,10 +60,5 @@ public class ProfileActivity  extends AppCompatActivity {
             // FirebaseUser.getIdToken() instead.
             String uid = user.getUid();
         }
-
-
     }
-
-
-
 }

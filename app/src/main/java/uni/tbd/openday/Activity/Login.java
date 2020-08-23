@@ -35,6 +35,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         emailEditText = (EditText) findViewById(R.id.emailEditText);
         passwordEditText = (EditText) findViewById(R.id.passwordEditText);
+
         loginBtn = (Button) findViewById(R.id.loginbutton);
         loginBtn.setOnClickListener(this);
         resetBtn = (TextView) findViewById(R.id.resetPwTextView);
@@ -90,11 +91,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = firebaseAuth.getCurrentUser();
-                            Intent i = new Intent(Login.this, ProfileActivity.class);
-                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(i);
+                            updateUI(user);
+                            Toast.makeText(Login.this, "Authentication success.",
+                                    Toast.LENGTH_SHORT).show();
+                            //Intent i = new Intent(Login.this, ProfileActivity.class);
+                            //i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            //startActivity(i);
                             finish();
-                            // updateUI(user);
                         } else {
                             Toast.makeText(Login.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
@@ -102,5 +105,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         }
                     }
                 });
+    }
+    public void updateUI(FirebaseUser user)
+    {
+
     }
 }
