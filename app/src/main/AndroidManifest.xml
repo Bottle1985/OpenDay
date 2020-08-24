@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Register"></activity>
+        android:fullBackupContent="true">
+        <activity android:name=".Activity.Register" />
         <activity android:name=".webview" />
         <activity android:name=".TRAC_NGHIEM" />
         <activity android:name=".GT_NGANH" />
@@ -27,12 +27,10 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".ActivityBuilding" />
         <activity android:name=".Activity.event_add" />
     </application>
-
 </manifest>
