@@ -1,8 +1,10 @@
-package uni.tbd.openday;
+package uni.tbd.openday.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import uni.tbd.openday.R;
 
 public class Register extends AppCompatActivity {
 

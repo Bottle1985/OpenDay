@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Register"></activity>
+        <activity android:name=".Activity.Register"></activity>
         <activity android:name=".webview" />
         <activity android:name=".TRAC_NGHIEM" />
         <activity android:name=".GT_NGANH" />

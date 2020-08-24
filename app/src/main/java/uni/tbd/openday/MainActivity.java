@@ -155,29 +155,11 @@ public class MainActivity extends AppCompatActivity {
             String uid = user.getUid();
         }
     }
-    private void login(){
-        final Dialog login = new Dialog(this);
-        login.setContentView(R.layout.login);
-        login.setCanceledOnTouchOutside(false);
-        final EditText edit_email = login.findViewById(R.id.username);
-        final EditText edit_pass = login.findViewById(R.id.password);
-        Button loginbt = login.findViewById(R.id.btn_login);
-
-        this.overridePendingTransition(R.anim.dialog_enter,
-                R.anim.dialog_exit);
-        loginbt.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ShowToast")
-            @Override
-            public void onClick(View v) {
-                String email = edit_email.getText().toString().trim();
-                String pass = edit_pass.getText().toString().trim();
-                if (email.equals("123@gmail.com") && pass.equals("123456")){
-                    Toast.makeText(MainActivity.this,"Đăng nhập thành công ",Toast.LENGTH_LONG);
-                }else {
-                    Toast.makeText(MainActivity.this,"Đăng nhập thất bại ",Toast.LENGTH_LONG);
-                }
-            }
-        });
-        login.show();
+    @Override
+    protected void onRestart() {
+    // TODO Auto-generated method stub
+        super.onRestart();
+        //Do your code here
+        accessUserInformation();
     }
 }
