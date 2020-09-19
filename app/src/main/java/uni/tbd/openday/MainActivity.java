@@ -28,10 +28,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import uni.tbd.openday.Activity.Ask_answer;
 import uni.tbd.openday.Activity.Login;
 
 public class MainActivity extends AppCompatActivity {
-    Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem, Login;
+    Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem, Login, ask_answer;
     TextView txtUserName;
     ViewFlipper viewFlipper;
     int [] arrHinh = {R.drawable.sukien0,R.drawable.sukien1,R.drawable.sukien2,R.drawable.sukien3};
@@ -83,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), uni.tbd.openday.Activity.Login.class);
                 startActivityForResult(myIntent, 0);
-                //login();
             }
         });
         sodo.setOnClickListener(new View.OnClickListener() {
@@ -123,6 +123,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(myIntent, 0);
             }
         });
+        ask_answer.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), Ask_answer.class);
+                startActivity(myIntent);
+            }
+        });
     }
     private void AnhXa(){
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout);
@@ -134,8 +140,10 @@ public class MainActivity extends AppCompatActivity {
         sukien = (Button) findViewById(R.id.ButtonSuKien);
         tuyensinh = (Button) findViewById(R.id.ButtonTuyenSinh);
         tracnghiem = (Button) findViewById(R.id.ButtonTracNghiem);
+        ask_answer = (Button) findViewById(R.id.ButtonHoiDap);
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         txtUserName = (TextView) findViewById(R.id.textUserName);
+
     }
     public void accessUserInformation(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

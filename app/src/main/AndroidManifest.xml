@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme"
         android:fullBackupContent="true">
         <activity android:name=".Activity.Register" />
+        <activity android:name=".Activity.Ask_answer" />
         <activity android:name=".webview" />
         <activity android:name=".TRAC_NGHIEM" />
         <activity android:name=".GT_NGANH" />
