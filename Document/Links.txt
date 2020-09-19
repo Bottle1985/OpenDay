@@ -1,0 +1,8 @@
+https://www.androidhive.info/2016/06/android-getting-started-firebase-simple-login-registration-auth/
+https://firebase.google.com/docs/auth/android/google-signin
+https://firebase.google.com/docs/auth/android/custom-auth
+
+https://github.com/JonathanMoreno14/Android-Login-Screen-With-Firebase/blob/master/app/src/main/java/com/example/jonathanmoreno/loginscreen/LoginActivity.java
+https://github.com/Balaviknesh/Android-Java-Firebase-Login-Example
+https://github.com/db1group/android-login-firebase
+https://github.com/googlearchive/firebase-login-demo-android
