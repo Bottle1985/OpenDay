@@ -6,3 +6,4 @@ https://github.com/JonathanMoreno14/Android-Login-Screen-With-Firebase/blob/mast
 https://github.com/Balaviknesh/Android-Java-Firebase-Login-Example
 https://github.com/db1group/android-login-firebase
 https://github.com/googlearchive/firebase-login-demo-android
+https://guides.codepath.com/android/using-the-recyclerview
