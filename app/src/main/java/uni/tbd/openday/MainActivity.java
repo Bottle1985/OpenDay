@@ -32,10 +32,10 @@ import uni.tbd.openday.Activity.Ask_answer;
 import uni.tbd.openday.Activity.Login;
 
 public class MainActivity extends AppCompatActivity {
-    Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem, Login, ask_answer;
+    public static int mode_webview =0;
+    Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem, Login, ask_answer, sinhvien;
     TextView txtUserName;
     ViewFlipper viewFlipper;
-    int [] arrHinh = {R.drawable.sukien0,R.drawable.sukien1,R.drawable.sukien2,R.drawable.sukien3};
     Animation in, out;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
@@ -56,17 +56,20 @@ public class MainActivity extends AppCompatActivity {
         ButtonAction();
         ActionBar();
         accessUserInformation();
-        for (int i = 0;i< arrHinh.length;i++){
-            ImageView imageView = new ImageView(this);
-            imageView.setImageResource(arrHinh[i]);
-            viewFlipper.addView(imageView);
+        int imgflipper [] ={R.drawable.bg_giang_duong,R.drawable.bg_ky_tuc,R.drawable.bg_da_nang,R.drawable.cntt2,R.drawable.dongphuonghoc2,R.drawable.dulich2,R.drawable.ketoan2,R.drawable.luat2,R.drawable.ngonnguanh2,R.drawable.qtkd2,R.drawable.tcnh2};
+        for (int image: imgflipper){
+            setViewFlipper(image);
         }
+
+    }
+    public void setViewFlipper (int image){
+        ImageView imageView = new ImageView(this);
+        imageView.setBackgroundResource(image);
+        viewFlipper.addView(imageView);
+        viewFlipper.setFlipInterval(4000);
+        viewFlipper.setAutoStart(true);
         viewFlipper.setInAnimation(in);
         viewFlipper.setOutAnimation(out);
-        viewFlipper.setFlipInterval(3000);
-        viewFlipper.setAutoStart(true);
-        // For undone feature
-        viewFlipper.setVisibility(View.INVISIBLE);
     }
     private void ActionBar(){
         setSupportActionBar(toolbar);
@@ -113,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         });
         tuyensinh.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                mode_webview = 1;
                 Intent myIntent = new Intent(view.getContext(), webview.class);
                 startActivityForResult(myIntent, 0);
             }
@@ -129,6 +133,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+        sinhvien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mode_webview = 2;
+                Intent myIntent = new Intent(view.getContext(), webview.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
+
     }
     private void AnhXa(){
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout);
@@ -141,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
         tuyensinh = (Button) findViewById(R.id.ButtonTuyenSinh);
         tracnghiem = (Button) findViewById(R.id.ButtonTracNghiem);
         ask_answer = (Button) findViewById(R.id.ButtonHoiDap);
+        sinhvien = (Button) findViewById(R.id.ButtonTTSV);
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         txtUserName = (TextView) findViewById(R.id.textUserName);
 
