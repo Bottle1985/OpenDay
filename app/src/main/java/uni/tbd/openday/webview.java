@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 public class webview extends AppCompatActivity {
     private WebView webView;
+    String url;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,13 @@ public class webview extends AppCompatActivity {
         }
         webView = (WebView)findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://tbd.edu.vn/tuyen-sinh/phuong-an-tuyen-sinh-2020/");
+        switch (MainActivity.mode_webview){
+            case 0: webView.goBack();
+            case 1: url ="https://tbd.edu.vn/tuyen-sinh/phuong-an-tuyen-sinh-2020"; break;
+            case 2: url = "http://daotao.pou.edu.vn/"; break;
+        }
+
+        webView.loadUrl(url);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
     }
