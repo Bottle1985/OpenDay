@@ -15,7 +15,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import uni.tbd.openday.Data.EventData;
 import uni.tbd.openday.Data.NganhData;
 import uni.tbd.openday.R;
 
