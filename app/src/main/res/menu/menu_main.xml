@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Trang chủ"
+            android:icon="@drawable/home_icon_silhouette"/>
+        <item
+            android:id="@+id/nav_sukien"
+            android:title="@string/Su_kien"
+            android:icon="@drawable/ic_baseline_event_note_24"/>
+        <item
+            android:id="@+id/nav_tuyensinh"
+            android:title="@string/tuyen_sinh"
+            android:icon="@drawable/ic_baseline_apartment_24"/>
+        <item
+            android:id="@+id/nav_sodo"
+            android:title="@string/So_do"
+            android:icon="@drawable/ic_baseline_place_24"/>
+        <item
+            android:id="@+id/nav_daotao"
+            android:title="@string/Daotao"
+            android:icon="@drawable/ic_baseline_school_24"/>
+        <item
+            android:id="@+id/nav_tracnghiem"
+            android:title="@string/trac_nghiem"
+            android:icon="@drawable/ic_baseline_question_answer_24"/>
+    </group>
+        <item android:title="Cá nhân">
+            <menu>
+                <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_dangnhap"
+                    android:title="@string/DangNhap"
+                    android:icon="@drawable/ic_baseline_account_box_24"/>
+                <item
+                    android:id="@+id/nav_khoa"
+                    android:title="@string/Khoa"
+                    android:icon="@drawable/ic_baseline_assignment_24"/>
+                <item
+                    android:id="@+id/nav_nganh"
+                    android:title="@string/Nganh"
+                    android:icon="@drawable/ic_baseline_assignment_24"/>
+                </group>
+            </menu>
+        </item>
+        <item android:title="Liên hệ">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_ask"
+                        android:title="@string/ask"
+                        android:icon="@drawable/ic_baseline_question_answer_24"/>
+                </group>
+            </menu>
+        </item>
+</menu>

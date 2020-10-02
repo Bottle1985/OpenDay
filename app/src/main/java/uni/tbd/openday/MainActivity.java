@@ -20,25 +20,27 @@ import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import uni.tbd.openday.Activity.Ask_answer;
 import uni.tbd.openday.Activity.Login;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static int mode_webview =0;
-    Button sodo,khoa,nganh,sukien,tuyensinh,tracnghiem, Login, ask_answer, sinhvien;
     TextView txtUserName;
     ViewFlipper viewFlipper;
     Animation in, out;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
+    NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,15 +55,28 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayUseLogoEnabled(true);
         }
         AnhXa();
-        ButtonAction();
         ActionBar();
         accessUserInformation();
         int imgflipper [] ={R.drawable.bg_giang_duong,R.drawable.bg_ky_tuc,R.drawable.bg_da_nang,R.drawable.cntt2,R.drawable.dongphuonghoc2,R.drawable.dulich2,R.drawable.ketoan2,R.drawable.luat2,R.drawable.ngonnguanh2,R.drawable.qtkd2,R.drawable.tcnh2};
         for (int image: imgflipper){
             setViewFlipper(image);
         }
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.nav_open,R.string.nav_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {super.onBackPressed();}
 
     }
+
     public void setViewFlipper (int image){
         ImageView imageView = new ImageView(this);
         imageView.setBackgroundResource(image);
@@ -82,81 +97,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private void ButtonAction(){
-        Login.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), uni.tbd.openday.Activity.Login.class);
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        sodo.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), ActivityBuilding.class);
-                startActivity(myIntent);
-            }
-        });
-        khoa.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), KHOA.class);
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        nganh.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                GT_KHOA.mode = 0;
-                Intent myIntent = new Intent(view.getContext(), NGANH.class);
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        sukien.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), SUKIEN.class);
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        tuyensinh.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                mode_webview = 1;
-                Intent myIntent = new Intent(view.getContext(), webview.class);
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        tracnghiem.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), TRAC_NGHIEM.class);
-                startActivityForResult(myIntent, 0);
-            }
-        });
-        ask_answer.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), Ask_answer.class);
-                startActivity(myIntent);
-            }
-        });
-        sinhvien.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mode_webview = 2;
-                Intent myIntent = new Intent(view.getContext(), webview.class);
-                startActivityForResult(myIntent, 0);
-            }
-        });
-
-    }
     private void AnhXa(){
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewflipper);
-        Login = (Button) findViewById(R.id.ButtonDangNhap);
-        sodo = (Button) findViewById(R.id.ButtonSoDo);
-        khoa = (Button) findViewById(R.id.ButtonKhoa);
-        nganh = (Button) findViewById(R.id.ButtonNganh);
-        sukien = (Button) findViewById(R.id.ButtonSuKien);
-        tuyensinh = (Button) findViewById(R.id.ButtonTuyenSinh);
-        tracnghiem = (Button) findViewById(R.id.ButtonTracNghiem);
-        ask_answer = (Button) findViewById(R.id.ButtonHoiDap);
-        sinhvien = (Button) findViewById(R.id.ButtonTTSV);
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         txtUserName = (TextView) findViewById(R.id.textUserName);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
 
     }
     public void accessUserInformation(){
@@ -183,5 +129,54 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         //Do your code here
         accessUserInformation();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.nav_home:
+                break;
+            case R.id.nav_sukien:
+                Intent intent_sukien = new Intent(MainActivity.this, SUKIEN.class);
+                startActivity(intent_sukien);
+                break;
+            case R.id.nav_sodo:
+                Intent intent_sodo = new Intent(MainActivity.this, ActivityBuilding.class);
+                startActivity(intent_sodo);
+                break;
+            case R.id.nav_khoa:
+                Intent intent_khoa = new Intent(MainActivity.this, KHOA.class);
+                startActivity(intent_khoa);
+                break;
+            case R.id.nav_nganh:
+                GT_KHOA.mode = 0;
+                Intent intent_nganh = new Intent(MainActivity.this, NGANH.class);
+                startActivity(intent_nganh);
+                break;
+            case R.id.nav_tuyensinh:
+                mode_webview = 1;
+                Intent intent_tuyensinh = new Intent(MainActivity.this, webview.class);
+                startActivity(intent_tuyensinh);
+                break;
+            case R.id.nav_ask:
+                Intent intent_ask = new Intent(MainActivity.this, Ask_answer.class);
+                startActivity(intent_ask);
+                break;
+            case R.id.nav_tracnghiem:
+                Intent intent_tracnghiem = new Intent(MainActivity.this, TRAC_NGHIEM.class);
+                startActivity(intent_tracnghiem);
+                break;
+            case R.id.nav_daotao:
+                mode_webview = 2;
+                Intent intent_daotao = new Intent(MainActivity.this, webview.class);
+                startActivity(intent_daotao);
+                break;
+            case R.id.nav_dangnhap:
+                Intent intent_dangnhap = new Intent(MainActivity.this, uni.tbd.openday.Activity.Login.class);
+                startActivity(intent_dangnhap);
+                break;
+        }
+
+        return false;
     }
 }
