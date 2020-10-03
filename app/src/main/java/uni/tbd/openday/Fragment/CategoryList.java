@@ -33,7 +33,7 @@ public class CategoryList extends Fragment {
         // its reference
         mbase                = FirebaseDatabase.getInstance().getReference();
 
-        recyclerView = getView().findViewById(R.id.recyclerView);
+        recyclerView = view.findViewById(R.id.recyclerView);
 
         // To display the Recycler view linearly
         recyclerView.setLayoutManager(

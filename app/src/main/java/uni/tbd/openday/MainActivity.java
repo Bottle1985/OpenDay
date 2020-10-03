@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewflipper);
         toolbar = (Toolbar)findViewById(R.id.toolbar);
-        txtUserName = (TextView) findViewById(R.id.textUserName);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
 
     }
@@ -113,7 +112,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             String email = user.getEmail();
             Uri photoUrl = user.getPhotoUrl();
 
-            txtUserName.setText(email);
+            View headerView = navigationView.getHeaderView(0);
+            TextView txtEmail = (TextView) headerView.findViewById(R.id.textView);
+            txtEmail.setText(email);
             // Check if user's email is verified
             boolean emailVerified = user.isEmailVerified();
 

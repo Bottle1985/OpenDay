@@ -36,8 +36,8 @@ public class UserAdapter extends FirebaseRecyclerAdapter<
     {
 
         // Add firstname from model class (here
-        // "person.class")to appropriate view in Card
-        // view (here "person.xml")
+        // "user.class")to appropriate view in Card
+        // view (here "user.xml")
         holder.firstname.setText(model.getFirstname());
 
         // Add lastname from model class (here
@@ -46,13 +46,13 @@ public class UserAdapter extends FirebaseRecyclerAdapter<
         holder.lastname.setText(model.getLastname());
 
         // Add age from model class (here
-        // "person.class")to appropriate view in Card
-        // view (here "person.xml")
+        // "user.class")to appropriate view in Card
+        // view (here "user.xml")
         holder.age.setText(model.getAge());
     }
 
     // Function to tell the class about the Card view (here
-    // "person.xml")in
+    // "user.xml")in
     // which the data will be shown
     @NonNull
     @Override
