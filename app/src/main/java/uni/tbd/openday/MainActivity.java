@@ -36,7 +36,6 @@ import uni.tbd.openday.Activity.Login;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static int mode_webview =0;
     TextView txtUserName;
-    ViewFlipper viewFlipper;
     Animation in, out;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
@@ -57,10 +56,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         AnhXa();
         ActionBar();
         accessUserInformation();
-        int imgflipper [] ={R.drawable.bg_giang_duong,R.drawable.bg_ky_tuc,R.drawable.bg_da_nang,R.drawable.cntt2,R.drawable.dongphuonghoc2,R.drawable.dulich2,R.drawable.ketoan2,R.drawable.luat2,R.drawable.ngonnguanh2,R.drawable.qtkd2,R.drawable.tcnh2};
-        for (int image: imgflipper){
-            setViewFlipper(image);
-        }
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.nav_open,R.string.nav_close);
         drawerLayout.addDrawerListener(toggle);
@@ -77,15 +72,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    public void setViewFlipper (int image){
-        ImageView imageView = new ImageView(this);
-        imageView.setBackgroundResource(image);
-        viewFlipper.addView(imageView);
-        viewFlipper.setFlipInterval(4000);
-        viewFlipper.setAutoStart(true);
-        viewFlipper.setInAnimation(in);
-        viewFlipper.setOutAnimation(out);
-    }
     private void ActionBar(){
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -99,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
     private void AnhXa(){
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout);
-        viewFlipper = (ViewFlipper) findViewById(R.id.viewflipper);
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
 

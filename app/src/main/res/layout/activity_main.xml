@@ -3,42 +3,53 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@+id/drawerlayout"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_login"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
+    android:id="@+id/drawerlayout"
     tools:openDrawer="start">
-        <com.google.android.material.navigation.NavigationView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/nav_view"
-            app:headerLayout="@layout/header"
-            app:menu="@menu/menu_main"
-            android:layout_gravity="start"/>
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu_main" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/action_bar_lg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.Design.NoActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/Theme.Design.NoActionBar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ViewFlipper
-                android:id="@+id/viewflipper"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar">
-
-            </ViewFlipper>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".27"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card1"
@@ -46,11 +57,12 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="16dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/viewflipper">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -85,11 +97,12 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="20dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/viewflipper">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -123,12 +136,12 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="16dp"
-                android:layout_marginTop="32dp"
+                android:layout_below="@+id/card1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card1">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -162,12 +175,12 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="16dp"
-                android:layout_marginTop="32dp"
+                android:layout_below="@+id/card2"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card1">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -184,7 +197,6 @@
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-
                             android:src="@mipmap/ic_book" />
 
                         <TextView
@@ -195,5 +207,88 @@
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_below="@+id/card3"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:src="@mipmap/ic_book" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Các chuyên ngành"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_below="@+id/card4"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:src="@mipmap/ic_book" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Các chuyên ngành"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.drawerlayout.widget.DrawerLayout>
