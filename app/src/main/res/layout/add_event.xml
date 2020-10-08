@@ -67,7 +67,6 @@
         android:id="@+id/button_event_save"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-
         android:background="@drawable/custom_button"
         android:onClick="save_event_click"
         android:layout_margin="20dp"

@@ -49,7 +49,8 @@ public class CategoryList extends Fragment {
         // the Adapter class itself
         adapter = new UserAdapter(options);
         // Connecting Adapter class with the Recycler view*/
-        recyclerView.setAdapter(adapter);
+        // Bottle: Temporary rem due to crash
+        // recyclerView.setAdapter(adapter);
         return view;
     }
 
