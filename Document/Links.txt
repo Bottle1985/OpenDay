@@ -8,3 +8,4 @@ https://github.com/db1group/android-login-firebase
 https://github.com/googlearchive/firebase-login-demo-android
 https://guides.codepath.com/android/using-the-recyclerview
 https://www.geeksforgeeks.org/how-to-populate-recyclerview-with-firebase-data-using-firebaseui-in-android-studio/
+https://www.youtube.com/watch?v=RvKpvrl3iWo
