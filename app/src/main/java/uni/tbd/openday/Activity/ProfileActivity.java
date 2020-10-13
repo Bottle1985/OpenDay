@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -40,6 +42,10 @@ public class ProfileActivity  extends AppCompatActivity {
 
             }
         });
+        GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
+        if (signInAccount!=null){
+            userInfoEmail.setText(signInAccount.getEmail());
+        }
         accessUserInformation();
     }
 

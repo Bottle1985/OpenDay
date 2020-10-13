@@ -232,4 +232,5 @@
     <string name="returnToLoginTextView">Return to Login Screen</string>
     <string name="Daotao">Đào Tạo</string>
     <string name="ask">Đặt câu hỏi</string>
+    <string name="sign_in_with_google">Sign in With Google</string>
 </resources>
