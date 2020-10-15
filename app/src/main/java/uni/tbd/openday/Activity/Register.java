@@ -1,4 +1,4 @@
-package uni.tbd.openday;
+package uni.tbd.openday.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +18,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-<<<<<<< HEAD:app/src/main/java/uni/tbd/openday/Activity/Register.java
 import uni.tbd.openday.R;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
@@ -30,9 +29,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     Button signUpBtn;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
-=======
-public class Register extends AppCompatActivity {
->>>>>>> parent of 8969950... + Added activity register:app/src/main/java/uni/tbd/openday/Register.java
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

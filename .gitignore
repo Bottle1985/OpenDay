@@ -19,9 +19,3 @@
 build.gradle
 gradle/wrapper/gradle-wrapper.properties
 .idea/codeStyles/Project.xml
-app/build.gradle
-app/src/main/java/uni/tbd/openday/Activity/Login.java
-app/src/main/java/uni/tbd/openday/Activity/ProfileActivity.java
-app/src/main/res/drawable/ic_google.xml
-app/src/main/res/layout/activity_login.xml
-app/src/main/res/values/strings.xml

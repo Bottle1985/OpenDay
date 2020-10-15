@@ -8,34 +8,25 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-<<<<<<< HEAD
-import com.bumptech.glide.Glide;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-=======
->>>>>>> parent of ef5c5ab... add Google Login
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import uni.tbd.openday.R;
 
 public class ProfileActivity  extends AppCompatActivity {
-    TextView userInfoEmail,nameUser,emailuser;
-    ImageView imageuser;
-
+    TextView userInfoEmail;
     Button signOutBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        nameUser = (TextView) findViewById(R.id.textUserName);
-        emailuser = (TextView) findViewById(R.id.emailUser);
-        imageuser = (ImageView) findViewById(R.id.imageUser);
+
+        userInfoEmail = (TextView) findViewById(R.id.userNmaeTextView);
+
         signOutBtn = (Button) findViewById(R.id.signOutButton);
         signOutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,19 +40,6 @@ public class ProfileActivity  extends AppCompatActivity {
 
             }
         });
-<<<<<<< HEAD
-        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-        if (acct != null) {
-            String personName = acct.getDisplayName();
-            String personEmail = acct.getEmail();
-            String personId = acct.getId();
-            Uri personPhoto = acct.getPhotoUrl();
-            emailuser.setText(personEmail);
-            nameUser.setText(personName);
-            Glide.with(this).load(String.valueOf(personPhoto)).into(imageuser);
-        }
-=======
->>>>>>> parent of ef5c5ab... add Google Login
         accessUserInformation();
     }
 

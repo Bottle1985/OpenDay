@@ -11,14 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-<<<<<<< HEAD
         android:fullBackupContent="true">
         <activity android:name=".Activity.Register" />
         <activity android:name=".Activity.Ask_answer" />
-=======
-        android:usesCleartextTraffic="true">
-        <activity android:name=".Register"></activity>
->>>>>>> parent of 8969950... + Added activity register
         <activity android:name=".webview" />
         <activity android:name=".TRAC_NGHIEM" />
         <activity android:name=".GT_NGANH" />
