@@ -1,87 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
+    android:background="@drawable/bg_login"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".SUKIEN">
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/action_bar_lg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".27"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="24dp"
-        android:contentDescription="@string/logo"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TextView
+        android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".27"
-        app:layout_constraintTop_toBottomOf="@+id/icon">
+        android:background="@drawable/custom_textview"
+        android:padding="10dp"
+        android:text="@string/danh_sach_su_kien"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-    <RelativeLayout
+    <ListView
+        android:id="@+id/list_sukien"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:background="@drawable/bg_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".27"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_textview"
-                android:padding="10dp"
-                android:text="@string/danh_sach_su_kien"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="18sp"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginLeft="24dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:textStyle="bold" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-            <ListView
-                android:id="@+id/list_sukien"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_below="@+id/textView8"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/event_add"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_button"
-                android:onClick="add_event_click"
-                android:layout_marginLeft="24dp"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/list_sukien"
-                android:padding="8dp"
-                android:text="@string/add_event"
-                android:visibility="invisible" />
-        </RelativeLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/event_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:onClick="add_event_click"
+        android:padding="8dp"
+        android:text="@string/add_event"
+        android:visibility="invisible" />
+</LinearLayout>
