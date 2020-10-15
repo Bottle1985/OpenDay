@@ -16,22 +16,21 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
+=======
+>>>>>>> parent of ef5c5ab... add Google Login
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
 
-import uni.tbd.openday.MainActivity;
 import uni.tbd.openday.R;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
@@ -39,23 +38,16 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth firebaseAuth;
     EditText emailEditText;
     EditText passwordEditText;
+<<<<<<< HEAD
     CheckBox remember;
     Button loginBtn;
     SignInButton loginGoogleBtn;
+=======
+    Button loginBtn;
+>>>>>>> parent of ef5c5ab... add Google Login
     TextView resetBtn;
     TextView createAccountBtn;
-    private GoogleSignInClient mGoogleSignInClient;
-    private final static int RC_SIGN_IN = 123;
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-        if (currentUser!=null){
-            Intent intent = new Intent(getApplicationContext(),ProfileActivity.class);
-            startActivity(intent);
-        }
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +62,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         resetBtn.setOnClickListener(this);
         createAccountBtn = (TextView) findViewById(R.id.createAccTextView);
         createAccountBtn.setOnClickListener(this);
+<<<<<<< HEAD
         loginGoogleBtn = (SignInButton) findViewById(R.id.sign_in_google_btn);
         loginGoogleBtn.setOnClickListener(this);
         firebaseAuth = FirebaseAuth.getInstance();
@@ -153,13 +146,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 });
     }
 
+=======
+        firebaseAuth = FirebaseAuth.getInstance();
+
+    }
+>>>>>>> parent of ef5c5ab... add Google Login
     @Override
     public void onClick(View v) {
         // default method for handling onClick Events..
         switch (v.getId()) {
-            case R.id.sign_in_google_btn:
-                signIn();
-                break;
 
             case R.id.loginbutton:
                 loginUser();

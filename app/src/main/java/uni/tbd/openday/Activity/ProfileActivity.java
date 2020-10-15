@@ -12,9 +12,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+=======
+>>>>>>> parent of ef5c5ab... add Google Login
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -46,6 +49,7 @@ public class ProfileActivity  extends AppCompatActivity {
 
             }
         });
+<<<<<<< HEAD
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
             String personName = acct.getDisplayName();
@@ -56,6 +60,8 @@ public class ProfileActivity  extends AppCompatActivity {
             nameUser.setText(personName);
             Glide.with(this).load(String.valueOf(personPhoto)).into(imageuser);
         }
+=======
+>>>>>>> parent of ef5c5ab... add Google Login
         accessUserInformation();
     }
 
