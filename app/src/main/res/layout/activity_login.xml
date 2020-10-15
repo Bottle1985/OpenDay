@@ -61,14 +61,7 @@
                 android:background="@drawable/et_bg"
                 android:ems="10"
                 android:hint="@string/email_address"
-<<<<<<< HEAD
                 android:inputType="textEmailAddress" />
-=======
-                android:inputType="textEmailAddress"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
->>>>>>> parent of b279c88... design
 
             <TextView
                 android:id="@+id/createAccTextView"
@@ -79,13 +72,7 @@
                 android:layout_marginTop="30dp"
                 android:text="@string/signUp"
                 android:textColor="@android:color/black"
-<<<<<<< HEAD
                 android:textStyle="bold" />
-=======
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
->>>>>>> parent of b279c88... design
 
             <Button
                 android:id="@+id/loginbutton"
@@ -103,15 +90,7 @@
                 android:background="@drawable/btn_bg"
                 android:elevation="5dp"
                 android:text="@string/loginButton"
-<<<<<<< HEAD
                 android:textColor="@android:color/white" />
-=======
-                android:textColor="@android:color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
->>>>>>> parent of b279c88... design
-
             <EditText
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
@@ -154,21 +133,18 @@
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
 
-            <Button
+            <com.google.android.gms.common.SignInButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/sign_in_google_btn"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
                 android:layout_marginBottom="20dp"
                 android:background="#fff"
                 android:drawableStart="@drawable/ic_google"
                 android:drawableLeft="@drawable/ic_google"
-                android:paddingStart="40dp"
-                android:paddingEnd="40dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_below="@+id/resetPwTextView"
                 android:layout_centerHorizontal="true"
-                android:text="@string/sign_in_with_google"
                 android:textAllCaps="false"
                 android:textSize="16sp"/>
 

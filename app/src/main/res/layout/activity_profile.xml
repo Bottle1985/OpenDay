@@ -7,16 +7,36 @@
         android:layout_height="match_parent">
 
 
+        <ImageView
+            android:id="@+id/imageUser"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/ic_launcher" />
+
         <TextView
-            android:id="@+id/userNmaeTextView"
+            android:id="@+id/textUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageUser"
+            android:layout_marginTop="20dp"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:text="@string/nav_header_title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/emailUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="164dp"
-            android:textSize="18sp"
-            android:textStyle="italic"
-            android:typeface="monospace" />
+            android:layout_below="@+id/textUserName"
+            android:layout_marginTop="20dp"
+            android:text="@string/nav_header_subtitle"
+            android:textSize="18dp" />
 
 
         <Button
