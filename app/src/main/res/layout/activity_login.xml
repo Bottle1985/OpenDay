@@ -48,6 +48,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <TextView
+                android:id="@+id/loginTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="45dp"
+                android:text="@string/loginText"
+                android:textSize="30sp"
+                android:textStyle="italic"
+                android:typeface="monospace" />
+
             <EditText
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
@@ -63,6 +75,54 @@
                 android:hint="@string/email_address"
                 android:inputType="textEmailAddress" />
 
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/emailEditText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/et_bg"
+                android:ems="10"
+                android:hint="@string/passwordEdit"
+                android:inputType="textPassword"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
+
+            <CheckBox
+                android:id="@+id/rememberUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/passwordEditText"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Remember" />
+
+            <Button
+                android:id="@+id/loginbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:layout_below="@+id/rememberUser"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="100dp"
+                android:background="@drawable/btn_bg"
+                android:elevation="5dp"
+                android:text="@string/loginButton"
+                android:textColor="@android:color/white" />
+
             <TextView
                 android:id="@+id/createAccTextView"
                 android:layout_width="wrap_content"
@@ -74,52 +134,13 @@
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/loginbutton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:layout_below="@+id/passwordEditText"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="100dp"
-                android:background="@drawable/btn_bg"
-                android:elevation="5dp"
-                android:text="@string/loginButton"
-                android:textColor="@android:color/white" />
-            <EditText
-                android:id="@+id/passwordEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:layout_below="@+id/emailEditText"
+            <View
+                android:id="@+id/divider"
+                android:layout_width="106dp"
+                android:layout_height="3dp"
+                android:layout_below="@+id/createAccTextView"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/et_bg"
-                android:ems="10"
-                android:hint="@string/passwordEdit"
-                android:inputType="textPassword"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
-
-            <TextView
-                android:id="@+id/loginTitleTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="45dp"
-                android:text="@string/loginText"
-                android:textSize="30sp"
-                android:textStyle="italic"
-                android:typeface="monospace" />
+                android:layout_marginTop="10dp" />
 
             <TextView
                 android:id="@+id/resetPwTextView"
@@ -148,13 +169,6 @@
                 android:textAllCaps="false"
                 android:textSize="16sp"/>
 
-            <View
-                android:id="@+id/divider"
-                android:layout_width="106dp"
-                android:layout_height="3dp"
-                android:layout_below="@+id/createAccTextView"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp" />
         </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
