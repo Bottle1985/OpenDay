@@ -166,7 +166,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 break;
 
             case R.id.createAccTextView:
-                Intent i2 = new Intent(Login.this, Register.class);
+                Intent i2 = new Intent(Login.this, SignupActivity.class);
                 startActivity(i2);
                 break;
 
