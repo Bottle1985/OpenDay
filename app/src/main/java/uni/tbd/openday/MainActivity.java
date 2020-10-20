@@ -1,22 +1,13 @@
 package uni.tbd.openday;
 
-import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.ContextMenu;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -30,8 +21,8 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import uni.tbd.openday.Activity.Ask_answer;
-import uni.tbd.openday.Activity.Login;
+import uni.tbd.openday.module.main.Chats;
+import uni.tbd.openday.module.signin.view.SigninActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static int mode_webview =0;
@@ -40,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,24 +81,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView = (NavigationView) findViewById(R.id.nav_view);
 
     }
-    public void accessUserInformation(){
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
+    public void accessUserInformation() {
+
+        FirebaseUser User = FirebaseAuth.getInstance().getCurrentUser();
+        if (User != null) {
             // Name, email address, and profile photo Url
-            String name = user.getDisplayName();
-            String email = user.getEmail();
-            Uri photoUrl = user.getPhotoUrl();
+            String name = User.getDisplayName();
+            String email = User.getEmail();
+            Uri photoUrl = User.getPhotoUrl();
 
             View headerView = navigationView.getHeaderView(0);
-            TextView txtEmail = (TextView) headerView.findViewById(R.id.textView);
+            TextView txtEmail = (TextView) headerView.findViewById(R.id.txt_email);
+            TextView txtName = (TextView) headerView.findViewById(R.id.textUserName);
+//            ImageView profile_image = (ImageView) headerView.findViewById(R.id.profile_image);
+//            if (photoUrl.equals("default")){
+//                profile_image.setImageResource(R.mipmap.ic_launcher);
+//            }else Glide.with(MainActivity.this).load(User.getPhotoUrl()).into(profile_image);
+            txtName.setText(name);
             txtEmail.setText(email);
+
             // Check if user's email is verified
-            boolean emailVerified = user.isEmailVerified();
+            boolean emailVerified = User.isEmailVerified();
 
             // The user's ID, unique to the Firebase project. Do NOT use this value to
             // authenticate with your backend server, if you have one. Use
             // FirebaseUser.getIdToken() instead.
-            String uid = user.getUid();
+            String uid = User.getUid();
         }
     }
     @Override
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent_tuyensinh);
                 break;
             case R.id.nav_ask:
-                Intent intent_ask = new Intent(MainActivity.this, Ask_answer.class);
+                Intent intent_ask = new Intent(MainActivity.this, Chats.class);
                 startActivity(intent_ask);
                 break;
             case R.id.nav_tracnghiem:
@@ -158,11 +158,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent_daotao);
                 break;
             case R.id.nav_dangnhap:
-                Intent intent_dangnhap = new Intent(MainActivity.this, uni.tbd.openday.Activity.Login.class);
+                Intent intent_dangnhap = new Intent(MainActivity.this, SigninActivity.class);
                 startActivity(intent_dangnhap);
                 break;
         }
 
         return false;
     }
+
 }

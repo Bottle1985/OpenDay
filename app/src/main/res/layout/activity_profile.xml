@@ -1,79 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white">
+<layout>
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/action_bar_lg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".27"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/logo"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".27"
-        app:layout_constraintTop_toBottomOf="@+id/icon">
-
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="0"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_login"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".27"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/userNmaeTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="40dp"
-                android:text="@string/email_address"
-                android:textSize="18sp"
-                android:textStyle="italic"
-                android:typeface="monospace" />
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_weight="0"
+                android:src="@drawable/user_photo_holder"
+                android:layout_marginTop="4dp"
+                android:scaleType="fitCenter"
+                android:transitionName="photo"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
 
-            <Button
-                android:id="@+id/signOutButton"
+            <LinearLayout
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/userNmaeTextView"
-                android:layout_marginTop="20dp"
-                android:layout_margin="20dp"
-                android:background="?attr/colorPrimaryDark"
-                android:elevation="5dp"
-                android:text="@string/signOutText"
-                android:textColor="@android:color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/user_name"
+                    tools:text="Nikita Gordia"
+                    android:layout_marginBottom="10dp"
+                    android:transitionName="nickname"
+                    android:elevation="6dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-condensed"
+                    android:background="@drawable/edit_text_background_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    tools:text="nikita.gordia@gmail.com"
+                    android:id="@+id/user_email"
+                    android:textSize="10sp"
+                    android:elevation="6dp"
+                    android:transitionName="email"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray"
+                    android:background="@drawable/edit_text_background_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                 
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="invisible"
+                android:id="@+id/status"
+                android:layout_margin="15dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_weight="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/status_img"
+                    android:layout_weight="0"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
+
+                <TextView
+                    android:id="@+id/status_tv"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/chat_btn"
+                    android:src="@drawable/icon_chat"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
+
+            </LinearLayout>
 
 
-        </RelativeLayout>
+        </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_weight="1"
+            android:id="@+id/post_list"
+            tools:listitem="@layout/layout_blog_post"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</layout>
