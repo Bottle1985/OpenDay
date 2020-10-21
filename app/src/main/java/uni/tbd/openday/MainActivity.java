@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,7 +23,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import uni.tbd.openday.module.main.Chats;
-import uni.tbd.openday.module.signin.view.SigninActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static int mode_webview =0;
@@ -90,7 +90,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             View headerView = navigationView.getHeaderView(0);
             TextView txtEmail = (TextView) headerView.findViewById(R.id.textView);
+            TextView txtName = (TextView) headerView.findViewById(R.id.textUserName);
+            ImageView profile_image = (ImageView) headerView.findViewById(R.id.profile_image);
             txtEmail.setText(email);
+            txtName.setText(name);
+            profile_image.setImageURI(photoUrl);
             // Check if user's email is verified
             boolean emailVerified = user.isEmailVerified();
 
@@ -135,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent_tuyensinh = new Intent(MainActivity.this, webview.class);
                 startActivity(intent_tuyensinh);
                 break;
-            case R.id.nav_ask:
+            case R.id.nav_messenger:
                 Intent intent_ask = new Intent(MainActivity.this, Chats.class);
                 startActivity(intent_ask);
                 break;
@@ -147,10 +151,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 mode_webview = 2;
                 Intent intent_daotao = new Intent(MainActivity.this, webview.class);
                 startActivity(intent_daotao);
-                break;
-            case R.id.nav_dangnhap:
-                Intent intent_dangnhap = new Intent(MainActivity.this, SigninActivity.class);
-                startActivity(intent_dangnhap);
                 break;
         }
 
