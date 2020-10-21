@@ -1,8 +1,6 @@
 package uni.tbd.openday.module.postdetail.model;
 
-/**
- * Created by nikitagordia on 3/31/18.
- */
+
 
 public class Comment {
 

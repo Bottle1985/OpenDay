@@ -1,11 +1,6 @@
 package uni.tbd.openday.module.main.users.view;
 
-import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -13,21 +8,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import uni.tbd.openday.R;
-import uni.tbd.openday.databinding.FragmentUsersBinding;
-import uni.tbd.openday.module.main.users.model.User;
 
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by nikitagordia on 3/30/18.
- */
+import uni.tbd.openday.R;
+import uni.tbd.openday.databinding.FragmentUsersBinding;
+import uni.tbd.openday.module.main.users.model.User;
+
 
 public class UsersFragment extends Fragment {
 

@@ -2,17 +2,17 @@ package uni.tbd.openday.module.profilesetup.view;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.View;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
-import android.widget.Toast;
+import androidx.databinding.DataBindingUtil;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -22,15 +22,16 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.UploadTask;
-import uni.tbd.openday.R;
-import uni.tbd.openday.databinding.ActivityProfileSetupBinding;
-import uni.tbd.openday.module.main.Chats;
-import uni.tbd.openday.module.signin.view.PhotoPickDialog;
-import uni.tbd.openday.utils.ImageUtils;
 import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+
+import uni.tbd.openday.MainActivity;
+import uni.tbd.openday.R;
+import uni.tbd.openday.databinding.ActivityProfileSetupBinding;
+import uni.tbd.openday.module.signin.view.PhotoPickDialog;
+import uni.tbd.openday.utils.ImageUtils;
 
 public class ProfileSetupActivity extends AppCompatActivity {
 
@@ -133,7 +134,7 @@ public class ProfileSetupActivity extends AppCompatActivity {
                 String email = auth.getCurrentUser().getEmail();
                 if (email == null) email = auth.getCurrentUser().getPhoneNumber();
                 database.getReference().child("user").child(user.getUid()).child("email").setValue(email);
-                startActivity(new Intent(ProfileSetupActivity.this, Chats.class));
+                startActivity(new Intent(ProfileSetupActivity.this, MainActivity.class));
                 finish();
             }
         });

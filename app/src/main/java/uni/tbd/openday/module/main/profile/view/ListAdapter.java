@@ -2,28 +2,28 @@ package uni.tbd.openday.module.main.profile.view;
 
 import android.app.Activity;
 import android.content.Context;
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.util.Pair;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import uni.tbd.openday.R;
-import uni.tbd.openday.databinding.LayoutBlogPostBinding;
-import uni.tbd.openday.module.postdetail.view.PostDetailActivity;
-import uni.tbd.openday.module.main.profile.model.BlogPost;
-import uni.tbd.openday.module.profile.view.ProfileActivity;
-import uni.tbd.openday.utils.ImageUtils;
-import uni.tbd.openday.utils.StringUtils;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by nikitagordia on 3/28/18.
- */
+import uni.tbd.openday.R;
+import uni.tbd.openday.databinding.LayoutBlogPostBinding;
+import uni.tbd.openday.module.main.profile.model.BlogPost;
+import uni.tbd.openday.module.postdetail.view.PostDetailActivity;
+import uni.tbd.openday.module.profile.view.ProfileActivity;
+import uni.tbd.openday.utils.ImageUtils;
+import uni.tbd.openday.utils.StringUtils;
+
+
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.PostHolder> {
 

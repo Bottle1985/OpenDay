@@ -4,18 +4,15 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.provider.MediaStore;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
+
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import uni.tbd.openday.R;
 import uni.tbd.openday.databinding.DialogPhotoPickBinding;
 import uni.tbd.openday.module.profilesetup.view.ProfileSetupActivity;
 
-/**
- * Created by nikitagordia on 4/7/18.
- */
 
 public class PhotoPickDialog extends BottomSheetDialogFragment {
 

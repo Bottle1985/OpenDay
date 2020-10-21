@@ -5,17 +5,18 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.appcompat.app.AlertDialog;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,6 +27,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.squareup.picasso.Picasso;
+
 import uni.tbd.openday.R;
 import uni.tbd.openday.databinding.FragmentProfileBinding;
 import uni.tbd.openday.module.main.profile.model.BlogPost;
@@ -33,11 +36,8 @@ import uni.tbd.openday.module.main.users.model.User;
 import uni.tbd.openday.module.profilesetup.view.ProfileSetupActivity;
 import uni.tbd.openday.module.signin.view.SigninActivity;
 import uni.tbd.openday.utils.ImageUtils;
-import com.squareup.picasso.Picasso;
 
-/**
- * Created by nikitagordia on 3/28/18.
- */
+
 
 public class ProfileFragment extends Fragment {
 

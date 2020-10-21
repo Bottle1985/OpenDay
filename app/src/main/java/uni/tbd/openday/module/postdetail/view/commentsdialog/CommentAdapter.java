@@ -2,26 +2,24 @@ package uni.tbd.openday.module.postdetail.view.commentsdialog;
 
 import android.app.Activity;
 import android.content.Context;
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.util.Pair;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import uni.tbd.openday.R;
 import uni.tbd.openday.databinding.LayoutCommentHolderBinding;
 import uni.tbd.openday.module.postdetail.model.Comment;
 import uni.tbd.openday.module.profile.view.ProfileActivity;
 import uni.tbd.openday.utils.ImageUtils;
-import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * Created by nikitagordia on 3/31/18.
- */
 
 public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentHolder> {
 

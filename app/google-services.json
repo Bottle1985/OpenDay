@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "682851834312",
-    "firebase_url": "https://hnport-cde0a.firebaseio.com",
-    "project_id": "hnport-cde0a",
-    "storage_bucket": "hnport-cde0a.appspot.com"
+    "project_number": "940053606946",
+    "firebase_url": "https://openday-802c4.firebaseio.com",
+    "project_id": "openday-802c4",
+    "storage_bucket": "openday-802c4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:682851834312:android:ea9aba641dcf99e42388fd",
+        "mobilesdk_app_id": "1:940053606946:android:b33814cb94df29ddb7507b",
         "android_client_info": {
           "package_name": "uni.tbd.openday"
         }
       },
       "oauth_client": [
         {
-          "client_id": "682851834312-3k8937qr0pt4sjevnv9ltv4ff9949mc9.apps.googleusercontent.com",
+          "client_id": "940053606946-dijb574oh0g2bc30sv6po725q03qt7d9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "uni.tbd.openday",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "682851834312-dnut0l2ralv4g9brp7an3lo642aag82n.apps.googleusercontent.com",
+          "client_id": "940053606946-jbffgbrr30ord56dssj60602fsm6trn3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCuXRriZuO3sZ23k04o8ncT11-fMljEcrM"
+          "current_key": "AIzaSyC_e_YsEMfJppaAd_dBAq0KekOOAuHaKfg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "682851834312-dnut0l2ralv4g9brp7an3lo642aag82n.apps.googleusercontent.com",
+              "client_id": "940053606946-gviv8rm5i95ling01fes5apb0vo1c5kf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

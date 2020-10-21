@@ -2,12 +2,6 @@ package uni.tbd.openday.module.chat.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-/**
- * Created by nikitagordia on 4/3/18.
- */
 
 public class Message {
 
