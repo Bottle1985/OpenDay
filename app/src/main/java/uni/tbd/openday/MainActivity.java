@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,32 +80,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView = (NavigationView) findViewById(R.id.nav_view);
 
     }
-    public void accessUserInformation() {
-
-        FirebaseUser User = FirebaseAuth.getInstance().getCurrentUser();
-        if (User != null) {
+    public void accessUserInformation(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
             // Name, email address, and profile photo Url
-            String name = User.getDisplayName();
-            String email = User.getEmail();
-            Uri photoUrl = User.getPhotoUrl();
+            String name = user.getDisplayName();
+            String email = user.getEmail();
+            Uri photoUrl = user.getPhotoUrl();
 
             View headerView = navigationView.getHeaderView(0);
-            TextView txtEmail = (TextView) headerView.findViewById(R.id.txt_email);
-            TextView txtName = (TextView) headerView.findViewById(R.id.textUserName);
-//            ImageView profile_image = (ImageView) headerView.findViewById(R.id.profile_image);
-//            if (photoUrl.equals("default")){
-//                profile_image.setImageResource(R.mipmap.ic_launcher);
-//            }else Glide.with(MainActivity.this).load(User.getPhotoUrl()).into(profile_image);
-            txtName.setText(name);
+            TextView txtEmail = (TextView) headerView.findViewById(R.id.textView);
             txtEmail.setText(email);
-
             // Check if user's email is verified
-            boolean emailVerified = User.isEmailVerified();
+            boolean emailVerified = user.isEmailVerified();
 
             // The user's ID, unique to the Firebase project. Do NOT use this value to
             // authenticate with your backend server, if you have one. Use
             // FirebaseUser.getIdToken() instead.
-            String uid = User.getUid();
+            String uid = user.getUid();
         }
     }
     @Override
@@ -165,5 +156,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return false;
     }
-
 }

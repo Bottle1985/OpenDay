@@ -4,13 +4,12 @@ import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
 
 import uni.tbd.openday.R;
 import uni.tbd.openday.databinding.ActivityChatsBinding;
@@ -20,6 +19,7 @@ import uni.tbd.openday.module.main.users.view.UsersFragment;
 import uni.tbd.openday.module.postdetail.view.PostDetailActivity;
 
 public class Chats extends AppCompatActivity {
+
 
     private FragmentPagerAdapter adapter;
     private ActivityChatsBinding bind;
@@ -34,7 +34,7 @@ public class Chats extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bind = DataBindingUtil.setContentView(Chats.this, R.layout.activity_chats);
+        bind = DataBindingUtil.setContentView(this, R.layout.activity_chats);
 
         list = new Fragment[]{
                 new ProfileFragment(),
@@ -52,11 +52,11 @@ public class Chats extends AppCompatActivity {
         backgroundColors = new int[]{
                 getResources().getColor(R.color.white),
                 getResources().getColor(R.color.white),
-                getResources().getColor(R.color.colorPrimaryDark)
+                getResources().getColor(R.color.colorPrimaryDarkBlue)
         };
         textColors = new int[]{
-                getResources().getColor(R.color.colorPrimaryDark),
-                getResources().getColor(R.color.colorPrimaryDark),
+                getResources().getColor(R.color.colorPrimaryDarkBlue),
+                getResources().getColor(R.color.colorPrimaryDarkBlue),
                 getResources().getColor(R.color.white)
         };
         currColorBack = backgroundColors[0];
@@ -105,18 +105,18 @@ public class Chats extends AppCompatActivity {
         animatorBack.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                bind.tabLayout.setBackgroundColor((int) animation.getAnimatedValue());
-                currColorBack = (int) animation.getAnimatedValue();
+                bind.tabLayout.setBackgroundColor((int)animation.getAnimatedValue());
+                currColorBack = (int)animation.getAnimatedValue();
             }
         });
 
-        final int selected = getResources().getColor(R.color.colorAccent);
+        final int selected = getResources().getColor(R.color.colorAccentDark);
         ValueAnimator animatorText = ValueAnimator.ofArgb(currColorText, textColors[state]);
         animatorText.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                bind.tabLayout.setTabTextColors((int) animation.getAnimatedValue(), selected);
-                currColorText = (int) animation.getAnimatedValue();
+                bind.tabLayout.setTabTextColors((int)animation.getAnimatedValue(), selected);
+                currColorText = (int)animation.getAnimatedValue();
             }
         });
 

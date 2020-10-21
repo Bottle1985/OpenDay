@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="uni.tbd.openday" >
+    package="uni.tbd.openday">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="uni.tbd.openday.helper.MyApplication"
         android:allowBackup="true"
-        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="true">
         <service
-            android:name=".helper.firebasenotify.MessagingService">
+            android:name="uni.tbd.openday.helper.firebasenotify.MessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
         <service
-            android:name=".helper.firebasenotify.InstanceIDService">
+            android:name="uni.tbd.openday.helper.firebasenotify.InstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>
 
-        <receiver android:name=".helper.BootBR">
+        <receiver android:name="uni.tbd.openday.helper.BootBR">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name=".helper.MainService"
+            android:name="uni.tbd.openday.helper.MainService"
             android:stopWithTask="false" />
 
         <activity
-            android:name=".module.splash.SplashActivity"
+            android:name="uni.tbd.openday.module.splash.SplashActivity"
             android:theme="@style/Splash"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -49,29 +49,50 @@
         </activity>
 
         <activity
-            android:name=".module.signin.view.SigninActivity"
+            android:name="uni.tbd.openday.module.signin.view.SigninActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".module.profilesetup.view.ProfileSetupActivity"
+            android:name="uni.tbd.openday.module.profilesetup.view.ProfileSetupActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".module.main.Chats"
+            android:name="uni.tbd.openday.module.main.Chats"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".chat.view.ChatActivity"
+            android:name="uni.tbd.openday.module.chat.view.ChatActivity"
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".module.postdetail.view.PostDetailActivity"
+            android:name="uni.tbd.openday.module.postdetail.view.PostDetailActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".module.profile.view.ProfileActivity"
+            android:name="uni.tbd.openday.module.profile.view.ProfileActivity"
             android:screenOrientation="portrait" />
 
+        <!-- Facebook API -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
         <activity android:name=".webview" />
         <activity android:name=".TRAC_NGHIEM" />
         <activity android:name=".GT_NGANH" />
@@ -81,12 +102,9 @@
         <activity android:name=".KHOA" />
         <activity android:name=".Activity.BuildingInfo" />
         <activity android:name=".Activity.event_info" />
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait" >
+        <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".ActivityBuilding" />
         <activity android:name=".Activity.event_add" />
     </application>
-
 </manifest>

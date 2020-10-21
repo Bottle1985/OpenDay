@@ -3,14 +3,13 @@ package uni.tbd.openday.module.postdetail.view;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
+import androidx.databinding.DataBindingUtil;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
-import androidx.databinding.DataBindingUtil;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -19,8 +18,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
-
 import uni.tbd.openday.R;
 import uni.tbd.openday.databinding.ActivityPostDetailBinding;
 import uni.tbd.openday.module.main.profile.model.BlogPost;
@@ -28,6 +25,7 @@ import uni.tbd.openday.module.postdetail.view.commentsdialog.CommentsDialog;
 import uni.tbd.openday.module.postdetail.view.likedialog.LikesDialog;
 import uni.tbd.openday.module.profile.view.ProfileActivity;
 import uni.tbd.openday.utils.ImageUtils;
+import com.squareup.picasso.Picasso;
 
 public class PostDetailActivity extends AppCompatActivity {
 
@@ -93,7 +91,7 @@ public class PostDetailActivity extends AppCompatActivity {
             postId = i.getStringExtra(EXTRA_ID);
 
             bind.like.setText(getResources().getString(R.string.like_cnt, i.getLongExtra(EXTRA_LIKE, 0)));
-            bind.commentUser.setText(getResources().getString(R.string.comment_cnt, i.getLongExtra(EXTRA_COMMENT, 0)));
+            bind.comment.setText(getResources().getString(R.string.comment_cnt, i.getLongExtra(EXTRA_COMMENT, 0)));
             bind.view.setText(getResources().getString(R.string.view_cnt, i.getLongExtra(EXTRA_VIEW, 0)));
 
             String photo = i.getStringExtra(EXTRA_OWNER_PHOTO_URL);
@@ -217,6 +215,6 @@ public class PostDetailActivity extends AppCompatActivity {
     }
 
     public void commentAdded(long x) {
-        bind.commentUser.setText(getResources().getString(R.string.comment_cnt, x));
+        bind.comment.setText(getResources().getString(R.string.comment_cnt, x));
     }
 }

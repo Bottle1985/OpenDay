@@ -1,4 +1,9 @@
 package uni.tbd.openday.module.main.users.model;
+
+/**
+ * Created by nikitagordia on 3/30/18.
+ */
+
 public class User {
 
     private String name;

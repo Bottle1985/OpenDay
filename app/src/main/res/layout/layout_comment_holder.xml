@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimaryDarkBlue"
         android:orientation="horizontal"
         android:layout_margin="3dp"
         android:layout_width="match_parent"

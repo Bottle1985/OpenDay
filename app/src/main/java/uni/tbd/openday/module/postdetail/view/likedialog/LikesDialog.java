@@ -3,18 +3,20 @@ package uni.tbd.openday.module.postdetail.view.likedialog;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.os.Bundle;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import android.view.LayoutInflater;
 
-import androidx.recyclerview.widget.GridLayoutManager;
-
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import uni.tbd.openday.databinding.DialogLikesBinding;
 import uni.tbd.openday.module.main.users.model.User;
+
+/**
+ * Created by nikitagordia on 4/3/18.
+ */
 
 public class LikesDialog extends BottomSheetDialogFragment {
 

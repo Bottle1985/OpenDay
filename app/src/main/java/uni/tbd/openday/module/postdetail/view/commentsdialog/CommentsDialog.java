@@ -4,25 +4,27 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import uni.tbd.openday.databinding.DialogCommentsBinding;
-import uni.tbd.openday.module.postdetail.model.CommentUser;
+import uni.tbd.openday.module.postdetail.model.Comment;
 import uni.tbd.openday.module.postdetail.view.PostDetailActivity;
+
+/**
+ * Created by nikitagordia on 3/31/18.
+ */
 
 public class CommentsDialog extends BottomSheetDialogFragment {
 
@@ -82,7 +84,7 @@ public class CommentsDialog extends BottomSheetDialogFragment {
                     db.getReference().child("comment").child((String)dataSnapshot.getValue()).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            if (adapter != null) adapter.addComment(dataSnapshot.getValue(CommentUser.class));
+                            if (adapter != null) adapter.addComment(dataSnapshot.getValue(Comment.class));
                         }
 
                         @Override
@@ -122,8 +124,8 @@ public class CommentsDialog extends BottomSheetDialogFragment {
             @Override
             public void onClick(View v) {
                 String s = db.getReference().child("comment").push().getKey();
-                db.getReference().child("comment").child(s).child("context").setValue(bind.commentUser.getText().toString());
-                bind.commentUser.setText("");
+                db.getReference().child("comment").child(s).child("context").setValue(bind.comment.getText().toString());
+                bind.comment.setText("");
                 db.getReference().child("comment").child(s).child("owner_id").setValue(auth.getCurrentUser().getUid());
                 db.getReference().child("comment").child(s).child("owner_photo_url").setValue(auth.getCurrentUser().getPhotoUrl().toString());
                 db.getReference().child("comment").child(s).child("owner_name").setValue(auth.getCurrentUser().getDisplayName());

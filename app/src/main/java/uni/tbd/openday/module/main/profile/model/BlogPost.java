@@ -3,6 +3,10 @@ package uni.tbd.openday.module.main.profile.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Created by nikitagordia on 3/28/18.
+ */
+
 public class BlogPost {
 
     private String id;

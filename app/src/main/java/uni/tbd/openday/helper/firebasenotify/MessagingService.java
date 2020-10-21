@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 import java.io.IOException;
 
 import uni.tbd.openday.R;
-import uni.tbd.openday.chat.view.ChatActivity;
+import uni.tbd.openday.module.chat.view.ChatActivity;
 import uni.tbd.openday.utils.ImageUtils;
 
 

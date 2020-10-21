@@ -1,4 +1,4 @@
-package uni.tbd.openday.chat.view;
+package uni.tbd.openday.module.chat.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -30,8 +30,8 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import uni.tbd.openday.R;
-import uni.tbd.openday.chat.model.Message;
 import uni.tbd.openday.databinding.ActivityChatBinding;
+import uni.tbd.openday.module.chat.model.Message;
 import uni.tbd.openday.utils.Const;
 
 public class ChatActivity extends AppCompatActivity {

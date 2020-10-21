@@ -1,23 +1,26 @@
 package uni.tbd.openday.module.main.chats.view;
 
 import android.content.Context;
+
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.recyclerview.widget.RecyclerView;
-
+import uni.tbd.openday.R;
+import uni.tbd.openday.databinding.LayoutChatHolderBinding;
+import uni.tbd.openday.module.chat.view.ChatActivity;
+import uni.tbd.openday.module.main.chats.model.Chat;
+import uni.tbd.openday.utils.ImageUtils;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import uni.tbd.openday.R;
-import uni.tbd.openday.chat.view.ChatActivity;
-import uni.tbd.openday.databinding.LayoutChatHolderBinding;
-import uni.tbd.openday.module.main.chats.model.Chat;
-import uni.tbd.openday.utils.ImageUtils;
-
+/**
+ * Created by nikitagordia on 4/6/18.
+ */
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatHolder> {
 

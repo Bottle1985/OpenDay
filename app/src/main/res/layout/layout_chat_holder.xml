@@ -16,10 +16,9 @@
             android:layout_height="80dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/user_photo_holder"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="8dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/chat_name"
@@ -29,11 +28,10 @@
             android:layout_marginTop="10dp"
             android:textSize="17sp"
             android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorAccentDark"
             app:layout_constraintStart_toEndOf="@+id/photo"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Nikita Gordia"
-            android:layout_marginLeft="16dp" />
+            tools:text="Nikita Gordia" />
 
         <!--TODO Cutting strings everywhere-->
 
@@ -47,8 +45,7 @@
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/photo"
             app:layout_constraintTop_toBottomOf="@+id/chat_name"
-            tools:text="@string/post_example"
-            android:layout_marginLeft="16dp" />
+            tools:text="@string/post_example" />
 
         <TextView
             android:id="@+id/time"
@@ -58,8 +55,7 @@
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="18:09"
-            android:layout_marginRight="8dp" />
+            tools:text="18:09" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

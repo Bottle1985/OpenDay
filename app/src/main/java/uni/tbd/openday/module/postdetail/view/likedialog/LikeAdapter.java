@@ -1,21 +1,23 @@
 package uni.tbd.openday.module.postdetail.view.likedialog;
 
 import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 
 import uni.tbd.openday.R;
 import uni.tbd.openday.databinding.LayoutLikeHolderBinding;
 import uni.tbd.openday.module.main.users.model.User;
 import uni.tbd.openday.utils.ImageUtils;
+import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by nikitagordia on 4/3/18.
+ */
 
 public class LikeAdapter extends RecyclerView.Adapter<LikeAdapter.LikeHolder> {
 

@@ -4,14 +4,14 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
-
+import androidx.databinding.DataBindingUtil;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
+import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
+
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,21 +24,21 @@ import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.squareup.picasso.Picasso;
-
 import uni.tbd.openday.R;
-import uni.tbd.openday.chat.view.ChatActivity;
 import uni.tbd.openday.databinding.ActivityProfileBinding;
+import uni.tbd.openday.module.chat.view.ChatActivity;
 import uni.tbd.openday.module.main.profile.model.BlogPost;
 import uni.tbd.openday.module.main.profile.view.ListAdapter;
 import uni.tbd.openday.module.main.profile.view.ProfileFragment;
 import uni.tbd.openday.module.main.users.model.User;
 import uni.tbd.openday.module.postdetail.view.PostDetailActivity;
 import uni.tbd.openday.utils.ImageUtils;
+import com.squareup.picasso.Picasso;
 
 public class ProfileActivity extends AppCompatActivity {
 
     private static final String EXTRA_UID = "uni.tbd.openday.module.profile.view.ProfileActivity.uid";
+
     private User user;
 
     private FirebaseDatabase db;

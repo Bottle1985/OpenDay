@@ -85,7 +85,7 @@
                     android:paddingRight="10dp"
                     android:layout_marginRight="3dp"
                     android:fontFamily="sans-serif-condensed"
-                    android:textColor="@color/cadet_blue"
+                    android:textColor="@color/like"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -97,19 +97,19 @@
                     android:paddingRight="10dp"
                     android:layout_marginRight="3dp"
                     android:fontFamily="sans-serif-condensed"
-                    android:textColor="@color/chartreuse"
+                    android:textColor="@color/view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:id="@+id/commentUser"
+                    android:id="@+id/comment"
                     android:text="3 Comment"
-                    android:transitionName="commentUser"
+                    android:transitionName="comment"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:layout_marginRight="3dp"
                     android:fontFamily="sans-serif-condensed"
-                    android:textColor="@color/chartreuse"
+                    android:textColor="@color/comment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -132,10 +132,9 @@
                 android:layout_weight="1"
                 android:textAlignment="center"
                 android:fontFamily="sans-serif-condensed"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimaryDarkBlue"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal" />
+                android:layout_height="match_parent" />
 
             <TextView
                 android:id="@+id/show_comments"
@@ -144,10 +143,9 @@
                 android:layout_weight="1"
                 android:textAlignment="center"
                 android:fontFamily="sans-serif-condensed"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorPrimaryDarkBlue"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal" />
+                android:layout_height="match_parent" />
 
         </LinearLayout>
     </LinearLayout>

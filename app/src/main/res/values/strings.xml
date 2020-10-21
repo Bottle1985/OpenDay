@@ -232,8 +232,14 @@
     <string name="returnToLoginTextView">Return to Login Screen</string>
     <string name="Daotao">Đào Tạo</string>
     <string name="ask">Đặt câu hỏi</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!--API-->
+    <string name="facebook_app_id">1765601310169433</string>
+    <string name="fb_login_protocol_scheme">fb1765601310169433</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">nk02m5V1uLaVA9bNflWeDZpNj</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">3mePLHbik7HYI8Xyi2olITJObthZmyrza0ppS9pSJ3gkkh4Grc</string>
+
     <!--SigninActivity-->
     <string name="sign_in">Sign in with</string>
     <string name="create_account">Create an simple account</string>
@@ -269,7 +275,7 @@
     <!--PostDetailActivitytail-->
     <string name="show_likes">Show likes</string>
     <string name="show_comments">Show comments</string>
-    <string name="type_your_comment">Type commentUser here ...</string>
+    <string name="type_your_comment">Type comment here ...</string>
 
     <!--Profile-->
     <string name="follow">Follow</string>

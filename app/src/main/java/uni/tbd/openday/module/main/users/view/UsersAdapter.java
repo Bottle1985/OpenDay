@@ -2,25 +2,23 @@ package uni.tbd.openday.module.main.users.view;
 
 import android.app.Activity;
 import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.squareup.picasso.Picasso;
-
-import java.util.LinkedList;
-import java.util.List;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import uni.tbd.openday.R;
 import uni.tbd.openday.databinding.LayoutUserHolderBinding;
 import uni.tbd.openday.module.main.users.model.User;
 import uni.tbd.openday.module.profile.view.ProfileActivity;
 import uni.tbd.openday.utils.ImageUtils;
+import com.squareup.picasso.Picasso;
 
+import java.util.LinkedList;
+import java.util.List;
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserHolder>{
 

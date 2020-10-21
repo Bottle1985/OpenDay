@@ -1,6 +1,10 @@
 package uni.tbd.openday.module.postdetail.model;
 
-public class CommentUser {
+/**
+ * Created by nikitagordia on 3/31/18.
+ */
+
+public class Comment {
 
     private String owner_id;
 
@@ -10,9 +14,9 @@ public class CommentUser {
 
     private String owner_photo_url;
 
-    public CommentUser() {}
+    public Comment() {}
 
-    public CommentUser(String owner_name, String context) {
+    public Comment(String owner_name, String context) {
         this.owner_name = owner_name;
         this.context = context;
     }

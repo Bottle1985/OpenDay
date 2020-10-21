@@ -5,7 +5,7 @@
     <corners android:topLeftRadius="20dp"
         android:topRightRadius="20dp"/>
 
-    <solid android:color="@color/colorPrimaryDark"/>
+    <solid android:color="@color/colorPrimaryDarkBlue"/>
 
     <padding android:bottom="3dp"
         android:top="3dp"

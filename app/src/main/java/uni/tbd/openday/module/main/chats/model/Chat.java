@@ -1,5 +1,8 @@
 package uni.tbd.openday.module.main.chats.model;
 
+/**
+ * Created by nikitagordia on 4/6/18.
+ */
 
 public class Chat {
 

@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="uni.tbd.openday.module.splash.SplashActivity">
+    tools:context="uni.tbd.openday.com.nikitagordia.openday.module.splash.SplashActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

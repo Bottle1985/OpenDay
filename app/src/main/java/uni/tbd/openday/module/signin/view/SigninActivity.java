@@ -22,6 +22,11 @@ import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
 import androidx.databinding.DataBindingUtil;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -32,16 +37,28 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.auth.TwitterAuthProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.twitter.sdk.android.core.Callback;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterAuthToken;
+import com.twitter.sdk.android.core.TwitterConfig;
+import com.twitter.sdk.android.core.TwitterException;
+import com.twitter.sdk.android.core.TwitterSession;
+import com.twitter.sdk.android.core.identity.TwitterAuthClient;
 
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import uni.tbd.openday.MainActivity;
@@ -59,6 +76,9 @@ public class SigninActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseDatabase database;
     private GoogleApiClient client;
+    private LoginManager loginManager;
+    private CallbackManager callbackManager;
+    private TwitterAuthClient twitterClient;
 
     private OnCompleteListener<AuthResult> signInCallback;
 
@@ -128,6 +148,7 @@ public class SigninActivity extends AppCompatActivity {
         bind.center.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (isAnimated) return;
                 isAnimated = true;
                 showAnimation();
@@ -136,8 +157,10 @@ public class SigninActivity extends AppCompatActivity {
 
         googleSetup();
         emailPasswordSetup();
+        facebookSetup();
         phoneSetup();
         loginSetup();
+        twitterSetup();
     }
 
     @Override
@@ -155,8 +178,72 @@ public class SigninActivity extends AppCompatActivity {
             AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
             auth.signInWithCredential(credential).addOnCompleteListener(signInCallback);
         }
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        twitterClient.onActivityResult(requestCode, resultCode, data);
     }
 
+    private void twitterSetup() {
+        TwitterConfig config = new TwitterConfig.Builder(this)
+                .twitterAuthConfig(new TwitterAuthConfig(getResources().getString(R.string.com_twitter_sdk_android_CONSUMER_KEY),
+                        getResources().getString(R.string.com_twitter_sdk_android_CONSUMER_SECRET)))
+                .build();
+        Twitter.initialize(config);
+        twitterClient = new TwitterAuthClient();
+        bind.twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                lastOpenId = ProfileSetupActivity.PROFILE_SETUP_WITH_TWITTER;
+                lastOpenImg = bind.twitterImg;
+                lastOpenTv = bind.twitterTv;
+                twitterClient.authorize(SigninActivity.this, new Callback<TwitterSession>() {
+                    @Override
+                    public void success(Result<TwitterSession> result) {
+                        TwitterAuthToken token = result.data.getAuthToken();
+                        auth.signInWithCredential(TwitterAuthProvider.getCredential(token.token, token.secret)).addOnCompleteListener(signInCallback);
+                    }
+
+                    @Override
+                    public void failure(TwitterException exception) {
+                        showToast(R.string.twitter_trouble);
+                        dialog.cancel();
+                    }
+                });
+            }
+        });
+    }
+
+    private void facebookSetup() {
+        callbackManager = CallbackManager.Factory.create();
+        loginManager = LoginManager.getInstance();
+        loginManager.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                auth.signInWithCredential(FacebookAuthProvider.getCredential(loginResult.getAccessToken().getToken()))
+                        .addOnCompleteListener(signInCallback);
+            }
+
+            @Override
+            public void onCancel() {
+                dialog.cancel();
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                showToast(R.string.facebook_trouble);
+                dialog.cancel();
+            }
+        });
+        bind.facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lastOpenId = ProfileSetupActivity.PROFILE_SETUP_WITH_FACEBOOK;
+                lastOpenImg = bind.facebookImg;
+                lastOpenTv = bind.facebookTv;
+                loginManager.logInWithReadPermissions(SigninActivity.this, Arrays.asList("email", "public_profile"));
+            }
+        });
+    }
 
     private void emailPasswordSetup() {
         bind.done.setOnClickListener(new View.OnClickListener() {
@@ -301,10 +388,20 @@ public class SigninActivity extends AppCompatActivity {
                 (float)(centerY - r * Math.sin(Const.PHONE_ANGLE) - bind.phone.getMeasuredHeight() / 2d),
                 Const.PHONE_SHOW_DURAION);
 
+        showAnimation(bind.twitter,
+                (float)(centerX + r * Math.cos(Const.TWITTER_ANGLE) - bind.twitter.getMeasuredWidth() / 2d),
+                (float)(centerY - r * Math.sin(Const.TWITTER_ANGLE) - bind.twitter.getMeasuredHeight() / 2d),
+                Const.TWITTER_SHOW_DURATION);
+
         showAnimation(bind.google,
                 (float)(centerX + r * Math.cos(Const.GOOGLE_ANGLE) - bind.google.getMeasuredWidth() / 2d),
                 (float)(centerY - r * Math.sin(Const.GOOGLE_ANGLE) - bind.google.getMeasuredHeight() / 2d),
                 Const.GOOGLE_SHOW_DURAION);
+
+        showAnimation(bind.facebook,
+                (float)(centerX + r * Math.cos(Const.FACEBOOK_ANGLE) - bind.facebook.getMeasuredWidth() / 2d),
+                (float)(centerY - r * Math.sin(Const.FACEBOOK_ANGLE) - bind.facebook.getMeasuredHeight() / 2d),
+                Const.FACEBOOK_SHOW_DURATION);
 
         showAnimation(bind.loginImg,
                 bind.area.getMeasuredWidth() / 2 - bind.loginImg.getMeasuredWidth() / 2,

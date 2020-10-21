@@ -11,10 +11,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-/**
- * Created by nikitagordia on 4/14/18.
- */
-
 public class BootBR extends BroadcastReceiver {
 
     @Override

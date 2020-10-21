@@ -2,26 +2,28 @@ package uni.tbd.openday.module.main.profile.view;
 
 import android.app.Activity;
 import android.content.Context;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.util.Pair;
-import androidx.recyclerview.widget.RecyclerView;
-
+import uni.tbd.openday.R;
+import uni.tbd.openday.databinding.LayoutBlogPostBinding;
+import uni.tbd.openday.module.postdetail.view.PostDetailActivity;
+import uni.tbd.openday.module.main.profile.model.BlogPost;
+import uni.tbd.openday.module.profile.view.ProfileActivity;
+import uni.tbd.openday.utils.ImageUtils;
+import uni.tbd.openday.utils.StringUtils;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import uni.tbd.openday.R;
-import uni.tbd.openday.databinding.LayoutBlogPostBinding;
-import uni.tbd.openday.module.main.profile.model.BlogPost;
-import uni.tbd.openday.module.postdetail.view.PostDetailActivity;
-import uni.tbd.openday.module.profile.view.ProfileActivity;
-import uni.tbd.openday.utils.ImageUtils;
-import uni.tbd.openday.utils.StringUtils;
+/**
+ * Created by nikitagordia on 3/28/18.
+ */
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.PostHolder> {
 
@@ -94,7 +96,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.PostHolder> {
                         new Pair<View, String>(bind.date, "date"),
                         new Pair<View, String>(bind.content, "content"),
                         new Pair<View, String>(bind.like, "like"),
-                        new Pair<View, String>(bind.commentUser, "comment"),
+                        new Pair<View, String>(bind.comment, "comment"),
                         new Pair<View, String>(bind.view, "view"),
                         new Pair<View, String>(bind.postBody, "post_body")).toBundle());
             }
@@ -131,7 +133,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.PostHolder> {
             bind.content.setText(StringUtils.cut(post.getContent(), 500));
             bind.date.setText(post.getDate());
             bind.like.setText(context.getResources().getString(R.string.like_cnt, post.getLike()));
-            bind.commentUser.setText(context.getResources().getString(R.string.comment_cnt, post.getComment()));
+            bind.comment.setText(context.getResources().getString(R.string.comment_cnt, post.getComment()));
             bind.view.setText(context.getResources().getString(R.string.view_cnt, post.getView()));
             if (post.getOwner_photo_url() != null) Picasso.get().load(post.getOwner_photo_url()).placeholder(R.drawable.user_photo_holder).resize(ImageUtils.SIZE_L, ImageUtils.SIZE_L).into(bind.photo);
         }

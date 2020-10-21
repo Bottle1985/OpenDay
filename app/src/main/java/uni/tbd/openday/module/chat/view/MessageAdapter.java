@@ -1,4 +1,4 @@
-package uni.tbd.openday.chat.view;
+package uni.tbd.openday.module.chat.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,9 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import uni.tbd.openday.R;
-import uni.tbd.openday.chat.model.Message;
 import uni.tbd.openday.databinding.LayoutMessageHolderLeftBinding;
 import uni.tbd.openday.databinding.LayoutMessageHolderRightBinding;
+import uni.tbd.openday.module.chat.model.Message;
 import uni.tbd.openday.utils.ImageUtils;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageHolder> {
