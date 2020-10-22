@@ -126,20 +126,23 @@ public class ProfileSetupActivity extends AppCompatActivity {
                     showToast(R.string.empty_field);
                     return;
                 }
-                if (user.getPhotoUrl() == null) {
-                    showToast(R.string.profile_image_empty_field);
-                };
-                UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
-                        .setDisplayName(nickname)
-                        .build();
-                user.updateProfile(profileChangeRequest);
+                if (user.getPhotoUrl() != null) {
+                    UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
+                            .setDisplayName(nickname)
+                            .build();
+                    user.updateProfile(profileChangeRequest);
 
-                database.getReference().child("user").child(user.getUid()).child("name").setValue(nickname);
-                String email = auth.getCurrentUser().getEmail();
-                if (email == null) email = auth.getCurrentUser().getPhoneNumber();
-                database.getReference().child("user").child(user.getUid()).child("email").setValue(email);
-                startActivity(new Intent(ProfileSetupActivity.this, MainActivity.class));
-                finish();
+                    database.getReference().child("user").child(user.getUid()).child("name").setValue(nickname);
+                    String email = auth.getCurrentUser().getEmail();
+                    if (email == null) email = auth.getCurrentUser().getPhoneNumber();
+                    database.getReference().child("user").child(user.getUid()).child("email").setValue(email);
+                    startActivity(new Intent(ProfileSetupActivity.this, MainActivity.class));
+                    finish();
+                }else {
+                    showToast(R.string.profile_image_empty_field);
+                    return;
+                }
+
             }
         });
 

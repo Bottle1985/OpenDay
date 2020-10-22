@@ -47,6 +47,10 @@
                         android:id="@+id/nav_messenger"
                         android:title="Messenger"
                         android:icon="@drawable/ic_baseline_question_answer_24"/>
+                    <item
+                        android:id="@+id/nav_logout"
+                        android:title="Logout"
+                        android:icon="@drawable/ic_baseline_question_answer_24"/>
                 </group>
             </menu>
         </item>

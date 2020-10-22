@@ -1,7 +1,6 @@
 package uni.tbd.openday;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,14 +19,25 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.squareup.picasso.Picasso;
 
 import uni.tbd.openday.module.main.Chats;
+import uni.tbd.openday.module.main.users.model.User;
+import uni.tbd.openday.module.signin.view.SigninActivity;
+import uni.tbd.openday.utils.ImageUtils;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static int mode_webview =0;
-    TextView txtUserName;
     Animation in, out;
+    private FirebaseDatabase db;
+    private FirebaseAuth auth;
+    private User user;
+    private FirebaseMessaging messaging;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -36,6 +46,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Open activity list building
+
+        db = FirebaseDatabase.getInstance();
+        auth = FirebaseAuth.getInstance();
+        messaging = FirebaseMessaging.getInstance();
         ActionBar actionBar = getSupportActionBar();
         in = AnimationUtils.loadAnimation(this,R.anim.fade_in);
         out = AnimationUtils.loadAnimation(this,R.anim.fade_out);
@@ -81,28 +95,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
     public void accessUserInformation(){
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            // Name, email address, and profile photo Url
-            String name = user.getDisplayName();
-            String email = user.getEmail();
-            Uri photoUrl = user.getPhotoUrl();
+//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//        if (user != null) {
+//            // Name, email address, and profile photo Url
+//            String name = user.getDisplayName();
+//            String email = user.getEmail();
+//            Uri photoUrl = user.getPhotoUrl();
+//
+//            View headerView = navigationView.getHeaderView(0);
+//            TextView txtEmail = (TextView) headerView.findViewById(R.id.textView);
+//            TextView txtName = (TextView) headerView.findViewById(R.id.textUserName);
+//            ImageView profile_image = (ImageView) headerView.findViewById(R.id.profile_image);
+//            txtEmail.setText(email);
+//            txtName.setText(name);
+//            profile_image.setImageURI(photoUrl);
+//            // Check if user's email is verified
+//            boolean emailVerified = user.isEmailVerified();
+//
+//            // The user's ID, unique to the Firebase project. Do NOT use this value to
+//            // authenticate with your backend server, if you have one. Use
+//            // FirebaseUser.getIdToken() instead.
+//            String uid = user.getUid();
+        db.getReference().child("user").child(auth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                user = dataSnapshot.getValue(User.class);
+                View headerView = navigationView.getHeaderView(0);
+                TextView txtEmail = (TextView) headerView.findViewById(R.id.textView);
+                TextView txtName = (TextView) headerView.findViewById(R.id.textUserName);
+                ImageView profile_image = (ImageView) headerView.findViewById(R.id.profile_image);
+                user.setUid(auth.getCurrentUser().getUid());
+                txtEmail.setText(user.getEmail());
+                txtName.setText(user.getName());
+                Picasso.get().load(user.getPhoto_url()).placeholder(R.drawable.user_photo_holder).placeholder(R.drawable.user_photo_holder).resize(ImageUtils.SIZE_XXL, ImageUtils.SIZE_XXL).into(profile_image);
+            }
 
-            View headerView = navigationView.getHeaderView(0);
-            TextView txtEmail = (TextView) headerView.findViewById(R.id.textView);
-            TextView txtName = (TextView) headerView.findViewById(R.id.textUserName);
-            ImageView profile_image = (ImageView) headerView.findViewById(R.id.profile_image);
-            txtEmail.setText(email);
-            txtName.setText(name);
-            profile_image.setImageURI(photoUrl);
-            // Check if user's email is verified
-            boolean emailVerified = user.isEmailVerified();
-
-            // The user's ID, unique to the Firebase project. Do NOT use this value to
-            // authenticate with your backend server, if you have one. Use
-            // FirebaseUser.getIdToken() instead.
-            String uid = user.getUid();
-        }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
     @Override
     protected void onRestart() {
@@ -151,6 +182,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 mode_webview = 2;
                 Intent intent_daotao = new Intent(MainActivity.this, webview.class);
                 startActivity(intent_daotao);
+                break;
+            case R.id.nav_logout:
+                db.getReference().child("user").child(auth.getCurrentUser().getUid()).child("chat_id").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snap : dataSnapshot.getChildren())
+                            messaging.unsubscribeFromTopic((String)snap.getValue());
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+                auth.signOut();
+                startActivity(new Intent(MainActivity.this, SigninActivity.class));
+                finish();
                 break;
         }
 
