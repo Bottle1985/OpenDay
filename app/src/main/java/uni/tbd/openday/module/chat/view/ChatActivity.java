@@ -27,12 +27,13 @@ import okhttp3.Callback;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 import uni.tbd.openday.R;
 import uni.tbd.openday.databinding.ActivityChatBinding;
 import uni.tbd.openday.module.chat.model.Message;
 import uni.tbd.openday.utils.Const;
+
+import static okhttp3.RequestBody.create;
 
 public class ChatActivity extends AppCompatActivity {
 
@@ -147,7 +148,7 @@ public class ChatActivity extends AppCompatActivity {
                     .url(Const.NOTIFICATION_URL)
                     .addHeader("Content-Type", Const.CONTENT_TYPE)
                     .addHeader("Authorization", Const.AUTH_KEY)
-                    .post(RequestBody.create(JSON, obj.toString()))
+                    .post(create(JSON, obj.toString()))
                     .build()
             ).enqueue(new Callback() {
                 @Override

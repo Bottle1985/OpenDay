@@ -50,21 +50,21 @@ public class ChatsFragment extends Fragment {
                 final Chat chat = new Chat((String)dataSnapshot.getValue());
                 db.getReference().child("chat").child(chat.getChat_id()).child("message_id").limitToLast(1).addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot snap : dataSnapshot.getChildren()) {
                             db.getReference().child("message").child((String)snap.getValue()).addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     chat.setLast_message((String)dataSnapshot.child("content").getValue());
                                     chat.setTime((String)dataSnapshot.child("date").getValue());
                                     db.getReference().child("chat").child(chat.getChat_id()).child("user_id").addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
+                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                             for (DataSnapshot snap : dataSnapshot.getChildren())
                                                 if (!auth.getCurrentUser().getUid().equals((String)snap.getValue())) {
                                                     db.getReference().child("user").child((String)snap.getValue()).addListenerForSingleValueEvent(new ValueEventListener() {
                                                         @Override
-                                                        public void onDataChange(DataSnapshot dataSnapshot) {
+                                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                             User u = dataSnapshot.getValue(User.class);
                                                             chat.setChat_name(u.getName());
                                                             chat.setPhoto_url(u.getPhoto_url());

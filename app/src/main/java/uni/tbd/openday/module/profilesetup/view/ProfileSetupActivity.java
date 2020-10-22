@@ -14,7 +14,8 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -125,6 +126,9 @@ public class ProfileSetupActivity extends AppCompatActivity {
                     showToast(R.string.empty_field);
                     return;
                 }
+                if (user.getPhotoUrl() == null) {
+                    showToast(R.string.profile_image_empty_field);
+                };
                 UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
                         .setDisplayName(nickname)
                         .build();
@@ -180,19 +184,39 @@ public class ProfileSetupActivity extends AppCompatActivity {
 
         progressDialog.show();
         dialog.dismiss();
-        storage.getReference().child("user").child(auth.getCurrentUser().getUid()).putBytes(data).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+//        storage.getReference().child("user").child(auth.getCurrentUser().getUid()).putBytes(data).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+//                if (task.isSuccessful()) {
+//                    Uri downloadUri = task.getResult().getUploadSessionUri();
+//                    database.getReference().child("user").child(auth.getCurrentUser().getUid()).child("photo_url").setValue(task.getResult().getUploadSessionUri().toString());
+//                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+//                            .setPhotoUri(task.getResult().getUploadSessionUri())
+//                            .build();
+//                    auth.getCurrentUser().updateProfile(profileUpdates);
+//                } else {
+//                    Toast.makeText(ProfileSetupActivity.this, getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
+//                }
+//                progressDialog.cancel();
+//            }
+//        });
+        storage.getReference().child("user").child(auth.getCurrentUser().getUid()).putBytes(data).addOnFailureListener(ProfileSetupActivity.this, new OnFailureListener() {
             @Override
-            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                if (task.isSuccessful()) {
-                    Uri downloadUri = task.getResult().getUploadSessionUri();
-                    database.getReference().child("user").child(auth.getCurrentUser().getUid()).child("photo_url").setValue(downloadUri);
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(ProfileSetupActivity.this, "Upload Error: " +
+                        e.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        }).addOnSuccessListener(ProfileSetupActivity.this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Task<Uri> uri = taskSnapshot.getStorage().getDownloadUrl();
+                while(!uri.isComplete());
+                Uri url = uri.getResult();
+                database.getReference().child("user").child(auth.getCurrentUser().getUid()).child("photo_url").setValue(url.toString());
                     UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                            .setPhotoUri(downloadUri)
+                            .setPhotoUri(url)
                             .build();
                     auth.getCurrentUser().updateProfile(profileUpdates);
-                } else {
-                    Toast.makeText(ProfileSetupActivity.this, getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
-                }
                 progressDialog.cancel();
             }
         });

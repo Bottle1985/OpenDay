@@ -2,6 +2,7 @@ package uni.tbd.openday.module.chat.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public class Message {
 
@@ -22,7 +23,7 @@ public class Message {
     public Message(String owner_id, String owner_nickname, String content, String owner_photo_url) {
         this.owner_nickname = owner_nickname;
         this.content = content;
-        this.owner_id = owner_id;
+        this.owner_id = Objects.requireNonNull(owner_id);
         this.owner_photo_url = owner_photo_url;
 
         date = new SimpleDateFormat("kk:mm").format(new Date()).toString();

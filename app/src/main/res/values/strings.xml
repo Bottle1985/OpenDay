@@ -250,6 +250,7 @@
     <string name="welcome">Welcome</string>
     <string name="error">Error(</string>
     <string name="empty_field">Empty field</string>
+    <string name="profile_image_empty_field">You Dont Choose Profile Image</string>
     <string name="loading">Loading, please wait...</string>
     <string name="phone">Phone</string>
     <string name="twitter">Twitter</string>
