@@ -7,13 +7,12 @@
     android:background="@color/white"
     android:fitsSystemWindows="true"
     android:id="@+id/drawerlayout"
-    tools:openDrawer="start">
+    tools:openDrawer="">
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/header"
         app:menu="@menu/menu_main" />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -79,12 +78,12 @@
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:src="@mipmap/ic_book" />
+                            android:src="@mipmap/ic_incentive" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Các chuyên ngành"
+                            android:text="Sự kiện"
                             android:textSize="18sp" />
                     </LinearLayout>
 
@@ -119,12 +118,12 @@
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:src="@mipmap/ic_book" />
+                            android:src="@mipmap/ic_enterprise" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Các chuyên ngành"
+                            android:text="Tuyển sinh"
                             android:textSize="18sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -158,12 +157,12 @@
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:src="@mipmap/ic_book" />
+                            android:src="@mipmap/ic_student" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Các chuyên ngành"
+                            android:text="Ngành"
                             android:textSize="18sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -202,7 +201,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Các chuyên ngành"
+                            android:text="Khoa"
                             android:textSize="18sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -237,12 +236,12 @@
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:src="@mipmap/ic_book" />
+                            android:src="@mipmap/ic_gps" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Các chuyên ngành"
+                            android:text="Sơ đồ"
                             android:textSize="18sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -277,12 +276,12 @@
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:src="@mipmap/ic_book" />
+                            android:src="@mipmap/ic_passenger" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Các chuyên ngành"
+                            android:text="Trắc nghiệm"
                             android:textSize="18sp" />
                     </LinearLayout>
                 </LinearLayout>

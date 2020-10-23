@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="uni.tbd.openday.helper.MyApplication"
+        android:name="uni.tbd.openday.Helper.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,31 +14,31 @@
         android:theme="@style/AppTheme"
         android:fullBackupContent="true">
         <service
-            android:name="uni.tbd.openday.helper.firebasenotify.MessagingService">
+            android:name="uni.tbd.openday.Helper.firebasenotify.MessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
         <service
-            android:name="uni.tbd.openday.helper.firebasenotify.InstanceIDService">
+            android:name="uni.tbd.openday.Helper.firebasenotify.InstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>
 
-        <receiver android:name="uni.tbd.openday.helper.BootBR">
+        <receiver android:name="uni.tbd.openday.Helper.BootBR">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name="uni.tbd.openday.helper.MainService"
+            android:name="uni.tbd.openday.Helper.MainService"
             android:stopWithTask="false" />
 
         <activity
-            android:name="uni.tbd.openday.module.splash.SplashActivity"
+            android:name="uni.tbd.openday.Module.splash.SplashActivity"
             android:theme="@style/Splash"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -49,27 +49,27 @@
         </activity>
 
         <activity
-            android:name="uni.tbd.openday.module.signin.view.SigninActivity"
+            android:name="uni.tbd.openday.Module.signin.view.SigninActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="uni.tbd.openday.module.profilesetup.view.ProfileSetupActivity"
+            android:name="uni.tbd.openday.Module.profilesetup.view.ProfileSetupActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="uni.tbd.openday.module.main.Chats"
+            android:name="uni.tbd.openday.Module.main.Chats"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="uni.tbd.openday.module.chat.view.ChatActivity"
+            android:name="uni.tbd.openday.Module.chat.view.ChatActivity"
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name="uni.tbd.openday.module.postdetail.view.PostDetailActivity"
+            android:name="uni.tbd.openday.Module.postdetail.view.PostDetailActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="uni.tbd.openday.module.profile.view.ProfileActivity"
+            android:name="uni.tbd.openday.Module.profile.view.ProfileActivity"
             android:screenOrientation="portrait" />
 
         <!-- Facebook API -->

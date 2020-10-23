@@ -2,10 +2,12 @@ package uni.tbd.openday;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +16,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -26,10 +29,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
-import uni.tbd.openday.module.main.Chats;
-import uni.tbd.openday.module.main.users.model.User;
-import uni.tbd.openday.module.signin.view.SigninActivity;
-import uni.tbd.openday.utils.ImageUtils;
+import uni.tbd.openday.Module.main.Chats;
+import uni.tbd.openday.Module.main.users.model.User;
+import uni.tbd.openday.Module.signin.view.SigninActivity;
+import uni.tbd.openday.Utils.ImageUtils;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static int mode_webview =0;
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FirebaseAuth auth;
     private User user;
     private FirebaseMessaging messaging;
+    CardView btn_card1,btn_card2,btn_card3,btn_card4,btn_card5,btn_card6;
+    Button btn_login;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -60,14 +65,86 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         AnhXa();
         ActionBar();
-        accessUserInformation();
+        ButtonAction ();
+        if (FirebaseAuth.getInstance().getCurrentUser()!=null){
+            MenuAction(true);
+            View view = View.inflate(this, R.layout.header_after_login, null);
+            navigationView.addHeaderView(view);
+            accessUserInformation();
+        }else {
+            MenuAction(false);
+            View view = View.inflate(this, R.layout.header_no_login, null);
+            navigationView.addHeaderView(view);
+            View headerView = navigationView.getHeaderView(0);
+            btn_login = (Button) headerView.findViewById(R.id.btn_login);
+            btn_login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent_login = new Intent(MainActivity.this, SigninActivity.class);
+                    startActivity(intent_login);
+                }
+            });
+        }
+
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.nav_open,R.string.nav_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
     }
-
+    public boolean MenuAction(boolean check){
+        Menu menu =navigationView.getMenu();
+        menu.findItem(R.id.nav_messenger).setVisible(check);
+        menu.findItem(R.id.nav_logout).setVisible(check);
+        menu.findItem(R.id.nav_daotao).setVisible(check);
+        return check;
+    }
+    public void ButtonAction (){
+        btn_card1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_sukien = new Intent(MainActivity.this, SUKIEN.class);
+                startActivity(intent_sukien);
+            }
+        });
+        btn_card2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mode_webview = 1;
+                Intent intent_tuyensinh = new Intent(MainActivity.this, webview.class);
+                startActivity(intent_tuyensinh);
+            }
+        });
+        btn_card3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GT_KHOA.mode = 0;
+                Intent intent_nganh = new Intent(MainActivity.this, NGANH.class);
+                startActivity(intent_nganh);
+            }
+        });
+        btn_card4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_khoa = new Intent(MainActivity.this, KHOA.class);
+                startActivity(intent_khoa);
+            }
+        });
+        btn_card5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_sodo = new Intent(MainActivity.this, ActivityBuilding.class);
+                startActivity(intent_sodo);
+            }
+        });
+        btn_card6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_tracnghiem = new Intent(MainActivity.this, TRAC_NGHIEM.class);
+                startActivity(intent_tracnghiem);
+            }
+        });
+    }
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)){
@@ -92,30 +169,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerlayout);
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
+        btn_card1 = (CardView) findViewById(R.id.card1);
+        btn_card2 = (CardView) findViewById(R.id.card2);
+        btn_card3 = (CardView) findViewById(R.id.card3);
+        btn_card4 = (CardView) findViewById(R.id.card4);
+        btn_card5 = (CardView) findViewById(R.id.card5);
+        btn_card6 = (CardView) findViewById(R.id.card6);
 
     }
     public void accessUserInformation(){
-//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        if (user != null) {
-//            // Name, email address, and profile photo Url
-//            String name = user.getDisplayName();
-//            String email = user.getEmail();
-//            Uri photoUrl = user.getPhotoUrl();
-//
-//            View headerView = navigationView.getHeaderView(0);
-//            TextView txtEmail = (TextView) headerView.findViewById(R.id.textView);
-//            TextView txtName = (TextView) headerView.findViewById(R.id.textUserName);
-//            ImageView profile_image = (ImageView) headerView.findViewById(R.id.profile_image);
-//            txtEmail.setText(email);
-//            txtName.setText(name);
-//            profile_image.setImageURI(photoUrl);
-//            // Check if user's email is verified
-//            boolean emailVerified = user.isEmailVerified();
-//
-//            // The user's ID, unique to the Firebase project. Do NOT use this value to
-//            // authenticate with your backend server, if you have one. Use
-//            // FirebaseUser.getIdToken() instead.
-//            String uid = user.getUid();
         db.getReference().child("user").child(auth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -197,7 +259,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }
                 });
                 auth.signOut();
-                startActivity(new Intent(MainActivity.this, SigninActivity.class));
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
                 finish();
                 break;
         }
