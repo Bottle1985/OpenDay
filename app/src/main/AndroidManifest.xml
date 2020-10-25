@@ -106,6 +106,7 @@
         </activity>
         <activity android:name=".ActivityBuilding" />
         <activity android:name=".Activity.event_add" />
+        <activity android:name=".Activity.Ask_answer" />
         <service android:name=".Notifications.MyFirebaseldService"
             android:enabled="true"
             android:exported="true">

@@ -29,6 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
+import uni.tbd.openday.Activity.Ask_answer;
 import uni.tbd.openday.Module.main.Chats;
 import uni.tbd.openday.Module.main.users.model.User;
 import uni.tbd.openday.Module.signin.view.SigninActivity;
@@ -246,6 +247,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 mode_webview = 2;
                 Intent intent_daotao = new Intent(MainActivity.this, webview.class);
                 startActivity(intent_daotao);
+                break;
+            case R.id.nav_forum:
+                Intent intent_forum = new Intent(MainActivity.this, Ask_answer.class);
+                startActivity(intent_forum);
                 break;
             case R.id.nav_logout:
                 db.getReference().child("user").child(auth.getCurrentUser().getUid()).child("chat_id").addListenerForSingleValueEvent(new ValueEventListener() {
