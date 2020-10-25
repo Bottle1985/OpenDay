@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // TODO Auto-generated method stub
         super.onRestart();
         //Do your code here
-        accessUserInformation();
+//        accessUserInformation();
     }
 
     @Override
