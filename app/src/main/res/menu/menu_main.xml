@@ -25,6 +25,10 @@
             android:id="@+id/nav_tracnghiem"
             android:title="@string/trac_nghiem"
             android:icon="@drawable/ic_baseline_question_answer_24"/>
+        <item
+            android:id="@+id/nav_forum"
+            android:title="@string/ask"
+            android:icon="@drawable/ic_baseline_question_answer_24"/>
     </group>
         <item android:title="Cá nhân">
             <menu>
