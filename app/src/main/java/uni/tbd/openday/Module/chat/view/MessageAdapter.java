@@ -36,7 +36,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageH
 
     @Override
     public MessageHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (viewType == 0) return new LeftMessageHolder(LayoutMessageHolderLeftBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+        if (viewType == 1) return new LeftMessageHolder(LayoutMessageHolderLeftBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
                       else return new RightMessageHolder(LayoutMessageHolderRightBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 

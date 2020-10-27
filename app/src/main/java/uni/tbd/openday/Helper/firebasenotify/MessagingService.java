@@ -31,7 +31,6 @@ public class MessagingService extends FirebaseMessagingService {
         super.onMessageReceived(remoteMessage);
         Log.d("mytg", "HERE");
         if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals(remoteMessage.getData().get("owner_id"))) return;
-
         try {
             final Bitmap bitmap = Picasso.get().load(remoteMessage.getData().get("owner_photo_url")).placeholder(R.drawable.user_photo_holder).resize(ImageUtils.SIZE_M, ImageUtils.SIZE_M).get();
             new Handler(getMainLooper()).post(new Runnable() {

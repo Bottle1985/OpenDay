@@ -8,10 +8,6 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
-/**
- * Created by nikitagordia on 4/7/18.
- */
-
 public class ImageUtils {
 
     public static final int SIZE_XXL = 350;

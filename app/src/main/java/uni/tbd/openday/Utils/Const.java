@@ -1,8 +1,5 @@
 package uni.tbd.openday.Utils;
 
-/**
- * Created by nikitagordia on 3/21/18.
- */
 
 public class Const {
 
@@ -21,6 +18,6 @@ public class Const {
 
     public static final String NOTIFICATION_URL = "https://fcm.googleapis.com/fcm/send";
     public static final String CONTENT_TYPE = "application/json";
-    public static final String AUTH_KEY = "key=AAAAz_5csro:APA91bFUVVHSHf1pVDl5jjndvhW55u_H0BVLmiGUQVfsZgZAci7HNs7u3FffIWu4JchbGYef79KC3Uqn3930uRPu0db7zCnujkB6WeBjr90LIiiqwktkOmvGiJhtGkRDp1GaOeSud7Lg";
+    public static final String AUTH_KEY = "key=AAAA2t-PsiI:APA91bFGfZmRFk7IjYGLrz9L8hEzTLxBBXAUBSE2X2S-nbtTOkXYm5ucu0YCUntPJzRraBj-KA7IK_N7RJfD5k3AkPsbkjhJmy371S_6jcCzusVeSIT867Hj0vV-wPL90rKkGr5K6r6u";
 
 }

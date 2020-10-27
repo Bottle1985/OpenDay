@@ -11,20 +11,16 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-import uni.tbd.openday.Notifications.Token;
-import uni.tbd.openday.databinding.FragmentChatBinding;
 import uni.tbd.openday.Module.main.chats.model.Chat;
 import uni.tbd.openday.Module.main.users.model.User;
+import uni.tbd.openday.databinding.FragmentChatBinding;
 
 public class ChatsFragment extends Fragment {
 
@@ -128,14 +124,7 @@ public class ChatsFragment extends Fragment {
 
             }
         });
-        updateToken(FirebaseInstanceId.getInstance().getToken());
 
         return bind.getRoot();
-    }
-    private void updateToken(String refreshToken) {
-        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Tokens");
-        Token token = new Token(refreshToken);
-        reference.child(firebaseUser.getUid()).setValue(token);
     }
 }

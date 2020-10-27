@@ -1,8 +1,5 @@
 package uni.tbd.openday.Utils;
 
-/**
- * Created by nikitagordia on 3/30/18.
- */
 
 public class StringUtils {
 

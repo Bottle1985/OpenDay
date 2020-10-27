@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
     public void accessUserInformation(){
-        if(auth.getCurrentUser()== null)
+        if( auth.getCurrentUser().getUid()== null)
             return;
         db.getReference().child("user").child(auth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -204,8 +204,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onRestart() {
     // TODO Auto-generated method stub
         super.onRestart();
-        //Do your code here
-//        accessUserInformation();
+//        Do your code here
+        accessUserInformation();
     }
 
     @Override
