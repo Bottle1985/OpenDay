@@ -18,6 +18,6 @@ public class Const {
 
     public static final String NOTIFICATION_URL = "https://fcm.googleapis.com/fcm/send";
     public static final String CONTENT_TYPE = "application/json";
-    public static final String AUTH_KEY = ":key=AAAA2t-PsiI:APA91bFGfZmRFk7IjYGLrz9L8hEzTLxBBXAUBSE2X2S-nbtTOkXYm5ucu0YCUntPJzRraBj-KA7IK_N7RJfD5k3AkPsbkjhJmy371S_6jcCzusVeSIT867Hj0vV-wPL90rKkGr5K6r6u";
+    public static final String AUTH_KEY = "key=AAAA2t-PsiI:APA91bFGfZmRFk7IjYGLrz9L8hEzTLxBBXAUBSE2X2S-nbtTOkXYm5ucu0YCUntPJzRraBj-KA7IK_N7RJfD5k3AkPsbkjhJmy371S_6jcCzusVeSIT867Hj0vV-wPL90rKkGr5K6r6u";
 
 }

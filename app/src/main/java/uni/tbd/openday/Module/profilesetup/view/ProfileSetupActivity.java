@@ -156,15 +156,17 @@ public class ProfileSetupActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String chucvu = new String();
+                Integer ischucvu = null;
                 String nickname = bind.nickname.getText().toString();
                 if(bind.isGiangvien.isChecked()){
+                    ischucvu = 1;
                     chucvu = tmp_chucvu + bind.GVkhoa.getText().toString();
                 }else if (bind.isSinhvien.isChecked()){
+                    ischucvu = 0;
                     chucvu = tmp_chucvu + bind.svthuockhoa.getText().toString();
                 }
 
                 FirebaseUser user = auth.getCurrentUser();
-                Toast.makeText(ProfileSetupActivity.this,chucvu,Toast.LENGTH_SHORT).show();
                 if (nickname.isEmpty()) {
                     showToast(R.string.empty_field);
                     return;
@@ -174,9 +176,9 @@ public class ProfileSetupActivity extends AppCompatActivity {
                             .setDisplayName(nickname)
                             .build();
                     user.updateProfile(profileChangeRequest);
-
                     database.getReference().child("user").child(user.getUid()).child("name").setValue(nickname);
                     database.getReference().child("user").child(user.getUid()).child("chuc_vu").setValue(chucvu);
+                    database.getReference().child("user").child(user.getUid()).child("isChucvu").setValue(ischucvu);
                     String email = auth.getCurrentUser().getEmail();
                     if (email == null) email = auth.getCurrentUser().getPhoneNumber();
                     database.getReference().child("user").child(user.getUid()).child("email").setValue(email);

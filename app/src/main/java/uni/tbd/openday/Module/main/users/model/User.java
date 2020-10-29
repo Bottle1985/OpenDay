@@ -10,16 +10,26 @@ public class User {
     private String uid;
 
     private String photo_url;
+    private int isChucvu;
 
     private String chuc_vu;
 
     public User() {}
 
-    public User(String uid, String name, String email,String chuc_vu) {
+    public User(String uid, String name, String email,String chuc_vu, int isChucvu) {
         this.chuc_vu = chuc_vu;
         this.uid = uid;
         this.name = name;
         this.email = email;
+        this.isChucvu = isChucvu;
+    }
+
+    public int getIsChucvu() {
+        return isChucvu;
+    }
+
+    public void setIsChucvu(int isChucvu) {
+        this.isChucvu = isChucvu;
     }
 
     public String getChuc_vu() {
