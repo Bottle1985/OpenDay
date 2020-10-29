@@ -44,7 +44,7 @@
                 android:textStyle="bold"
                 android:textSize="11sp"
                 android:layout_margin="10dp"
-                tools:text="nikita.gordia@gmail.com"
+                tools:text="tbd@gmail.com"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -59,10 +59,64 @@
             android:elevation="6dp"
             android:background="@drawable/edit_text_background_black"
             android:layout_weight="0"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+            <Switch
+                android:id="@+id/isSinhvien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bạn là Sinh Viên?"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/edit_text_background_black"
+                android:padding="5dp"/>
+            <Switch
+                android:id="@+id/isGiangvien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bạn là Giảng Viên?"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/edit_text_background_black"
+                android:padding="5dp"/>
+        </LinearLayout>
+            <EditText
+                android:id="@+id/svthuockhoa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="0"
+                android:background="@drawable/edit_text_background_black"
+                android:elevation="6dp"
+                android:hint="Sinh viên khoa nào?"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/darker_gray" />
+            <EditText
+                android:id="@+id/GVkhoa"
+                android:hint="Giảng viên khoa nào?"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                android:textColorHint="@android:color/darker_gray"
+                android:elevation="6dp"
+                android:background="@drawable/edit_text_background_black"
+                android:layout_weight="0"
+                android:layout_margin="5dp"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         <LinearLayout
             android:orientation="vertical"
             android:background="@drawable/card_grey"

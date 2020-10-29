@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,10 +30,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import uni.tbd.openday.MainActivity;
-import uni.tbd.openday.R;
-import uni.tbd.openday.databinding.ActivityProfileSetupBinding;
 import uni.tbd.openday.Module.signin.view.PhotoPickDialog;
+import uni.tbd.openday.R;
 import uni.tbd.openday.Utils.ImageUtils;
+import uni.tbd.openday.databinding.ActivityProfileSetupBinding;
 
 public class ProfileSetupActivity extends AppCompatActivity {
 
@@ -54,7 +55,7 @@ public class ProfileSetupActivity extends AppCompatActivity {
     private FirebaseStorage storage;
 
     private PhotoPickDialog dialog;
-
+    String tmp_chucvu = "";
     private ProgressDialog progressDialog;
 
     @Override
@@ -116,12 +117,54 @@ public class ProfileSetupActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage(getResources().getString(R.string.loading));
-
+        if  (bind.isGiangvien.isChecked()){
+            if (bind.isSinhvien.isChecked()){
+                bind.isGiangvien.setChecked(false);
+                Toast.makeText(ProfileSetupActivity.this,"Chỉ được chọn một",Toast.LENGTH_SHORT).show();
+            }
+        }
+        bind.isGiangvien.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    bind.GVkhoa.setVisibility(View.VISIBLE);
+                    bind.isSinhvien.setVisibility(View.GONE);
+                }else {
+                    bind.isSinhvien.setVisibility(View.VISIBLE);
+                    bind.svthuockhoa.setVisibility(View.GONE);
+                    bind.GVkhoa.setVisibility(View.GONE);
+                }
+                tmp_chucvu ="Giảng viên Khoa ";
+            }
+        });
+        bind.isSinhvien.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    bind.isSinhvien.setVisibility(View.GONE);
+                    bind.svthuockhoa.setVisibility(View.VISIBLE);
+                }
+                else {
+                    bind.isGiangvien.setVisibility(View.VISIBLE);
+                    bind.svthuockhoa.setVisibility(View.GONE);
+                    bind.GVkhoa.setVisibility(View.GONE);
+                }
+                tmp_chucvu ="Sinh viên Khoa ";
+            }
+        });
         bind.done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String chucvu = new String();
                 String nickname = bind.nickname.getText().toString();
+                if(bind.isGiangvien.isChecked()){
+                    chucvu = tmp_chucvu + bind.GVkhoa.getText().toString();
+                }else if (bind.isSinhvien.isChecked()){
+                    chucvu = tmp_chucvu + bind.svthuockhoa.getText().toString();
+                }
+
                 FirebaseUser user = auth.getCurrentUser();
+                Toast.makeText(ProfileSetupActivity.this,chucvu,Toast.LENGTH_SHORT).show();
                 if (nickname.isEmpty()) {
                     showToast(R.string.empty_field);
                     return;
@@ -133,6 +176,7 @@ public class ProfileSetupActivity extends AppCompatActivity {
                     user.updateProfile(profileChangeRequest);
 
                     database.getReference().child("user").child(user.getUid()).child("name").setValue(nickname);
+                    database.getReference().child("user").child(user.getUid()).child("chuc_vu").setValue(chucvu);
                     String email = auth.getCurrentUser().getEmail();
                     if (email == null) email = auth.getCurrentUser().getPhoneNumber();
                     database.getReference().child("user").child(user.getUid()).child("email").setValue(email);

@@ -38,8 +38,8 @@
 
                 <TextView
                     android:id="@+id/user_name"
-                    tools:text="Nikita Gordia"
-                    android:layout_marginBottom="10dp"
+                    tools:text="Thai Binh Duong"
+                    android:layout_marginBottom="5dp"
                     android:transitionName="nickname"
                     android:elevation="6dp"
                     android:textSize="16sp"
@@ -51,8 +51,20 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    tools:text="nikita.gordia@gmail.com"
+                    tools:text="tbd@gmail.com"
                     android:id="@+id/user_email"
+                    android:textSize="10sp"
+                    android:layout_marginBottom="5dp"
+                    android:elevation="6dp"
+                    android:transitionName="email"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray"
+                    android:background="@drawable/edit_text_background_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    tools:text="Giáo viên CNTT"
+                    android:id="@+id/user_chucvu"
                     android:textSize="10sp"
                     android:elevation="6dp"
                     android:transitionName="email"

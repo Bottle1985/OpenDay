@@ -187,6 +187,7 @@ public class ProfileFragment extends Fragment {
                 user.setUid(auth.getCurrentUser().getUid());
                 bind.userEmail.setText(user.getEmail());
                 bind.userName.setText(user.getName());
+                bind.userChucvu.setText(user.getChuc_vu());
                 if (user.getPhoto_url() != null) Picasso.get().load(user.getPhoto_url()).placeholder(R.drawable.user_photo_holder).placeholder(R.drawable.user_photo_holder).resize(ImageUtils.SIZE_XXL, ImageUtils.SIZE_XXL).into(bind.photo);
                 dialog.cancel();
                 runningDialog = false;

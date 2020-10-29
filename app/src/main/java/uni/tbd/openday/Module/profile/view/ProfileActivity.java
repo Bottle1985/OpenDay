@@ -4,14 +4,14 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import androidx.databinding.DataBindingUtil;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,16 +24,17 @@ import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
-import uni.tbd.openday.R;
-import uni.tbd.openday.databinding.ActivityProfileBinding;
+import com.squareup.picasso.Picasso;
+
 import uni.tbd.openday.Module.chat.view.ChatActivity;
 import uni.tbd.openday.Module.main.profile.model.BlogPost;
 import uni.tbd.openday.Module.main.profile.view.ListAdapter;
 import uni.tbd.openday.Module.main.profile.view.ProfileFragment;
 import uni.tbd.openday.Module.main.users.model.User;
 import uni.tbd.openday.Module.postdetail.view.PostDetailActivity;
+import uni.tbd.openday.R;
 import uni.tbd.openday.Utils.ImageUtils;
-import com.squareup.picasso.Picasso;
+import uni.tbd.openday.databinding.ActivityProfileBinding;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -174,6 +175,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(User.class);
                 user.setUid(uid);
+                bind.userChucvu.setText(user.getChuc_vu());
                 bind.userEmail.setText(user.getEmail());
                 bind.userName.setText(user.getName());
                 if (user.getPhoto_url() != null) Picasso.get().load(user.getPhoto_url()).placeholder(R.drawable.user_photo_holder).resize(ImageUtils.SIZE_XXL, ImageUtils.SIZE_XXL).into(bind.photo);

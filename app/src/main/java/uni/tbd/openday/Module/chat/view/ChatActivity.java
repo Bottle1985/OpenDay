@@ -28,15 +28,12 @@ import okhttp3.Callback;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import uni.tbd.openday.Module.chat.model.Message;
 import uni.tbd.openday.R;
 import uni.tbd.openday.Utils.Const;
 import uni.tbd.openday.databinding.ActivityChatBinding;
-
-import static okhttp3.RequestBody.create;
 
 public class ChatActivity extends AppCompatActivity {
 
@@ -131,6 +128,7 @@ public class ChatActivity extends AppCompatActivity {
         Message message = new Message(auth.getCurrentUser().getUid(), auth.getCurrentUser().getDisplayName(), content, auth.getCurrentUser().getPhotoUrl().toString());
         db.getReference().child("message").child(key).setValue(message);
 
+
         try {
 
             JSONObject obj = new JSONObject();
@@ -142,15 +140,12 @@ public class ChatActivity extends AppCompatActivity {
             data.put("date", message.getDate());
             data.put("owner_id", auth.getCurrentUser().getUid());
             obj.put("data", data);
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(Const.NOTIFICATION_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
+            RequestBody body = RequestBody.create(JSON,obj.toString());
             client.newCall(new Request.Builder()
                     .url(Const.NOTIFICATION_URL)
                     .addHeader("Content-Type", Const.CONTENT_TYPE)
                     .addHeader("Authorization", Const.AUTH_KEY)
-                    .post(create(JSON, obj.toString()))
+                    .post(body)
                     .build()
             ).enqueue(new Callback() {
                 @Override
@@ -160,7 +155,20 @@ public class ChatActivity extends AppCompatActivity {
 
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
-                    Log.d(TAG, "Responce " + response.toString());
+
+                    String respBody;
+                    if (response.isSuccessful()) {
+                        if (response.body() != null) {
+                            respBody = response.body().string();
+                            Log.i(TAG, respBody);
+                            response.body().close();
+                            Log.d(TAG, "Responce " + response.toString());
+
+                        }
+                    } else {
+
+                        Log.d(TAG, "Responce " + response.toString());
+                    }
                 }
             });
 

@@ -2,23 +2,24 @@ package uni.tbd.openday.Module.main.users.view;
 
 import android.app.Activity;
 import android.content.Context;
-
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.util.Pair;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import uni.tbd.openday.R;
-import uni.tbd.openday.databinding.LayoutUserHolderBinding;
-import uni.tbd.openday.Module.main.users.model.User;
-import uni.tbd.openday.Module.profile.view.ProfileActivity;
-import uni.tbd.openday.Utils.ImageUtils;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.squareup.picasso.Picasso;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import uni.tbd.openday.Module.main.users.model.User;
+import uni.tbd.openday.Module.profile.view.ProfileActivity;
+import uni.tbd.openday.R;
+import uni.tbd.openday.Utils.ImageUtils;
+import uni.tbd.openday.databinding.LayoutUserHolderBinding;
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserHolder>{
 
@@ -92,6 +93,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserHolder>{
             context.startActivity(ProfileActivity.getIntent(user.getUid(), context), ActivityOptionsCompat.makeSceneTransitionAnimation(activity,
                     new Pair<View, String>(bind.userName, "nickname"),
                     new Pair<View, String>(bind.userEmail, "email"),
+                    new Pair<View, String>(bind.userChucvu, "chuc_vu"),
                     new Pair<View, String>(bind.photo, "photo")
             ).toBundle());
         }

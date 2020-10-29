@@ -11,12 +11,23 @@ public class User {
 
     private String photo_url;
 
+    private String chuc_vu;
+
     public User() {}
 
-    public User(String uid, String name, String email) {
+    public User(String uid, String name, String email,String chuc_vu) {
+        this.chuc_vu = chuc_vu;
         this.uid = uid;
         this.name = name;
         this.email = email;
+    }
+
+    public String getChuc_vu() {
+        return chuc_vu;
+    }
+
+    public void setChuc_vu(String chuc_vu) {
+        this.chuc_vu = chuc_vu;
     }
 
     public User(String name) {
