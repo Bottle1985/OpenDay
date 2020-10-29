@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
@@ -115,8 +116,8 @@ public class ProfileSetupActivity extends AppCompatActivity {
         } else finish();
 
         progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Uploading Image...");
         progressDialog.setCancelable(false);
-        progressDialog.setMessage(getResources().getString(R.string.loading));
         if  (bind.isGiangvien.isChecked()){
             if (bind.isSinhvien.isChecked()){
                 bind.isGiangvien.setChecked(false);
@@ -141,7 +142,7 @@ public class ProfileSetupActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-                    bind.isSinhvien.setVisibility(View.GONE);
+                    bind.isGiangvien.setVisibility(View.GONE);
                     bind.svthuockhoa.setVisibility(View.VISIBLE);
                 }
                 else {
@@ -233,22 +234,7 @@ public class ProfileSetupActivity extends AppCompatActivity {
 
         progressDialog.show();
         dialog.dismiss();
-//        storage.getReference().child("user").child(auth.getCurrentUser().getUid()).putBytes(data).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-//                if (task.isSuccessful()) {
-//                    Uri downloadUri = task.getResult().getUploadSessionUri();
-//                    database.getReference().child("user").child(auth.getCurrentUser().getUid()).child("photo_url").setValue(task.getResult().getUploadSessionUri().toString());
-//                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-//                            .setPhotoUri(task.getResult().getUploadSessionUri())
-//                            .build();
-//                    auth.getCurrentUser().updateProfile(profileUpdates);
-//                } else {
-//                    Toast.makeText(ProfileSetupActivity.this, getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
-//                }
-//                progressDialog.cancel();
-//            }
-//        });
+
         storage.getReference().child("user").child(auth.getCurrentUser().getUid()).putBytes(data).addOnFailureListener(ProfileSetupActivity.this, new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
@@ -267,6 +253,14 @@ public class ProfileSetupActivity extends AppCompatActivity {
                             .build();
                     auth.getCurrentUser().updateProfile(profileUpdates);
                 progressDialog.cancel();
+            }
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+
+                double progressPercent = (100.00 * snapshot.getBytesTransferred()/snapshot.getTotalByteCount());
+
+                progressDialog.setMessage(getResources().getString(R.string.loading)+" " + (int) progressPercent +"%");
             }
         });
     }
