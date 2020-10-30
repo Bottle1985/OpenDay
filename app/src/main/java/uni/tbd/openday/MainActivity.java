@@ -179,9 +179,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
     public void accessUserInformation(){
-        if( auth.getCurrentUser().getUid()== null)
-            return;
-        else {
+        if (auth.getCurrentUser()!=null && user!=null) {
             db.getReference().child("user").child(auth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
