@@ -179,7 +179,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
     public void accessUserInformation(){
-        if (auth.getCurrentUser()!=null && user!=null) {
             db.getReference().child("user").child(auth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -198,7 +197,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 public void onCancelled(DatabaseError databaseError) {
                 }
             });
-        }
     }
     @Override
     protected void onRestart() {
