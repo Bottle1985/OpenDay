@@ -15,7 +15,6 @@ import com.google.firebase.database.Query;
 
 import uni.tbd.openday.Adapter.FirebaseCategoryListAdapter;
 import uni.tbd.openday.Class.Category;
-import uni.tbd.openday.Config;
 import uni.tbd.openday.R;
 
 public class CategoryList extends Fragment {
@@ -42,7 +41,7 @@ public class CategoryList extends Fragment {
         mFirebaseDatabaseRef = mFirebaseInstance.getReference();
 
         setUpFirebaseQuery();
-        //setUpRecyclerView();
+        setUpRecyclerView();
 
         return view;
     }
@@ -53,7 +52,7 @@ public class CategoryList extends Fragment {
         // Bottle need to check
         //mQuery = new Firebase(category);
 
-        mQuery = mFirebaseDatabaseRef.child(Config.FIREBASE_CATEGORIES);
+        mQuery = mFirebaseDatabaseRef;
         System.out.println("Good luck Boong " + mQuery);
     }
 
