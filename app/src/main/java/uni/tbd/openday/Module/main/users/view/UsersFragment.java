@@ -105,7 +105,7 @@ public class UsersFragment extends Fragment {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     User user = snapshot.getValue(User.class);
                     user.setUid(snapshot.getKey());
-                    list.add(user);
+                    if (user.getIsChucvu()==1)list.add(user);
                 }
                 adapter.updateUser(list);
             }

@@ -179,24 +179,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
     public void accessUserInformation(){
-            db.getReference().child("user").child(auth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    user = dataSnapshot.getValue(User.class);
-                    View headerView = navigationView.getHeaderView(0);
-                    TextView txtEmail = (TextView) headerView.findViewById(R.id.textView);
-                    TextView txtName = (TextView) headerView.findViewById(R.id.textUserName);
-                    ImageView profile_image = (ImageView) headerView.findViewById(R.id.profile_image);
-                    user.setUid(auth.getCurrentUser().getUid());
-                    txtEmail.setText(user.getEmail());
-                    txtName.setText(user.getName());
-                    Picasso.get().load(user.getPhoto_url()).placeholder(R.drawable.user_photo_holder).placeholder(R.drawable.user_photo_holder).resize(ImageUtils.SIZE_XXL, ImageUtils.SIZE_XXL).into(profile_image);
-                }
+                db.getReference().child("user").child(auth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        user = dataSnapshot.getValue(User.class);
+                        if (user == null) {
+                            auth.signOut();
+                            MainActivity.this.finish();
+                            startActivity(new Intent(MainActivity.this, SigninActivity.class));
+                            return;
+                        }
+                        View headerView = navigationView.getHeaderView(0);
+                        TextView txtEmail = (TextView) headerView.findViewById(R.id.textView);
+                        TextView txtName = (TextView) headerView.findViewById(R.id.textUserName);
+                        ImageView profile_image = (ImageView) headerView.findViewById(R.id.profile_image);
+                        user.setUid(auth.getCurrentUser().getUid());
+                        txtEmail.setText(user.getEmail());
+                        txtName.setText(user.getName());
+                        Picasso.get().load(user.getPhoto_url()).placeholder(R.drawable.user_photo_holder).placeholder(R.drawable.user_photo_holder).resize(ImageUtils.SIZE_XXL, ImageUtils.SIZE_XXL).into(profile_image);
+                    }
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                }
-            });
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
     }
     @Override
     protected void onRestart() {

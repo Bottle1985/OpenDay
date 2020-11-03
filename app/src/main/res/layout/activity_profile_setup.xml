@@ -91,32 +91,28 @@
                 android:background="@drawable/edit_text_background_black"
                 android:padding="5dp"/>
         </LinearLayout>
-            <EditText
-                android:id="@+id/svthuockhoa"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:text="Chọn Khoa: "/>
+            <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:spinnerMode="dialog"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
                 android:layout_margin="5dp"
-                android:layout_weight="0"
-                android:background="@drawable/edit_text_background_black"
-                android:elevation="6dp"
-                android:hint="Sinh viên khoa nào?"
-                android:textAlignment="center"
-                android:visibility="gone"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/black" />
-            <EditText
-                android:id="@+id/GVkhoa"
-                android:hint="Giảng viên khoa nào?"
-                android:textColor="@android:color/black"
-                android:textAlignment="center"
-                android:textColorHint="@android:color/black"
-                android:elevation="6dp"
-                android:background="@drawable/edit_text_background_black"
-                android:layout_weight="0"
-                android:layout_margin="5dp"
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:id="@+id/spinner_khoa"/>
+        </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:background="@drawable/bg_login"

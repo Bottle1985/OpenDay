@@ -21,12 +21,13 @@
 
         <TextView
             android:id="@+id/nickname"
-            android:text="John Doe"
+            android:text="Thái Bình Dương"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
+            android:textStyle="bold"
             android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/colorAccentDark"
+            android:textColor="@color/royal_blue"
             app:layout_constraintLeft_toRightOf="@+id/photo"
             android:layout_marginLeft="8dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -51,6 +52,7 @@
             android:text="11:40"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:textSize="10sp"
             app:layout_constraintLeft_toRightOf="@+id/content"
             android:layout_marginLeft="4dp"

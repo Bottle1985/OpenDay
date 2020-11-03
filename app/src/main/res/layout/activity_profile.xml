@@ -44,7 +44,7 @@
                     android:elevation="6dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:fontFamily="sans-serif-condensed"
                     android:background="@drawable/edit_text_background_black"
                     android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
                     android:elevation="6dp"
                     android:transitionName="email"
                     android:textStyle="bold"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@color/black"
                     android:background="@drawable/edit_text_background_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -69,7 +69,7 @@
                     android:elevation="6dp"
                     android:transitionName="email"
                     android:textStyle="bold"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@color/black"
                     android:background="@drawable/edit_text_background_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />

@@ -25,9 +25,10 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="4dp"
+            android:textStyle="bold"
             android:fontFamily="sans-serif-condensed"
-            android:text="John Doe"
-            android:textColor="@color/colorAccentDark"
+            android:text="Thái Bình Dương"
+            android:textColor="@color/royal_blue"
             android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/photo"
             app:layout_constraintTop_toTopOf="parent" />
@@ -42,7 +43,7 @@
             android:maxWidth="240dp"
             android:padding="8dp"
             android:text="@string/post_example"
-            android:textColor="#ffffff"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toStartOf="@+id/photo"
             app:layout_constraintTop_toBottomOf="@+id/nickname" />
 
@@ -51,6 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
+            android:textColor="@color/black"
             android:text="11:40"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"

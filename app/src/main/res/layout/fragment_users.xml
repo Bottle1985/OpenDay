@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
-        android:background="@drawable/background"
+        android:background="@color/white"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -38,9 +38,10 @@
 
 
         <LinearLayout
-            android:background="@drawable/card_grey"
+            android:background="@color/white"
             android:gravity="center"
             android:elevation="6dp"
+
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">

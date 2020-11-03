@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
@@ -29,6 +31,7 @@ import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import uni.tbd.openday.MainActivity;
 import uni.tbd.openday.Module.signin.view.PhotoPickDialog;
@@ -55,15 +58,40 @@ public class ProfileSetupActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private FirebaseStorage storage;
 
+    String tmp_chucvu;
+    String thuocKhoa;
     private PhotoPickDialog dialog;
-    String tmp_chucvu = "";
     private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bind = DataBindingUtil.setContentView(this, R.layout.activity_profile_setup);
+        ArrayList<String> arrayKhoa = new ArrayList<String>();
+        arrayKhoa.add("Công Nghệ Thông Tin");
+        arrayKhoa.add("Luật");
+        arrayKhoa.add("Đông Phương Học");
+        arrayKhoa.add("Du Lịch");
+        arrayKhoa.add("Ngôn Ngữ Anh");
+        arrayKhoa.add("Kế Toán");
+        arrayKhoa.add("Tài Chính Ngân Hàng");
+        arrayKhoa.add("Quản Trị Kinh Doanh");
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,arrayKhoa);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        bind.spinnerKhoa.setAdapter(arrayAdapter);
+        bind.spinnerKhoa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                thuocKhoa = arrayKhoa.get(position);
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+                Toast.makeText(ProfileSetupActivity.this,"Bạn chưa chọn Khoa",Toast.LENGTH_SHORT).show();
+                return;
+            }
+        });
         boolean edit = false;
 
         switch (getIntent().getIntExtra(EXTRA_SETUP_METHOD, -1)) {
@@ -128,12 +156,9 @@ public class ProfileSetupActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    bind.GVkhoa.setVisibility(View.VISIBLE);
                     bind.isSinhvien.setVisibility(View.GONE);
                 }else {
                     bind.isSinhvien.setVisibility(View.VISIBLE);
-                    bind.svthuockhoa.setVisibility(View.GONE);
-                    bind.GVkhoa.setVisibility(View.GONE);
                 }
                 tmp_chucvu ="Giảng viên Khoa ";
             }
@@ -143,12 +168,9 @@ public class ProfileSetupActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
                     bind.isGiangvien.setVisibility(View.GONE);
-                    bind.svthuockhoa.setVisibility(View.VISIBLE);
                 }
                 else {
                     bind.isGiangvien.setVisibility(View.VISIBLE);
-                    bind.svthuockhoa.setVisibility(View.GONE);
-                    bind.GVkhoa.setVisibility(View.GONE);
                 }
                 tmp_chucvu ="Sinh viên Khoa ";
             }
@@ -156,40 +178,38 @@ public class ProfileSetupActivity extends AppCompatActivity {
         bind.done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String chucvu = new String();
-                Integer ischucvu = null;
-                String nickname = bind.nickname.getText().toString();
-                if(bind.isGiangvien.isChecked()){
-                    ischucvu = 1;
-                    chucvu = tmp_chucvu + bind.GVkhoa.getText().toString();
-                }else if (bind.isSinhvien.isChecked()){
-                    ischucvu = 0;
-                    chucvu = tmp_chucvu + bind.svthuockhoa.getText().toString();
-                }
-
-                FirebaseUser user = auth.getCurrentUser();
-                if (nickname.isEmpty()) {
-                    showToast(R.string.empty_field);
-                    return;
-                }
-                if (user.getPhotoUrl() != null) {
-                    UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
-                            .setDisplayName(nickname)
-                            .build();
-                    user.updateProfile(profileChangeRequest);
-                    database.getReference().child("user").child(user.getUid()).child("name").setValue(nickname);
-                    database.getReference().child("user").child(user.getUid()).child("chuc_vu").setValue(chucvu);
-                    database.getReference().child("user").child(user.getUid()).child("isChucvu").setValue(ischucvu);
-                    String email = auth.getCurrentUser().getEmail();
-                    if (email == null) email = auth.getCurrentUser().getPhoneNumber();
-                    database.getReference().child("user").child(user.getUid()).child("email").setValue(email);
-                    startActivity(new Intent(ProfileSetupActivity.this, MainActivity.class));
-                    finish();
-                }else {
-                    showToast(R.string.profile_image_empty_field);
-                    return;
-                }
-
+                    String chucvu = new String();
+                    Integer ischucvu = null;
+                    String nickname = bind.nickname.getText().toString();
+                    FirebaseUser user = auth.getCurrentUser();
+                    if (nickname.isEmpty()) {
+                        showToast(R.string.empty_field);
+                        return;
+                    }
+                    if(bind.isGiangvien.isChecked()){
+                        ischucvu = 1;
+                        chucvu = tmp_chucvu + thuocKhoa;
+                    }else if (bind.isSinhvien.isChecked()){
+                        ischucvu = 0;
+                        chucvu = tmp_chucvu + thuocKhoa;
+                    }
+                    if (user.getPhotoUrl() != null) {
+                        UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(nickname)
+                                .build();
+                        user.updateProfile(profileChangeRequest);
+                        database.getReference().child("user").child(user.getUid()).child("name").setValue(nickname);
+                        database.getReference().child("user").child(user.getUid()).child("chuc_vu").setValue(chucvu);
+                        database.getReference().child("user").child(user.getUid()).child("isChucvu").setValue(ischucvu);
+                        String email = auth.getCurrentUser().getEmail();
+                        if (email == null) email = auth.getCurrentUser().getPhoneNumber();
+                        database.getReference().child("user").child(user.getUid()).child("email").setValue(email);
+                        startActivity(new Intent(ProfileSetupActivity.this, MainActivity.class));
+                        finish();
+                    }else {
+                        showToast(R.string.profile_image_empty_field);
+                        return;
+                    }
             }
         });
 
