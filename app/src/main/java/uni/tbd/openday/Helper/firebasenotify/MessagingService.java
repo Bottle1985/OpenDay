@@ -29,7 +29,6 @@ public class MessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(final RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
-        Log.d("mytg", "HERE");
         if (FirebaseAuth.getInstance().getCurrentUser().getUid().equals(remoteMessage.getData().get("owner_id"))) return;
         try {
             final Bitmap bitmap = Picasso.get().load(remoteMessage.getData().get("owner_photo_url")).placeholder(R.drawable.user_photo_holder).resize(ImageUtils.SIZE_M, ImageUtils.SIZE_M).get();
@@ -44,6 +43,8 @@ public class MessagingService extends FirebaseMessagingService {
                             .setLargeIcon(bitmap)
                             .setContentIntent(PendingIntent.getActivity(getApplicationContext(), 0, ChatActivity.getIntent(remoteMessage.getData().get("chat_id"), getApplicationContext()), 0))
                             .build();
+
+                    Log.d("mytg", "HERE");
                     notification.flags |= Notification.FLAG_AUTO_CANCEL;
                     ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(0, notification);
                 }

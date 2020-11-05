@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -140,7 +141,7 @@ public class ChatActivity extends AppCompatActivity {
             data.put("date", message.getDate());
             data.put("owner_id", auth.getCurrentUser().getUid());
             obj.put("data", data);
-            RequestBody body = RequestBody.create(JSON,obj.toString());
+            RequestBody body = RequestBody.create(obj.toString(),JSON);
             client.newCall(new Request.Builder()
                     .url(Const.NOTIFICATION_URL)
                     .addHeader("Content-Type", Const.CONTENT_TYPE)
@@ -155,19 +156,8 @@ public class ChatActivity extends AppCompatActivity {
 
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
-
-                    String respBody;
-                    if (response.isSuccessful()) {
-                        if (response.body() != null) {
-                            respBody = response.body().string();
-                            Log.i(TAG, respBody);
-                            response.body().close();
-                            Log.d(TAG, "Responce " + response.toString());
-
-                        }
-                    } else {
-
-                        Log.d(TAG, "Responce " + response.toString());
+                    if (response.code()!=200){
+                        Toast.makeText(ChatActivity.this,"Failed",Toast.LENGTH_SHORT).show();
                     }
                 }
             });
