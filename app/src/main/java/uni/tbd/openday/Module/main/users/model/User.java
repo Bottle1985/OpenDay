@@ -10,6 +10,7 @@ public class User {
     private String uid;
 
     private String photo_url;
+
     private int isChucvu;
 
     private String chuc_vu;

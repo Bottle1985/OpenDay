@@ -10,7 +10,6 @@
         android:name="uni.tbd.openday.Helper.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:usesCleartextTraffic="true"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -18,8 +17,6 @@
         android:fullBackupContent="true">
         <service
             android:name="uni.tbd.openday.Helper.firebasenotify.MessagingService"
-            android:exported="true"
-            android:enabled="true"
             android:directBootAware="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -28,7 +25,7 @@
 
         <service
             android:name="uni.tbd.openday.Helper.firebasenotify.InstanceIDService"
-            android:exported="true"
+            android:exported="false"
             android:enabled="true"
             android:directBootAware="true">
             <intent-filter>

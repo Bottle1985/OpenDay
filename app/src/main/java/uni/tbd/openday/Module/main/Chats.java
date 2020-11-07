@@ -50,14 +50,14 @@ public class Chats extends AppCompatActivity {
 
         state = 0;
         backgroundColors = new int[]{
-                getResources().getColor(R.color.white),
-                getResources().getColor(R.color.white),
-                getResources().getColor(R.color.colorPrimaryDarkBlue)
+                getResources().getColor(R.color.white_smoke),
+                getResources().getColor(R.color.white_smoke),
+                getResources().getColor(R.color.white_smoke)
         };
         textColors = new int[]{
-                getResources().getColor(R.color.colorPrimaryDarkBlue),
-                getResources().getColor(R.color.colorPrimaryDarkBlue),
-                getResources().getColor(R.color.white)
+                getResources().getColor(R.color.black),
+                getResources().getColor(R.color.black),
+                getResources().getColor(R.color.black)
         };
         currColorBack = backgroundColors[0];
         currColorText = textColors[0];
